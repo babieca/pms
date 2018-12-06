@@ -1,0 +1,14 @@
+extends layout
+
+block neck
+	link(rel='stylesheet', href=static_url("css/charts.css"))
+	
+block feet
+	script(type='text/javascript', src=static_url("js/charts.js"))
+
+block link
+	- var selected = 'charts';
+
+
+block content
+	.row(style="width:100%;")

@@ -1,0 +1,73 @@
+extends layout
+
+block neck
+	link(rel='stylesheet', href=static_url("css/search.css"))
+	
+block feet
+	script(type='text/javascript', src=static_url("js/search.js"))
+	
+block link
+	- var selected = 'search';
+
+block content
+	.row(style="width:100%;")
+		#content.col-md-12
+			nav.navbar.navbar-expand-lg.navbar-light.bg-light
+				form.form-inline.my-2.my-lg-0
+					input#search.form-control.mr-sm-2(type='search', placeholder='Search', aria-label='Search')
+					button#submitButton.btn.btn-outline-secondary.my-2.my-sm-0(type='submit' onclick='sendMsg();') Search
+			.row
+				.col-sm-4
+					a.chatperson(href='?msg=15')
+						span.chatimg
+							img(src='https://via.placeholder.com/50x50?text=A', alt='')
+						.namechat
+							.pname Aperson name here
+							.lastmsg
+								| sdk nskdfjnlssdf sdf ss fsdaf kjlsadjf nkksaddbhk jasddl sdf kjsdfoashf89f sdbfoi nkksaddbhk jasddl
+					a.chatperson(href='?msg=16')
+						span.chatimg
+							img(src='https://via.placeholder.com/50x50?text=D', alt='')
+						.namechat
+							.pname D personname
+							.lastmsg
+								| sdk nskdfjnlssdf sdf ss fsdaf kjlsadjf nkksaddbhk jasddl sdf kjsdfoashf89f sdbfoi nkksaddbhk jasddl
+					a.chatperson(href='?msg=17')
+						span.chatimg
+							img(src='https://via.placeholder.com/50x50?text=W', alt='')
+						.namechat
+							.pname WWW
+							.lastmsg
+								| sdk nskdfjnlssdf sdf ss fsdaf kjlsadjf nkksaddbhk jasddl sdf kjsdfoashf89f sdbfoi nkksaddbhk jasddl
+				.col-sm-8
+					.chatbody
+						table.table
+							tr
+								td
+									img(src='https://via.placeholder.com/50x50?text=A')
+								td
+									| sdk fnsdkjnsadjnlk anflkjasdnflk kjasndlkfjnsdfs adfjksd ofh saddf lsdnflksnadl fjnasdfl ajsndflkja nlnfsdjlnf aslnfd as
+								td 15:20
+							tr
+								td
+									img(src='https://via.placeholder.com/50x50?text=B')
+								td
+									| sdk fnsdkjnsadjnlk adfjksd ofh saddf lsdnflksnadl fjnasdfl ajsndflkja nlnfsdjlnf aslnfd as
+								td 15:20
+							tr
+								td
+									img(src='https://via.placeholder.com/50x50?text=A')
+								td
+									| sdk fnsdkjnsadjnlk anflkjasdnflk kjasndl sdflksnfl jsdkfjsafkjsnd fnsalddf sdjdknkfjnsdfs adfjksd ofh saddf lsdnflksnadl fjnasdfl ajsndflkja nlnfsdjlnf aslnfd as
+								td 15:20
+							tr
+								td
+									img(src='https://via.placeholder.com/50x50?text=B')
+								td sdk sf s aslnfd as
+								td 15:20
+							tr
+								td
+									img(src='https://via.placeholder.com/50x50?text=A')
+								td
+									| sdk fnsdkjnsadjnlk anflkjasdnflk c vlsndl v slkdknf sdkmnfkfsndf kasndfllk asnddlflkn sadfn  sadn sandf sadf sajdf sdf sdflksnfl jsdkfjsafkjsnd fnsalddf sdjdknkfjnsdfs adfjksd ofh saddf lsdnflksnadl fjnasdfl ajsndflkja nlnfsdjlnf aslnfd as
+								td 15:20

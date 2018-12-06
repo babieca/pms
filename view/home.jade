@@ -1,0 +1,59 @@
+extends layout
+
+block neck
+	link(rel='stylesheet', href=static_url("css/home.css"))
+	
+block feet
+	script(type='text/javascript', src=static_url("js/home.js"))
+	
+block link
+	- var selected = 'home';
+
+block content
+	main(role='main')
+		section.jumbotron.text-center
+			.container
+				h1.jumbotron-heading Main page
+				p.lead.text-muted
+					| Something short and leading about ...
+
+		.maingrid.text-muted
+			.container
+				.row
+					.card
+						img(data-src='holder.js/100px280?theme=thumb', alt='Card image cap')
+						p.card-text
+							| This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+					.card
+						img(data-src='holder.js/100px280?theme=thumb', alt='Card image cap')
+						p.card-text
+							| This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+					.card
+						img(data-src='holder.js/100px280?theme=thumb', alt='Card image cap')
+						p.card-text
+							| This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+					.card
+						img(data-src='holder.js/100px280?theme=thumb', alt='Card image cap')
+						p.card-text
+							| This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+					.card
+						img(data-src='holder.js/100px280?theme=thumb', alt='Card image cap')
+						p.card-text
+							| This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+					.card
+						img(data-src='holder.js/100px280?theme=thumb', alt='Card image cap')
+						p.card-text
+							| This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+					.card
+						img(data-src='holder.js/100px280?theme=thumb', alt='Card image cap')
+						p.card-text
+							| This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+					.card
+						img(data-src='holder.js/100px280?theme=thumb', alt='Card image cap')
+						p.card-text
+							| This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+					.card
+						img(data-src='holder.js/100px280?theme=thumb', alt='Card image cap')
+						p.card-text
+							| This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+	
