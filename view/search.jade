@@ -3,8 +3,11 @@ extends layout
 block neck
 	link(rel='stylesheet', href=static_url("css/search.css"))
 	
-block feet
+block feet	
 	script(type='text/javascript', src=static_url("js/search.js"))
+	
+	script.
+		console.log("#{data}")	
 	
 block link
 	- var selected = 'search';
@@ -16,6 +19,17 @@ block content
 				form.form-inline.my-2.my-lg-0
 					input#search.form-control.mr-sm-2(type='search', placeholder='Search', aria-label='Search')
 					button#submitButton.btn.btn-outline-secondary.my-2.my-sm-0(type='submit' onclick='sendMsg();') Search
+			//- div
+				//- !{data}
+			div
+				table
+					thead
+						tr: th Movies
+					tbody
+						ul
+							- var index = 0
+							each val, key in data
+								li(id="#") #{key}: #{val}
 			.row
 				.col-sm-4
 					a.chatperson(href='?msg=15')

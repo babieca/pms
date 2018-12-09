@@ -1,3 +1,24 @@
+table = $('#tweetstable').DataTable( {
+    "order": [[ 0, "desc" ], [ 1, 'asc' ]],
+    "columnDefs": [
+        { "width": "15%"},
+        { targets: '_all', visible: true }
+        ]
+} );
+
+$("#messageform").on("submit", function() {
+    newMessage($(this));
+    return false;
+});
+$("#messageform").on("keypress", function(e) {
+    if (e.keyCode == 13) {
+        newMessage($(this));
+        return false;
+    }
+});
+$("#message").select();
+
+
 /*
 	Dropdown with Multiple checkbox select with jQuery - May 27, 2013
 	(c) 2013 @ElmahdiMahmoud

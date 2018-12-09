@@ -5,14 +5,12 @@ import datetime
 import re
 import tweepy
 import logging
-import sqlite3
 import tornado
 import json
 import tornado.web
 import tornado.websocket
 
-from config import conf_app, conf_sqlite
-from ddbb import SQLite
+from config import conf_app
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -80,10 +78,6 @@ class TweetsHandler(BaseController):
     __cursor = None
     
     def initialize(self, keywords):
-        
-        self.__oSQLite = SQLite(conf_sqlite.get('path'),
-                                conf_sqlite.get('name'),
-                                conf_sqlite.get('table'))
         self.keywords = keywords
         
     def get(self, *args, **kwargs):
@@ -108,9 +102,9 @@ class TweetsHandler(BaseController):
             ORDER BY Date DESC''' \
             .format(col1=col1, col2=col2, col3=col3,
                     col4=col4, col5=col5, col6=col6,
-                    tn=conf_sqlite.get('table'))
+                    tn='twitter')
             
-        data = self.__oSQLite.select(strSQL)
+        data = self.application.sqlite_conn.select(strSQL)
 
         colnames = tweets = []
         if data:
@@ -126,16 +120,25 @@ class TweetsHandler(BaseController):
         
 class SearchHandler(BaseController):
 
+    doc = {
+            'size' : 10,
+            'query': {
+                'match_all' : {}
+           }
+       }
+
+    def initialize(self):
+        data = {}
+        self.res = self.application.es_conn.search(index='imdb', doc_type='doc', body=self.doc, scroll='1m')
+        #scrollId = self.res['_scroll_id']    
+        #es.scroll(scroll_id = scrollId, scroll = '1m')
+    
     def get(self):
         self.render("search.jade",
                     title="search",
+                    data = self.res['hits']['hits'],
                     messages=Broadcaster.update_cache(''))
         
-class ImdbHandler(BaseController):
-
-    def get(self):
-        self.render("imdb.jade",
-                    title="imdb")
         
 class ChartsHandler(BaseController):
 
@@ -218,7 +221,6 @@ __all__ = ['HomeHandler',
            'WebSckt',
            'Broadcaster',
            'TweetsHandler',
-           'ImdbHandler',
            'ChartsHandler',
            'SearchHandler',
            'AboutHandler',

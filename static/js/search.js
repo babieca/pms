@@ -1,4 +1,34 @@
-/*$(document).ready(function(e){
+//alert(1)
+//console.log(title)
+
+/* test.js */
+var test = ""
+
+function set_test(val)
+{
+    test=val
+}
+
+function show_test()
+{
+    alert(test);
+}
+
+$("#srchfilter").on("keypress", function(e) {
+    if (e.keyCode == 13) {
+        newMessage($(this));
+        return false;
+    }
+});
+$("#srchfilter").on("keypress", function(e) {
+    if (e.keyCode == 13) {
+        newMessage($(this));
+        return false;
+    }
+});
+
+/*
+$(document).ready(function(e){
 	
 	function start(){
 		var msg = document.getElementById("search").value;
@@ -12,6 +42,8 @@
 
 });
 */
+
+/*
 
 var wsUri = "wss://echo.websocket.org/";
 var output;
@@ -68,3 +100,5 @@ function writeToScreen(message)
 }
 
 window.addEventListener("load", init, false);
+*/
+

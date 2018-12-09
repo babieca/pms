@@ -2,43 +2,10 @@ var wss;
 var wssbcst;
 var table;
 
-$(document).ready(function() {
+$( document ).ready(function() {
 	
     if (!window.console) window.console = {};
     if (!window.console.log) window.console.log = function() {};
-    
-    table = $('#tweetstable').DataTable( {
-        "order": [[ 0, "desc" ], [ 1, 'asc' ]],
-	    "columnDefs": [
-	        { "width": "15%"},
-	        { targets: '_all', visible: true }
-	        ]
-    } );
-
-    $("#messageform").on("submit", function() {
-        newMessage($(this));
-        return false;
-    });
-    $("#messageform").on("keypress", function(e) {
-        if (e.keyCode == 13) {
-            newMessage($(this));
-            return false;
-        }
-    });
-    $("#message").select();
-    
-    $("#srchfilter").on("keypress", function(e) {
-        if (e.keyCode == 13) {
-            newMessage($(this));
-            return false;
-        }
-    });
-    $("#srchfilter").on("keypress", function(e) {
-        if (e.keyCode == 13) {
-            newMessage($(this));
-            return false;
-        }
-    });
     
     //wss.start();
     wssbcst.start();
