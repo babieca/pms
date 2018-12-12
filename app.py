@@ -28,7 +28,7 @@ from controller import *
 
 BASEDIR = conf_app.get('BASEDIR')
 
-logging.getLogger().setLevel(logging.DEBUG)
+logging.getLogger().setLevel(logging.INFO)
 
 define("address", default=conf_app.get('LISTEN_ADDR'), type=str)
 define("portHTTP", default=conf_app.get('PORT_HTTP'), type=int)
@@ -43,13 +43,35 @@ def server_path(*args) -> str:
 
 class Application(tornado.web.Application):
 
-    def __init__(self, handlers, **kwargs):
+    def __init__(self):
+        
+        # keywords = items2listen()
+        keywords = ['trump']
+        
+        handlers = [
+            URLSpec(r"/", HomeHandler, name="index"),
+    
+            URLSpec(r"/wss", WebSckt),
+            URLSpec(r"/wssbcst", Broadcaster),
+    
+            URLSpec(r"/(?i)home", HomeHandler, name="home"),
+            URLSpec(r"/(?i)tweets", TweetsHandler, name="tweets", kwargs={'keywords':keywords}),
+            URLSpec(r"/(?i)search", SearchHandler, name="search"),
+            URLSpec(r"/(?i)charts", ChartsHandler, name="charts"),
+            URLSpec(r"/(?i)about", AboutHandler, name="about"),
+    
+            URLSpec(r"/(?i)static/js/(.*)", tornado.web.StaticFileHandler, {"path": server_path('static', 'js')}),
+            URLSpec(r"/(?i)static/css/(.*)", tornado.web.StaticFileHandler, {"path": server_path('static', 'css')}),
+            URLSpec(r"/(?i)static/img/(.*)", tornado.web.StaticFileHandler, {"path": server_path('static', 'img')}),
+    
+            URLSpec(r'/(?i)(robots\.txt|favicon\.ico)', tornado.web.StaticFileHandler, {"path": server_path('static')}),
+        ]
                 
         settings = dict(
             debug = True,
             template_path = server_path('view'),
             static_path = server_path('static'),
-            xsrf_cookies = conf_app.get('XSRF'),
+            xsrf_cookies = True,
             cookie_secret = conf_app.get('COOKIE_SEC'),
             default_handler_class = Error404
         )
@@ -58,14 +80,14 @@ class Application(tornado.web.Application):
         self.sqlite_conn = SQLite(conf_sqlite.get('path'),
                                 conf_sqlite.get('name'),
                                 conf_sqlite.get('table'),
-                                kwargs.get('deleteTable', False))
-        if kwargs.get('deleteTable', False):
-            self.sqlite_conn.create(conf_sqlite.get('create_tbl_twitter'))
+                                True)
+
+        self.sqlite_conn.create(conf_sqlite.get('create_tbl_twitter'))
         
         # Elasticsearch
         self.es_conn = es
 
-        tornado.web.Application.__init__(self, handlers, **settings)
+        super(Application, self).__init__(handlers, **settings)
 
 
 
@@ -80,35 +102,13 @@ def resetTwitterDDBB():
 
 def main():
 
-    # keywords = items2listen()
-    keywords = ['trump']
-
-    router = [
-        URLSpec(r"/", HomeHandler, name="index"),
-
-        URLSpec(r"/wss", WebSckt),
-        URLSpec(r"/wssbcst", Broadcaster),
-
-        URLSpec(r"/(?i)home", HomeHandler, name="home"),
-        URLSpec(r"/(?i)tweets", TweetsHandler, name="tweets", kwargs={'keywords':keywords}),
-        URLSpec(r"/(?i)search", SearchHandler, name="search"),
-        URLSpec(r"/(?i)charts", ChartsHandler, name="charts"),
-        URLSpec(r"/(?i)about", AboutHandler, name="about"),
-
-        URLSpec(r"/(?i)static/js/(.*)", tornado.web.StaticFileHandler, {"path": server_path('static', 'js')}),
-        URLSpec(r"/(?i)static/css/(.*)", tornado.web.StaticFileHandler, {"path": server_path('static', 'css')}),
-        URLSpec(r"/(?i)static/img/(.*)", tornado.web.StaticFileHandler, {"path": server_path('static', 'img')}),
-
-        URLSpec(r'/(?i)(robots\.txt|favicon\.ico)', tornado.web.StaticFileHandler, {"path": server_path('static')}),
-    ]
-
     options.parse_command_line(final=False)
 
     asyncio.set_event_loop_policy(AnyThreadEventLoopPolicy())
 
     #threading.Thread(target=OpenStream, args=(keywords,)).start()
 
-    application = Application(handlers=router, deleteTable=True)
+    application = Application()
 
     ssl_ctx = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
     ssl_ctx.load_cert_chain(os.path.join(BASEDIR, "config/certs/cert.crt"),

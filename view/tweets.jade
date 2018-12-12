@@ -16,7 +16,7 @@ block link
 block content
 	.row(style="width:100%;")
 		#content.col-md-12
-			table#tweetstable.table.table-hover.table-responsive-lg.display(cellspacing='0', width='100%', max-width='100%', style='font-size: 80%;')
+			table#dynamic_table1.table.table-hover.table-responsive-lg.display(cellspacing='0', width='100%', max-width='100%', style='font-size: 80%;')
 				thead.bg-secondary
 					tr
 						each colname in colnames
@@ -31,3 +31,4 @@ block content
 							each data in tweet
 								td(style='width:1px;white-space:nowrap;')
 									#{data}
+									

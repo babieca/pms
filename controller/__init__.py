@@ -7,10 +7,14 @@ import tweepy
 import logging
 import tornado
 import json
+
+from collections import OrderedDict
+
 import tornado.web
 import tornado.websocket
 
 from config import conf_app
+from test.test_array import ArraySubclassWithKwargs
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -110,6 +114,7 @@ class TweetsHandler(BaseController):
         if data:
             colnames = list(data[0].keys())
             tweets = [list(row.values()) for row in data]
+            print('{}'.format(tweets))
 
         self.render("tweets.jade",
                     title="tweets",
@@ -121,10 +126,12 @@ class TweetsHandler(BaseController):
 class SearchHandler(BaseController):
 
     doc = {
-            'size' : 10,
+            '_source': ['title', 'film_rating', 'duration', 'genre', 'release_date'],
             'query': {
                 'match_all' : {}
-           }
+           },
+            'size' : 50,
+            'from': 0,
        }
 
     def initialize(self):
@@ -134,10 +141,19 @@ class SearchHandler(BaseController):
         #es.scroll(scroll_id = scrollId, scroll = '1m')
     
     def get(self):
+        
+        all_keys = set()
+        content = []
+        for row in self.res['hits']['hits']:
+            all_keys |= set(row['_source'].keys())
+            content.append(row['_source'])
+        
+   
         self.render("search.jade",
-                    title="search",
-                    data = self.res['hits']['hits'],
-                    messages=Broadcaster.update_cache(''))
+                    title =" search",
+                    colnames = all_keys,
+                    data = content,
+                    message=False)
         
         
 class ChartsHandler(BaseController):
@@ -156,17 +172,25 @@ class WebSckt(tornado.websocket.WebSocketHandler):
 
     def check_origin(self, origin):
         return True
-    
-    def open(self, some_id):
-        logging.info("A client connected")
+ 
+    def open(self):
+        self.write_message(json.dumps({
+            'type': 'sys',
+            'message': 'Welcome to Websocket',
+            }))
+        logging.info("Client connected")
 
     def on_close(self):
-        logging.info("A client disconnected")
+        logging.info("Client disconnected")
 
-    def on_message(self, message):
+    def on_message(self, message): #, message):
         logging.info("message: {}".format(message))
-        WebSckt.write_message(u"You said: " + message)
-
+        #self.write_message(message)
+        self.write_message(json.dumps({
+                'type': 'user',
+                'id': id(self),
+                'message': message,
+            }))
 
 class Broadcaster(tornado.websocket.WebSocketHandler):
     waiters = set()

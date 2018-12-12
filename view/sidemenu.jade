@@ -43,15 +43,15 @@ block sidemenu
 			if selected == "charts"
 				li.current
 					a(href='/charts')
-						i.fa.fa-area-chart
+						i.fa.fa-chart-area
 						| Charts
 			else
 				li
 					a(href='/charts')
-						i.fa.fa-area-chart
+						i.fa.fa-chart-area
 						| Charts
 						
-	
+block feet
 	script(type='text/javascript').
 		$(document).ready(function () {
 			$('#sidebarCollapse').on('click', function () {

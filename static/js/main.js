@@ -1,5 +1,5 @@
-var wss;
-var wssbcst;
+//var wss;
+//var wssbcst;
 var table;
 
 $( document ).ready(function() {
@@ -8,7 +8,7 @@ $( document ).ready(function() {
     if (!window.console.log) window.console.log = function() {};
     
     //wss.start();
-    wssbcst.start();
+    //wssbcst.start();
     
 });
 
@@ -62,6 +62,7 @@ var wssbcst = {
 };
 
 // Websocket - single user
+/*
 var wss = {
 	    socket: null,
 
@@ -87,7 +88,7 @@ var wss = {
 	        node.slideDown();
 	    },
 	};
-
+*/
 
 //-----------------------------
 
