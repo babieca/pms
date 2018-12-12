@@ -10,30 +10,32 @@ $(document).ready(function() {
     	]
     });
     
-    $("#messageform").on("submit", function() {
-        newMessage($(this));
+    $("#submitButton").on("click", function(e) {
+    	var message = $.trim($('#message').val());
+    	if ( message.length != 0) {
+    		sendMessage(message);
+    	}
         return false;
     });
     $("#messageform").on("keypress", function(e) {
         if (e.keyCode == 13) {
-            newMessage($(this));
+        	var message = $.trim($('#message').val());
+        	if ( message.length != 0) {
+        		sendMessage(message);
+        	}
             return false;
         }
     });
-    $("#message").select();
+
+    $('#message').val("").focus()
+
     updater.start();
 });
 
-function sendMsg(){
-	message = document.getElementById('message').value
-	console.log("Sending message: " + message)
-	updater.socket.send(message);
-}
 
-function newMessage(form) {
-    var message = form.formToDict();
-    updater.socket.send(JSON.stringify(message));
-    form.find("input[type=text]").val("").select();
+function sendMessage(message) {
+	updater.socket.send(message);
+	$('#message').val("").focus();
 }
 
 jQuery.fn.formToDict = function() {
@@ -58,12 +60,14 @@ var updater = {
     },
 
     showMessage: function(message) {
-    	console.log('message back!: ' + message)
+    	console.log('message back!: ' + JSON.stringify(message))
+    	/*
         var existing = $("#m" + message.id);
         if (existing.length > 0) return;
         var node = $(message.html);
         node.hide();
         $("#inbox").append(node);
         node.slideDown();
+        */
     }
 };
