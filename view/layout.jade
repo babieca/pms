@@ -1,45 +1,71 @@
-doctype
-html
+doctype html
+html(lang='en')
 	head
-		meta(charset="UTF-8")
-		meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+		meta(charset='utf-8')
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
-		meta(name="description", content="Portfolio Management System)
-		
-		title= title
-		
-		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm', crossorigin='anonymous')
-		link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.5.0/css/all.css', integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU', crossorigin='anonymous')
-		
-		// datatables
-		link(rel='stylesheet', href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css")
-
-		link(rel='stylesheet', href=static_url("css/main.css"))
-		
-		block neck
-		
-
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		meta(name='description', content='')
+		meta(name='author', content='')
+		title !{title} - Portfolio Management System
+		// Bootstrap Core CSS
+		link(rel='stylesheet', href=static_url('vendor/bootstrap/css/bootstrap.min.css'))
+		// MetisMenu CSS
+		link(rel='stylesheet', href=static_url('vendor/metisMenu/metisMenu.min.css'))
+		// DataTables CSS
+		link(rel='stylesheet', href=static_url('vendor/datatables-plugins/dataTables.bootstrap.css'))
+		// DataTables Responsive CSS
+		link(rel='stylesheet', href=static_url('vendor/datatables-responsive/dataTables.responsive.css'))
+		// Custom CSS
+		link(rel='stylesheet', href=static_url('dist/css/sb-admin-2.css'))
+		// Morris Charts CSS
+		link(rel='stylesheet', href=static_url('vendor/morrisjs/morris.css'))
+		// Custom Fonts
+		link(rel='stylesheet', href=static_url('vendor/font-awesome/css/font-awesome.min.css'))
+		// HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+		// WARNING: Respond.js doesn't work if you view the page via file://
+		//if lt IE 9
+			script(type='text/javascript', src='//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+			script(type='text/javascript', src='//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
 	body
-		block link
-			- var selected = 'home'; //default
+		#wrapper
+			// Navigation
+			nav.navbar.navbar-default.navbar-static-top(role='navigation', style='margin-bottom: 0')
+				.navbar-header
+					button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+						span.sr-only Toggle navigation
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					a.navbar-brand(href='index.html') Portfollio Management System
+				// /.navbar-header
+				
+				include toplinks
+				
+				include sidebar
+				
+			block content
+		// /#wrapper
 		
-		.container-fluid
-			include navbar
-			
-			.wrapper
-				include sidemenu
-				block content
-			include footer
+		// jQuery
+		script(type='text/javascript', src=static_url('vendor/jquery/jquery.min.js'))
+		// Bootstrap Core JavaScript
+		script(type='text/javascript', src=static_url('vendor/bootstrap/js/bootstrap.min.js'))
+		// Metis Menu Plugin JavaScript
+		script(type='text/javascript', src=static_url('vendor/metisMenu/metisMenu.min.js'))
+		// Morris Charts JavaScript
+		script(type='text/javascript', src=static_url('vendor/raphael/raphael.min.js'))
+		script(type='text/javascript', src=static_url('vendor/morrisjs/morris.min.js'))
+		script(type='text/javascript', src=static_url('data/morris-data.js'))
 		
-		script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
-		script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q', crossorigin='anonymous')
-		script(type='text/javascript', src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl', crossorigin='anonymous')
-	
-		// datatables
-		script(type='text/javascript', src='https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js')		
-			
-		//script(type='text/javascript', src=static_url("js/main.js"))
-		script(type='text/javascript', src=static_url("js/search.js"))
-	
-		block feet
+		// DataTables JavaScript
+		script(src=static_url('vendor/datatables/js/jquery.dataTables.min.js'))
+		script(src=static_url('vendor/datatables-plugins/dataTables.bootstrap.min.js'))
+		script(src=static_url('vendor/datatables-responsive/dataTables.responsive.js'))
+		
+		// Custom Theme JavaScript
+		script(type='text/javascript', src=static_url('dist/js/sb-admin-2.js'))
+		
+		
+		block foot
+
 	

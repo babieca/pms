@@ -1,23 +1,14 @@
-//var wss;
-//var wssbcst;
-var table;
-
-$( document ).ready(function() {
-	
+$(document).ready(function() {
     if (!window.console) window.console = {};
     if (!window.console.log) window.console.log = function() {};
-    
-    //wss.start();
-    //wssbcst.start();
-    
+
+    wss.start();
 });
 
 
-function send_message(form) {
-    var message = form.formToDict();
-    wssbcst.socket.send(JSON.stringify(message));
-    form.find("input[type=text]").val("").select();
-};
+function sendMessage(message) {
+	wss.socket.send(message);
+}
 
 jQuery.fn.formToDict = function() {
     var fields = this.serializeArray();
@@ -29,21 +20,24 @@ jQuery.fn.formToDict = function() {
     return json;
 };
 
-// Websocket - broadcast
-var wssbcst = {
+var wss = {
     socket: null,
 
     start: function() {
-        var url = "wss://127.0.0.1:8443/wssbcst";
-        var msg;
-        
-        wssbcst.socket = new WebSocket(url);
-        
-        wssbcst.socket.onmessage = function(event) {
-        	msg = JSON.parse(event.data);
-        	console.log(event.data)
-            wssbcst.tweetMessage(msg);
+        var url = "wss://" + location.host + "/wss";
+        wss.socket = new WebSocket(url);
+        wss.socket.onmessage = function(event) {
+        	data = JSON.parse(event.data)
+        	if (data['tweet'] == true){
+        		wss.tweetMessage(data);
+        	}else{
+        		wss.showMessage(JSON.stringify(data));
+        	}
         }
+    },
+
+    showMessage: function(message) {
+    	console.log('message back!: ' + message)
     },
     
     tweetMessage: function(message){
@@ -61,36 +55,7 @@ var wssbcst = {
     }
 };
 
-// Websocket - single user
-/*
-var wss = {
-	    socket: null,
-
-	    start: function() {
-	        var url = "wss://127.0.0.1:8443/wss";
-	        var msg;
-	        
-	        wss.socket = new WebSocket(url);
-	        
-	        wss.socket.onmessage = function(event) {
-	        	msg = JSON.parse(event.data);
-	        	console.log(event.data)
-	            wss.showMessage(msg);
-	        }
-	    },
-
-	    showMessage: function(message) {
-	        var existing = $("#m" + message.id);
-	        if (existing.length > 0) return;
-	        var node = $(message.html);
-	        node.hide();
-	        $("#inbox").append(node);
-	        node.slideDown();
-	    },
-	};
-*/
-
-//-----------------------------
+// Helper functions -----------------------------
 
 function filter() {
 	var input, filter, table, tr, td, i, coltweet;

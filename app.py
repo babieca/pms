@@ -8,7 +8,7 @@ import threading
 
 from config import conf_app, conf_sqlite, conf_es
 from ddbb import SQLite, es
-from utils import OpenStream
+from utils import twitterStream
 
 import tweepy
 
@@ -49,22 +49,21 @@ class Application(tornado.web.Application):
         keywords = ['trump']
         
         handlers = [
-            URLSpec(r"/", HomeHandler, name="index"),
+            URLSpec(r"(?i)^/((\?|index|home).*?(\?.*)?)?$", HomeHandler, name="index"),
     
-            URLSpec(r"/wss", WebSckt),
-            URLSpec(r"/wssbcst", Broadcaster),
+            URLSpec(r"^/wss", WebSckt),
     
-            URLSpec(r"/(?i)home", HomeHandler, name="home"),
-            URLSpec(r"/(?i)tweets", TweetsHandler, name="tweets", kwargs={'keywords':keywords}),
-            URLSpec(r"/(?i)search", SearchHandler, name="search"),
-            URLSpec(r"/(?i)charts", ChartsHandler, name="charts"),
-            URLSpec(r"/(?i)about", AboutHandler, name="about"),
+            URLSpec(r"(?i)^/home", HomeHandler, name="home"),
+            URLSpec(r"(?i)^/tweets", TweetsHandler, name="tweets", kwargs={'keywords':keywords}),
+            URLSpec(r"(?i)^/search", SearchHandler, name="search"),
+            URLSpec(r"(?i)^/charts", ChartsHandler, name="charts"),
+            URLSpec(r"(?i)^/about", AboutHandler, name="about"),
     
-            URLSpec(r"/(?i)static/js/(.*)", tornado.web.StaticFileHandler, {"path": server_path('static', 'js')}),
-            URLSpec(r"/(?i)static/css/(.*)", tornado.web.StaticFileHandler, {"path": server_path('static', 'css')}),
-            URLSpec(r"/(?i)static/img/(.*)", tornado.web.StaticFileHandler, {"path": server_path('static', 'img')}),
+            URLSpec(r"(?i)^/static/js/(.*)", tornado.web.StaticFileHandler, {"path": server_path('static', 'js')}),
+            URLSpec(r"(?i)^/static/css/(.*)", tornado.web.StaticFileHandler, {"path": server_path('static', 'css')}),
+            URLSpec(r"(?i)^/static/img/(.*)", tornado.web.StaticFileHandler, {"path": server_path('static', 'img')}),
     
-            URLSpec(r'/(?i)(robots\.txt|favicon\.ico)', tornado.web.StaticFileHandler, {"path": server_path('static')}),
+            URLSpec(r'(?i)^/(robots\.txt|favicon\.ico)', tornado.web.StaticFileHandler, {"path": server_path('static')}),
         ]
                 
         settings = dict(
@@ -100,13 +99,9 @@ def resetTwitterDDBB():
     oSQLite.close()
 
 
-def main():
+def run_server():
 
     options.parse_command_line(final=False)
-
-    asyncio.set_event_loop_policy(AnyThreadEventLoopPolicy())
-
-    #threading.Thread(target=OpenStream, args=(keywords,)).start()
 
     application = Application()
 
@@ -130,4 +125,12 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+        
+    loop = asyncio.get_event_loop()
+    
+    loop.create_task(twitterStream(['trump', 'clinton']))
+    loop.create_task(run_server())
+
+    loop.run_forever()
+    
+    loop.close()

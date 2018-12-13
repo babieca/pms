@@ -3,6 +3,7 @@ import tweepy
 import datetime
 import re
 import json
+import asyncio
 
 from config import conf_twitter, conf_sqlite
 from ddbb import SQLite
@@ -33,8 +34,9 @@ class StreamListener(tweepy.StreamListener, Broadcaster):
             'created_at' in tweet['user']):
         
             if 'RT @' not in tweet['text']:
-                for keyword in self.keywords:
-                    if keyword in tweet['text']:
+                kws = self.keywords.split() if type(self.keywords) is str else self.keywords
+                for kw in kws:
+                    if kw in tweet['text']:
                         
                         created_at = datetime.datetime.strptime(
                                         tweet['created_at'],
@@ -51,7 +53,7 @@ class StreamListener(tweepy.StreamListener, Broadcaster):
                                 'user_followers_count': tweet['user']['followers_count'],
                                 'user_created_at': user_created_at.isoformat(),
                                 'user_location': tweet['user']['location'],
-                                'keyword': keyword}
+                                'keyword': kw}
                         
                         oSQLite = SQLite(conf_sqlite.get('path'),
                                          conf_sqlite.get('name'),
@@ -79,13 +81,13 @@ class StreamListener(tweepy.StreamListener, Broadcaster):
     '''
 
 
-def OpenStream(keywords):
+async def twitterStream(keywords):
 
     stream_listener = StreamListener(keywords)
     stream = tweepy.Stream(auth=api.auth, listener=stream_listener)
-    stream.filter(languages=["en"], track=keywords, encoding='utf8')
-
-
+    
+    # filter levels: none, low, medium, high
+    stream.filter(languages=["en"], track=keywords, encoding='utf8', is_async=True, filter_level='medium')
 
 
 def twitter_search(to_search, retweets=False, max_tweets=100):
@@ -148,6 +150,6 @@ def format_tweets(tweets):
 
     return table_data
 
-__all__ = ['OpenStream', 'twitter_search']
+__all__ = ['twitterStream', 'twitter_search']
 
 

@@ -1,0 +1,34 @@
+extends layout
+
+block neck
+	link(rel='stylesheet', href=static_url("css/dataTables.bootstrap4.min.css"))
+	link(rel='stylesheet', href=static_url("css/tweets.css"))
+	
+block feet
+	script(type='text/javascript', src=static_url("js/jquery.dataTables.min.js"))
+	script(type='text/javascript', src=static_url("js/dataTables.bootstrap4.min.js"))
+	script(type='text/javascript', src=static_url("js/tweets.js"))
+
+block link
+	- var selected = 'tweets';
+
+
+block content
+	.row(style="width:100%;")
+		#content.col-md-12
+			table#dynamic_table1.table.table-hover.table-responsive-lg.display(cellspacing='0', width='100%', max-width='100%', style='font-size: 80%;')
+				thead.bg-secondary
+					tr
+						each colname in colnames
+							th.text-light(scope="col") #{colname}
+				tfoot
+					tr
+						each colname in colnames
+							th.text-light(scope="col") #{colname}
+				tbody
+					each tweet in tweets
+						tr
+							each data in tweet
+								td(style='width:1px;white-space:nowrap;')
+									#{data}
+									

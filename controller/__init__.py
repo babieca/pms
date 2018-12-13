@@ -73,7 +73,7 @@ class Error404(BaseController):
 class HomeHandler(BaseController):
 
     def get(self, *args, **kwargs):
-        self.render("home.jade", title="home")
+        self.render("forms.jade", title="home")
 
 
 class TweetsHandler(BaseController):
@@ -114,7 +114,6 @@ class TweetsHandler(BaseController):
         if data:
             colnames = list(data[0].keys())
             tweets = [list(row.values()) for row in data]
-            print('{}'.format(tweets))
 
         self.render("tweets.jade",
                     title="tweets",
@@ -243,7 +242,6 @@ class Broadcaster(tornado.websocket.WebSocketHandler):
 
 __all__ = ['HomeHandler',
            'WebSckt',
-           'Broadcaster',
            'TweetsHandler',
            'ChartsHandler',
            'SearchHandler',

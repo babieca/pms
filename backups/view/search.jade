@@ -1,0 +1,43 @@
+extends layout
+
+block neck
+	//link(rel='stylesheet', href=static_url("css/search.css"))
+
+block feet
+
+block link
+	- var selected = 'search';
+
+block content
+	#content.container-fluid
+		.row(style="width:100%;")
+			.col-md-12
+				if message
+					.alert.alert-danger #{message}
+					.message(id='m' + message["id"]) module linkify(message["body"])
+		.row(style="width:100%;")
+			.col-md-12
+				nav.navbar.navbar-expand-lg.navbar-light.bg-light
+					#messageform.form.form-inline.my-2.my-lg-0
+						input#message.form-control.mr-sm-2(type='text', placeholder='Search', aria-label='Search')
+						button#submitButton.btn.btn-outline-secondary.my-2.my-sm-0(type='submit') Search
+						- module xsrf_form_html()
+		.row(style="width:100%;")
+			.col-md-12
+				div
+					table#dynamic_table.display
+						thead
+							tr
+								each colname in colnames
+									th #{colname}
+
+						tbody
+							each val in data
+								tr
+									each col in colnames
+										td(style='width:1px;white-space:nowrap;')!= val[col]
+						
+						tfoot
+							tr
+								each colname in colnames
+									th #{colname}										
