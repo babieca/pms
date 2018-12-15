@@ -1,22 +1,17 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 import os
 import ssl
 import logging
 import asyncio
-import threading
 
-from config import conf_app, conf_sqlite, conf_es
+from config import conf_app, conf_sqlite
 from ddbb import SQLite, es
 from utils import twitterStream
-
-import tweepy
 
 import tornado.web
 import tornado.httpserver
 import tornado.ioloop
 from tornado.web import URLSpec
-from tornado.platform.asyncio import AnyThreadEventLoopPolicy
 from tornado.options import define, options
 
 # Tornado + jade
@@ -35,59 +30,61 @@ define("portHTTP", default=conf_app.get('PORT_HTTP'), type=int)
 define("portHTTPS", default=conf_app.get('PORT_HTTPS'), type=int)
 define("env", default='dev', type=str)
 
+
 def server_path(*args) -> str:
     fpath = BASEDIR
     for arg in args:
         fpath = os.path.join(fpath, arg)
     return fpath
 
+
 class Application(tornado.web.Application):
 
     def __init__(self):
-        
+
         # keywords = items2listen()
         keywords = ['trump']
-        
+
         handlers = [
             URLSpec(r"(?i)^/((\?|index|home).*?(\?.*)?)?$", HomeHandler, name="index"),
-    
+
             URLSpec(r"^/wss", WebSckt),
-    
+
             URLSpec(r"(?i)^/home", HomeHandler, name="home"),
-            URLSpec(r"(?i)^/tweets", TweetsHandler, name="tweets", kwargs={'keywords':keywords}),
+            URLSpec(r"(?i)^/tweets", TweetsHandler, name="tweets", kwargs={'keywords': keywords}),
             URLSpec(r"(?i)^/search", SearchHandler, name="search"),
             URLSpec(r"(?i)^/charts", ChartsHandler, name="charts"),
             URLSpec(r"(?i)^/about", AboutHandler, name="about"),
-    
+
             URLSpec(r"(?i)^/static/js/(.*)", tornado.web.StaticFileHandler, {"path": server_path('static', 'js')}),
             URLSpec(r"(?i)^/static/css/(.*)", tornado.web.StaticFileHandler, {"path": server_path('static', 'css')}),
             URLSpec(r"(?i)^/static/img/(.*)", tornado.web.StaticFileHandler, {"path": server_path('static', 'img')}),
-    
+
             URLSpec(r'(?i)^/(robots\.txt|favicon\.ico)', tornado.web.StaticFileHandler, {"path": server_path('static')}),
         ]
-                
+
         settings = dict(
-            debug = True,
-            template_path = server_path('view'),
-            static_path = server_path('static'),
-            xsrf_cookies = True,
-            cookie_secret = conf_app.get('COOKIE_SEC'),
-            default_handler_class = Error404
+            debug=True,
+            template_path=server_path('view'),
+            static_path=server_path('static'),
+            xsrf_cookies=True,
+            cookie_secret=conf_app.get('COOKIE_SEC'),
+            default_handler_class=Error404
         )
-        
+
         # SQLite
-        self.sqlite_conn = SQLite(conf_sqlite.get('path'),
-                                conf_sqlite.get('name'),
-                                conf_sqlite.get('table'),
-                                True)
+        self.sqlite_conn = SQLite(
+            conf_sqlite.get('path'),
+            conf_sqlite.get('name'),
+            conf_sqlite.get('table'),
+            True)
 
         self.sqlite_conn.create(conf_sqlite.get('create_tbl_twitter'))
-        
+
         # Elasticsearch
         self.es_conn = es
 
         super(Application, self).__init__(handlers, **settings)
-
 
 
 def resetTwitterDDBB():
@@ -125,12 +122,12 @@ def run_server():
 
 
 if __name__ == '__main__':
-        
+
     loop = asyncio.get_event_loop()
-    
+
     loop.create_task(twitterStream(['trump', 'clinton']))
     loop.create_task(run_server())
 
     loop.run_forever()
-    
+
     loop.close()
