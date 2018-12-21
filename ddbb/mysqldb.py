@@ -1,10 +1,10 @@
 
-from config import conf_mysql
+from config import conf
 from ddbb import MySQLPython
 
-dbconn = MySQLPython(conf_mysql.get('MYSQL_HOST'), conf_mysql.get('MYSQL_PORT'),
-                      conf_mysql.get('MYSQL_USERNAME'), conf_mysql.get('MYSQL_PASSWORD'),
-                      conf_mysql.get('MYSQL_DB'))
+dbconn = MySQLPython(config.get('mysql',{}).get('host'), config.get('mysql',{}).get('port'),
+                      config.get('mysql',{}).get('username'), config.get('mysql',{}).get('password'),
+                      config.get('mysql',{}).get('database'))
 
 
 def items2listen(query):

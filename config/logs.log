@@ -1,0 +1,15 @@
+2018-12-21:11:56:02.864 - INFO - [app.py:118] #  Listening on None:8080
+2018-12-21:11:56:02.864 - INFO - [app.py:119] #  Listening on None:8443
+2018-12-21:11:57:49.920 - INFO - [app.py:118] #  Listening on None:8080
+2018-12-21:11:57:49.921 - INFO - [app.py:119] #  Listening on None:8443
+2018-12-21:11:59:08.598 - INFO - [app.py:118] #  Listening on None:8080
+2018-12-21:11:59:08.598 - INFO - [app.py:119] #  Listening on None:8443
+2018-12-21:11:59:39.506 - INFO - [app.py:118] #  Listening on 127.0.0.1:8080
+2018-12-21:11:59:39.506 - INFO - [app.py:119] #  Listening on 127.0.0.1:8443
+2018-12-21:12:00:10.005 - INFO - [app.py:117] #  Listening on 127.0.0.1:8080
+2018-12-21:12:00:10.005 - INFO - [app.py:118] #  Listening on 127.0.0.1:8443
+2018-12-21:12:01:47.518 - INFO - [esdb.py:13] #  [  OK  ]  Elasticsearch connection
+2018-12-21:12:01:47.557 - INFO - [app.py:117] #  Listening on 127.0.0.1:8080
+2018-12-21:12:01:47.557 - INFO - [app.py:118] #  Listening on 127.0.0.1:8443
+2018-12-21:15:54:31.575 - INFO - [app.py:116] #  Listening on 127.0.0.1:8080
+2018-12-21:15:54:31.577 - INFO - [app.py:117] #  Listening on 127.0.0.1:8443

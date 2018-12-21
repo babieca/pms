@@ -5,12 +5,17 @@ import re
 import json
 import asyncio
 
-from config import conf_twitter, conf_sqlite
+from config import conf
 from ddbb import SQLite
 from controller import Broadcaster
 
-auth = tweepy.OAuthHandler(conf_twitter.get('API_KEY'), conf_twitter.get('API_SECRET'))
-auth.set_access_token(conf_twitter.get('ACCESS_TOKEN'), conf_twitter.get('ACCESS_TOKEN_SECRET'))
+auth = tweepy.OAuthHandler(
+    conf.get('twitter',{}).get('api_key'),
+    conf.get('twitter',{}).get('api_secret'))
+
+auth.set_access_token(
+    conf.get('twitter',{}).get('access_token'),
+    conf.get('twitter',{}).get('access_token_secret'))
 
 api = tweepy.API(auth)
 
@@ -55,9 +60,9 @@ class StreamListener(tweepy.StreamListener, Broadcaster):
                                 'user_location': tweet['user']['location'],
                                 'keyword': kw}
                         
-                        oSQLite = SQLite(conf_sqlite.get('path'),
-                                         conf_sqlite.get('name'),
-                                         conf_sqlite.get('table'))
+                        oSQLite = SQLite(conf.get('sqlite',{}).get('path'),
+                                         conf.get('sqlite',{}).get('name'),
+                                         conf.get('sqlite',{}).get('table'))
                         oSQLite.insert(data)
 
                         Broadcaster.update_cache(data)

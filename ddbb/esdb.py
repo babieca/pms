@@ -1,14 +1,18 @@
-import logging
+import sys
+import os
 from elasticsearch import Elasticsearch
-from config import conf_es
+from config import conf, logger, decfun
 
-es=Elasticsearch(conf_es.get('HOST'),port=conf_es.get('PORT'), verify_certs=True)
+es=Elasticsearch(
+    host=conf.get('es',{}).get('host'),
+    port=conf.get('es',{}).get('port'),
+    verify_certs=True)
 
 if not es.ping():
     raise ValueError("Elasticsearch connection failed")
 
-logging.info('[  OK  ]  Elasticsearch connection')
+#logger.info('[  OK  ]  Elasticsearch connection')
 
-es.indices.create(index=conf_es.get('INDEX'), ignore=400)
+es.indices.create(index=conf.get('es',{}).get('index'), ignore=400)
 
 __all__= ['es']

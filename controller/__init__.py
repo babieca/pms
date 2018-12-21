@@ -4,27 +4,22 @@ import uuid
 import datetime
 import re
 import tweepy
-import logging
 import tornado
 import json
+from config import conf, logger, decfun
 
 from collections import OrderedDict
 
 import tornado.web
 import tornado.websocket
 
-from config import conf_app
-from test.test_array import ArraySubclassWithKwargs
-
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
 
 class BaseController(tornado.web.RequestHandler):
     """A class to collect common handler methods - all other handlers should
     subclass this one.
     """
-    COOKIE_NAME = conf_app.get('COOKIE_NAME')
-    COOKIE_SEC = conf_app.get('COOKIE_SEC')
+    COOKIE_NAME = conf.get('app',{}).get('cookie_name')
+    COOKIE_SEC = conf.get('app',{}).get('cookie_sec')
     
     @property
     def db(self):
@@ -177,13 +172,13 @@ class WebSckt(tornado.websocket.WebSocketHandler):
             'type': 'sys',
             'message': 'Welcome to Websocket',
             }))
-        logging.info("Client connected")
+        logger.info("Client connected")
 
     def on_close(self):
-        logging.info("Client disconnected")
+        logger.info("Client disconnected")
 
     def on_message(self, message): #, message):
-        logging.info("message: {}".format(message))
+        logger.info("message: {}".format(message))
         #self.write_message(message)
         self.write_message(json.dumps({
                 'type': 'user',
@@ -217,16 +212,16 @@ class Broadcaster(tornado.websocket.WebSocketHandler):
 
     @classmethod
     def send_updates(cls, data):
-        logging.info("sending message to %d waiters", len(cls.waiters))
+        logger.info("sending message to %d waiters", len(cls.waiters))
         for waiter in cls.waiters:
             # if waiter != self:
             try:
                 waiter.write_message(data)
             except:
-                logging.error("Error sending message", exc_info=True)
+                logger.error("Error sending message", exc_info=True)
 
     def on_message(self, message):
-        logging.info("got message %r", message)
+        logger.info("got message %r", message)
         parsed = tornado.escape.json_decode(message)
         content = {
             "time": datetime.datetime.now(),

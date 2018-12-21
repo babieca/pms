@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 import os
 import ssl
-import logging
 import asyncio
 
-from config import conf_app, conf_sqlite
+from config import conf, logger, decfun
 from ddbb import SQLite, es
 from utils import twitterStream
 
@@ -21,13 +20,11 @@ patch_tornado()
 
 from controller import *
 
-BASEDIR = conf_app.get('BASEDIR')
+BASEDIR = conf.get('app',{}).get('basedir')
 
-logging.getLogger().setLevel(logging.INFO)
-
-define("address", default=conf_app.get('LISTEN_ADDR'), type=str)
-define("portHTTP", default=conf_app.get('PORT_HTTP'), type=int)
-define("portHTTPS", default=conf_app.get('PORT_HTTPS'), type=int)
+define("address", default=conf.get('app',{}).get('listen_addr'), type=str)
+define("portHTTP", default=conf.get('app',{}).get('port_http'), type=int)
+define("portHTTPS", default=conf.get('app',{}).get('port_https'), type=int)
 define("env", default='dev', type=str)
 
 
@@ -68,18 +65,19 @@ class Application(tornado.web.Application):
             template_path=server_path('view'),
             static_path=server_path('static'),
             xsrf_cookies=True,
-            cookie_secret=conf_app.get('COOKIE_SEC'),
+            cookie_secret=conf.get('app',{}).get('cookie_sec'),
             default_handler_class=Error404
         )
 
         # SQLite
         self.sqlite_conn = SQLite(
-            conf_sqlite.get('path'),
-            conf_sqlite.get('name'),
-            conf_sqlite.get('table'),
+            conf.get('sqlite',{}).get('path'),
+            conf.get('sqlite',{}).get('name'),
+            conf.get('sqlite',{}).get('table'),
             True)
 
-        self.sqlite_conn.create(conf_sqlite.get('create_tbl_twitter'))
+        self.sqlite_conn.create(
+            conf.get('sqlite',{}).get('create_tbl_twitter'))
 
         # Elasticsearch
         self.es_conn = es
@@ -88,11 +86,11 @@ class Application(tornado.web.Application):
 
 
 def resetTwitterDDBB():
-    oSQLite = SQLite(conf_sqlite.get('path'),
-                     conf_sqlite.get('name'),
-                     conf_sqlite.get('table'),
+    oSQLite = SQLite(conf.get('sqlite',{}).get('path'),
+                     conf.get('sqlite',{}).get('name'),
+                     conf.get('sqlite',{}).get('table'),
                      True)
-    oSQLite.create(conf_sqlite.get('create_tbl_twitter'))
+    oSQLite.create(conf.get('sqlite',{}).get('create_tbl_twitter'))
     oSQLite.close()
 
 
@@ -115,8 +113,8 @@ def run_server():
     serverHTTP.listen(options.portHTTP, address=options.address)
     serverHTTPS.listen(options.portHTTPS, address=options.address)
 
-    logging.info('Listening on {}:{}'.format(options.address, options.portHTTP))
-    logging.info('Listening on {}:{}'.format(options.address, options.portHTTPS))
+    logger.info('Listening on {}:{}'.format(options.address, options.portHTTP))
+    logger.info('Listening on {}:{}'.format(options.address, options.portHTTPS))
 
     tornado.ioloop.IOLoop.current().start()
 
