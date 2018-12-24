@@ -1,2 +1,2 @@
-from .config import conf
+from .config import config
 from .control import logger, decfun

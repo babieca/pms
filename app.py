@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
+from gevent import monkey
+monkey.patch_all()
+import gevent
 import os
 import ssl
 import asyncio
 
-from config import conf, logger, decfun
+from config import config, logger, decfun
 from ddbb import SQLite, es
 from utils import twitterStream
 
@@ -20,11 +23,11 @@ patch_tornado()
 
 from controller import *
 
-BASEDIR = conf.get('app',{}).get('basedir')
+BASEDIR = config.get('app',{}).get('basedir')
 
-define("address", default=conf.get('app',{}).get('listen_addr'), type=str)
-define("portHTTP", default=conf.get('app',{}).get('port_http'), type=int)
-define("portHTTPS", default=conf.get('app',{}).get('port_https'), type=int)
+define("address", default=config.get('app',{}).get('listen_addr'), type=str)
+define("portHTTP", default=config.get('app',{}).get('port_http'), type=int)
+define("portHTTPS", default=config.get('app',{}).get('port_https'), type=int)
 define("env", default='dev', type=str)
 
 
@@ -43,15 +46,17 @@ class Application(tornado.web.Application):
         keywords = ['trump']
 
         handlers = [
-            URLSpec(r"(?i)^/((\?|index|home).*?(\?.*)?)?$", HomeHandler, name="index"),
+            URLSpec(r"/", HomeHandler, name="home"),
+            #URLSpec(r"(?i)^/((\?|index|home).*?(\?.*)?)?$", HomeHandler, name="home"),
 
             URLSpec(r"^/wss", WebSckt),
 
-            URLSpec(r"(?i)^/home", HomeHandler, name="home"),
+            URLSpec(r"(?i)^/research", ResearchHandler, name="research"),
             URLSpec(r"(?i)^/tweets", TweetsHandler, name="tweets", kwargs={'keywords': keywords}),
-            URLSpec(r"(?i)^/search", SearchHandler, name="search"),
             URLSpec(r"(?i)^/charts", ChartsHandler, name="charts"),
             URLSpec(r"(?i)^/about", AboutHandler, name="about"),
+            URLSpec(r"(?i)^/login", LoginHandler, name="login"),
+            URLSpec(r"(?i)^/logout", LogoutHandler, name="logout"),
 
             URLSpec(r"(?i)^/static/js/(.*)", tornado.web.StaticFileHandler, {"path": server_path('static', 'js')}),
             URLSpec(r"(?i)^/static/css/(.*)", tornado.web.StaticFileHandler, {"path": server_path('static', 'css')}),
@@ -65,19 +70,20 @@ class Application(tornado.web.Application):
             template_path=server_path('view'),
             static_path=server_path('static'),
             xsrf_cookies=True,
-            cookie_secret=conf.get('app',{}).get('cookie_sec'),
-            default_handler_class=Error404
+            cookie_secret=config.get('app',{}).get('cookie_sec'),
+            default_handler_class=Error404,
+            login_url="/login",
         )
 
         # SQLite
         self.sqlite_conn = SQLite(
-            conf.get('sqlite',{}).get('path'),
-            conf.get('sqlite',{}).get('name'),
-            conf.get('sqlite',{}).get('table'),
+            config.get('sqlite',{}).get('path'),
+            config.get('sqlite',{}).get('name'),
+            config.get('sqlite',{}).get('table'),
             True)
 
         self.sqlite_conn.create(
-            conf.get('sqlite',{}).get('create_tbl_twitter'))
+            config.get('sqlite',{}).get('create_tbl_twitter'))
 
         # Elasticsearch
         self.es_conn = es
@@ -86,11 +92,11 @@ class Application(tornado.web.Application):
 
 
 def resetTwitterDDBB():
-    oSQLite = SQLite(conf.get('sqlite',{}).get('path'),
-                     conf.get('sqlite',{}).get('name'),
-                     conf.get('sqlite',{}).get('table'),
+    oSQLite = SQLite(config.get('sqlite',{}).get('path'),
+                     config.get('sqlite',{}).get('name'),
+                     config.get('sqlite',{}).get('table'),
                      True)
-    oSQLite.create(conf.get('sqlite',{}).get('create_tbl_twitter'))
+    oSQLite.create(config.get('sqlite',{}).get('create_tbl_twitter'))
     oSQLite.close()
 
 

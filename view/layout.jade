@@ -2,69 +2,63 @@ doctype html
 html(lang='en')
 	head
 		meta(charset='utf-8')
-		meta(http-equiv='X-UA-Compatible', content='IE=edge')
-		meta(name='viewport', content='width=device-width, initial-scale=1')
+		meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
 		meta(name='description', content='')
 		meta(name='author', content='')
-		title !{title} - Portfolio Management System
-		// Bootstrap Core CSS
-		link(rel='stylesheet', href=static_url('vendor/bootstrap/css/bootstrap.min.css'))
-		// MetisMenu CSS
-		link(rel='stylesheet', href=static_url('vendor/metisMenu/metisMenu.min.css'))
-		// DataTables CSS
-		link(rel='stylesheet', href=static_url('vendor/datatables-plugins/dataTables.bootstrap.css'))
-		// DataTables Responsive CSS
-		link(rel='stylesheet', href=static_url('vendor/datatables-responsive/dataTables.responsive.css'))
-		// Custom CSS
-		link(rel='stylesheet', href=static_url('dist/css/sb-admin-2.css'))
-		// Morris Charts CSS
-		link(rel='stylesheet', href=static_url('vendor/morrisjs/morris.css'))
-		// Custom Fonts
-		link(rel='stylesheet', href=static_url('vendor/font-awesome/css/font-awesome.min.css'))
-		// HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
-		// WARNING: Respond.js doesn't work if you view the page via file://
-		//if lt IE 9
-			script(type='text/javascript', src='//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
-			script(type='text/javascript', src='//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+		title !{title}
+		// Bootstrap core CSS
+		link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css', integrity='sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS', crossorigin='anonymous')
+		// Custom styles for this template
+		link(rel='stylesheet', href=static_url('css/main.css'))
 	body
-		#wrapper
-			// Navigation
-			nav.navbar.navbar-default.navbar-static-top(role='navigation', style='margin-bottom: 0')
-				.navbar-header
-					button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-						span.sr-only Toggle navigation
-						span.icon-bar
-						span.icon-bar
-						span.icon-bar
-					a.navbar-brand(href='index.html') Portfollio Management System
-				// /.navbar-header
+		include navbar
 				
-				include toplinks
-				
-				include sidebar
-				
-			block content
-		// /#wrapper
+		block content
 		
-		// jQuery
-		script(type='text/javascript', src=static_url('vendor/jquery/jquery.min.js'))
-		// Bootstrap Core JavaScript
-		script(type='text/javascript', src=static_url('vendor/bootstrap/js/bootstrap.min.js'))
-		// Metis Menu Plugin JavaScript
-		script(type='text/javascript', src=static_url('vendor/metisMenu/metisMenu.min.js'))
-		// Morris Charts JavaScript
-		script(type='text/javascript', src=static_url('vendor/raphael/raphael.min.js'))
-		script(type='text/javascript', src=static_url('vendor/morrisjs/morris.min.js'))
-		script(type='text/javascript', src=static_url('data/morris-data.js'))
+		//
+		//	Bootstrap core JavaScript
+		//	==================================================
+		// Placed at the end of the document so the pages load faster
+		script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+		script(src='https://unpkg.com/popper.js/dist/umd/popper.min.js')
+		// script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js', integrity='sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut', crossorigin='anonymous')
+		script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js', integrity='sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k', crossorigin='anonymous')
+		// Icons
+		script(src='https://unpkg.com/feather-icons/dist/feather.min.js')
+		script.
+			feather.replace()
+		// Graphs
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js')
+		script.
+			var ctx = document.getElementById("myChart");
+			var myChart = new Chart(ctx, {
+			type: 'line',
+			data: {
+			labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			datasets: [{
+			data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+			lineTension: 0,
+			backgroundColor: 'transparent',
+			borderColor: '#007bff',
+			borderWidth: 4,
+			pointBackgroundColor: '#007bff'
+			}]
+			},
+			options: {
+			scales: {
+			yAxes: [{
+			ticks: {
+			beginAtZero: false
+			}
+			}]
+			},
+			legend: {
+			display: false,
+			}
+			}
+			});
 		
-		// DataTables JavaScript
-		script(src=static_url('vendor/datatables/js/jquery.dataTables.min.js'))
-		script(src=static_url('vendor/datatables-plugins/dataTables.bootstrap.min.js'))
-		script(src=static_url('vendor/datatables-responsive/dataTables.responsive.js'))
-		
-		// Custom Theme JavaScript
-		script(type='text/javascript', src=static_url('dist/js/sb-admin-2.js'))
-		
+		script(type='text/javascript', src=static_url('js/main.js'))
 		
 		block foot
 

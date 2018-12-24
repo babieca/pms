@@ -13,3 +13,428 @@
 2018-12-21:12:01:47.557 - INFO - [app.py:118] #  Listening on 127.0.0.1:8443
 2018-12-21:15:54:31.575 - INFO - [app.py:116] #  Listening on 127.0.0.1:8080
 2018-12-21:15:54:31.577 - INFO - [app.py:117] #  Listening on 127.0.0.1:8443
+2018-12-22:17:02:36.264 - INFO - [app.py:116] #  Listening on 127.0.0.1:8080
+2018-12-22:17:02:36.264 - INFO - [app.py:117] #  Listening on 127.0.0.1:8443
+2018-12-22:17:03:22.750 - INFO - [app.py:116] #  Listening on 127.0.0.1:8080
+2018-12-22:17:03:22.750 - INFO - [app.py:117] #  Listening on 127.0.0.1:8443
+2018-12-22:17:03:30.525 - INFO - [app.py:116] #  Listening on 127.0.0.1:8080
+2018-12-22:17:03:30.525 - INFO - [app.py:117] #  Listening on 127.0.0.1:8443
+2018-12-22:17:03:45.373 - INFO - [app.py:116] #  Listening on 127.0.0.1:8080
+2018-12-22:17:03:45.374 - INFO - [app.py:117] #  Listening on 127.0.0.1:8443
+2018-12-22:17:03:53.011 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-22:17:03:53.011 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-22:17:04:08.896 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-22:17:04:08.897 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-22:17:13:52.250 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-22:17:13:52.250 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-22:17:14:08.090 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-22:17:14:08.090 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-22:17:21:41.249 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-22:17:21:41.249 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-22:18:35:38.365 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-22:18:35:38.365 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-22:19:43:05.494 - INFO - [__init__.py:179] #  Client connected
+2018-12-22:19:51:45.495 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-22:19:51:45.496 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-22:19:51:50.794 - INFO - [__init__.py:179] #  Client connected
+2018-12-22:19:57:38.014 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-22:19:57:38.873 - INFO - [__init__.py:179] #  Client connected
+2018-12-22:19:57:48.973 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-22:19:57:49.755 - INFO - [__init__.py:179] #  Client connected
+2018-12-22:19:58:47.526 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-22:19:58:48.302 - INFO - [__init__.py:179] #  Client connected
+2018-12-22:19:58:54.273 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-22:19:58:54.872 - INFO - [__init__.py:179] #  Client connected
+2018-12-22:19:59:23.892 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-22:19:59:24.606 - INFO - [__init__.py:179] #  Client connected
+2018-12-22:19:59:38.450 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-22:19:59:39.270 - INFO - [__init__.py:179] #  Client connected
+2018-12-22:20:00:03.268 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-22:20:00:04.172 - INFO - [__init__.py:179] #  Client connected
+2018-12-22:20:01:09.304 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-22:20:01:10.279 - INFO - [__init__.py:179] #  Client connected
+2018-12-22:20:01:24.357 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-22:20:01:25.089 - INFO - [__init__.py:179] #  Client connected
+2018-12-22:20:01:53.346 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-22:20:01:54.320 - INFO - [__init__.py:179] #  Client connected
+2018-12-22:20:02:32.284 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-22:20:02:33.526 - INFO - [__init__.py:179] #  Client connected
+2018-12-22:20:03:02.901 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-22:20:03:04.134 - INFO - [__init__.py:179] #  Client connected
+2018-12-22:20:11:05.369 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-22:20:11:06.249 - INFO - [__init__.py:179] #  Client connected
+2018-12-22:20:11:07.451 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-22:20:11:07.890 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:00:03:31.179 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-23:00:03:31.179 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-23:00:20:37.149 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-23:00:20:37.149 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-23:00:21:00.060 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-23:00:21:00.060 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-23:00:21:22.956 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-23:00:21:22.957 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-23:00:26:04.493 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:00:26:05.668 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:00:26:06.074 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:01:07:12.053 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:01:25:35.286 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-23:01:25:35.287 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-23:01:25:44.334 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:01:26:05.043 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:01:26:05.507 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:01:26:41.195 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:01:26:41.539 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:01:29:13.380 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:01:29:13.924 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:01:29:35.105 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:01:29:35.496 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:01:30:15.413 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:01:30:15.780 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:01:33:58.272 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:01:33:58.660 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:01:34:41.636 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:01:34:42.037 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:01:41:13.005 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:13:14:53.726 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-23:13:14:53.726 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-23:13:15:10.478 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:13:17:02.596 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:13:17:03.024 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:13:25:37.748 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:13:40:19.517 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:14:13:55.321 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:14:13:55.833 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:15:14:24.503 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:15:14:25.796 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:15:16:19.097 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:15:16:19.633 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:15:16:39.237 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:15:16:39.708 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:15:20:06.355 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:15:20:11.774 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:15:20:21.107 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:15:20:22.613 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:15:21:40.360 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:15:21:40.792 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:15:22:07.638 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:15:22:08.103 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:15:23:27.991 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:15:23:28.457 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:15:23:52.097 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:15:23:52.537 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:15:30:38.538 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:15:30:53.595 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-23:15:30:53.595 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-23:15:30:56.511 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:15:31:13.161 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:15:31:13.607 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:15:32:22.876 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:15:32:23.486 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:15:32:43.516 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:15:32:44.187 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:15:32:57.522 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:15:32:58.255 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:15:33:20.524 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:15:33:21.112 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:15:36:59.496 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:15:37:13.541 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:15:42:18.426 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:15:42:18.889 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:15:42:49.040 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:15:42:49.504 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:15:43:35.557 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:15:43:36.073 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:15:45:24.873 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:15:45:25.322 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:15:49:31.622 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:15:49:32.840 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:15:50:39.083 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:15:50:39.564 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:15:56:07.454 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:15:56:07.972 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:15:59:37.745 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:15:59:39.009 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:15:59:48.352 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:16:50:18.779 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-23:16:50:18.780 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-23:16:50:44.660 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:16:54:32.706 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-23:16:54:32.706 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-23:16:54:38.475 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:16:55:35.838 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-23:16:55:35.838 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-23:16:55:41.443 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:16:58:17.806 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-23:16:58:17.806 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-23:16:58:23.328 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:16:59:05.167 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-23:16:59:05.167 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-23:16:59:07.371 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:16:59:20.057 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-23:16:59:20.057 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-23:16:59:22.157 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:00:36.472 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-23:17:00:36.472 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-23:17:00:41.174 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-23:17:00:41.174 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-23:17:00:59.748 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:01:16.593 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:17:01:17.033 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:02:50.055 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-23:17:02:50.056 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-23:17:04:19.963 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-23:17:04:19.964 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-23:17:04:23.878 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-23:17:04:23.878 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-23:17:04:28.292 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:04:53.768 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-23:17:04:53.768 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-23:17:04:57.420 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-23:17:04:57.420 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-23:17:05:01.787 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:17:36.858 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:17:17:38.126 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:21:24.445 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:17:21:25.881 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:22:21.580 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:17:22:22.732 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:23:07.811 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:17:23:08.484 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:24:38.554 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:17:24:39.919 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:24:45.295 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:17:24:46.384 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:26:48.167 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:17:26:49.360 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:28:44.925 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:17:28:46.173 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:29:49.901 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:17:29:51.061 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:29:54.181 - INFO - [__init__.py:185] #  message: wef
+2018-12-23:17:30:47.107 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:17:30:48.389 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:31:28.010 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:17:31:29.164 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:31:50.174 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:17:31:51.576 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:32:13.667 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:17:32:14.324 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:33:21.438 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:17:33:22.516 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:34:16.987 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:17:34:18.257 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:34:57.896 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:17:34:59.094 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:35:09.215 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:17:35:10.594 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:39:52.785 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:17:39:54.008 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:41:35.955 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:17:41:37.450 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:41:40.300 - INFO - [__init__.py:185] #  message: hello
+2018-12-23:17:42:23.602 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:17:42:24.308 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:42:33.367 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:17:42:34.228 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:43:53.515 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:17:43:54.764 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:17:43:57.510 - INFO - [__init__.py:185] #  message: car
+2018-12-23:17:45:32.312 - INFO - [app.py:119] #  Listening on 127.0.0.1:8080
+2018-12-23:17:45:32.312 - INFO - [app.py:120] #  Listening on 127.0.0.1:8443
+2018-12-23:18:01:51.869 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:18:02:05.932 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:18:02:06.300 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:18:03:24.229 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:18:03:24.592 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:18:04:50.762 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:18:04:51.237 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:18:07:34.048 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:18:07:34.495 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:18:08:55.628 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:18:08:56.890 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:18:09:16.837 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:18:09:17.536 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:18:10:42.752 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:18:10:43.906 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:18:11:44.332 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:18:11:45.252 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:18:12:38.848 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:18:12:39.227 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:18:12:54.122 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:18:12:54.534 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:18:13:51.009 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:18:13:52.240 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:18:15:05.025 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:18:15:05.527 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:18:17:14.081 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:18:17:14.544 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:18:51:59.891 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:18:52:01.075 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:18:52:19.436 - INFO - [__init__.py:182] #  Client disconnected
+2018-12-23:18:52:19.772 - INFO - [__init__.py:179] #  Client connected
+2018-12-23:18:55:46.284 - INFO - [app.py:118] #  Listening on 127.0.0.1:8080
+2018-12-23:18:55:46.284 - INFO - [app.py:119] #  Listening on 127.0.0.1:8443
+2018-12-23:18:57:19.604 - INFO - [app.py:118] #  Listening on 127.0.0.1:8080
+2018-12-23:18:57:19.604 - INFO - [app.py:119] #  Listening on 127.0.0.1:8443
+2018-12-23:18:57:29.980 - INFO - [app.py:118] #  Listening on 127.0.0.1:8080
+2018-12-23:18:57:29.980 - INFO - [app.py:119] #  Listening on 127.0.0.1:8443
+2018-12-23:18:57:36.790 - INFO - [__init__.py:177] #  Client connected
+2018-12-23:19:02:17.763 - INFO - [__init__.py:180] #  Client disconnected
+2018-12-23:19:02:41.878 - INFO - [__init__.py:177] #  Client connected
+2018-12-23:19:03:02.203 - INFO - [__init__.py:180] #  Client disconnected
+2018-12-23:19:03:02.813 - INFO - [__init__.py:177] #  Client connected
+2018-12-23:22:13:36.193 - INFO - [app.py:120] #  Listening on 127.0.0.1:8080
+2018-12-23:22:13:36.193 - INFO - [app.py:121] #  Listening on 127.0.0.1:8443
+2018-12-23:22:14:38.562 - INFO - [app.py:120] #  Listening on 127.0.0.1:8080
+2018-12-23:22:14:38.562 - INFO - [app.py:121] #  Listening on 127.0.0.1:8443
+2018-12-24:08:09:44.320 - INFO - [app.py:120] #  Listening on 127.0.0.1:8080
+2018-12-24:08:09:44.320 - INFO - [app.py:121] #  Listening on 127.0.0.1:8443
+2018-12-24:08:25:42.630 - INFO - [app.py:121] #  Listening on 127.0.0.1:8080
+2018-12-24:08:25:42.630 - INFO - [app.py:122] #  Listening on 127.0.0.1:8443
+2018-12-24:08:37:51.194 - INFO - [app.py:121] #  Listening on 127.0.0.1:8080
+2018-12-24:08:37:51.195 - INFO - [app.py:122] #  Listening on 127.0.0.1:8443
+2018-12-24:08:38:29.580 - INFO - [app.py:121] #  Listening on 127.0.0.1:8080
+2018-12-24:08:38:29.580 - INFO - [app.py:122] #  Listening on 127.0.0.1:8443
+2018-12-24:08:40:12.842 - INFO - [app.py:121] #  Listening on 127.0.0.1:8080
+2018-12-24:08:40:12.842 - INFO - [app.py:122] #  Listening on 127.0.0.1:8443
+2018-12-24:08:40:18.980 - INFO - [__init__.py:78] #  in post logging
+2018-12-24:08:42:40.190 - INFO - [app.py:121] #  Listening on 127.0.0.1:8080
+2018-12-24:08:42:40.190 - INFO - [app.py:122] #  Listening on 127.0.0.1:8443
+2018-12-24:08:42:45.050 - INFO - [app.py:121] #  Listening on 127.0.0.1:8080
+2018-12-24:08:42:45.051 - INFO - [app.py:122] #  Listening on 127.0.0.1:8443
+2018-12-24:08:42:57.370 - INFO - [app.py:121] #  Listening on 127.0.0.1:8080
+2018-12-24:08:42:57.370 - INFO - [app.py:122] #  Listening on 127.0.0.1:8443
+2018-12-24:08:43:38.249 - INFO - [app.py:121] #  Listening on 127.0.0.1:8080
+2018-12-24:08:43:38.249 - INFO - [app.py:122] #  Listening on 127.0.0.1:8443
+2018-12-24:08:43:42.069 - INFO - [app.py:121] #  Listening on 127.0.0.1:8080
+2018-12-24:08:43:42.069 - INFO - [app.py:122] #  Listening on 127.0.0.1:8443
+2018-12-24:08:43:44.755 - CRITICAL - [__init__.py:58] #  [get_current_user] name 'datetime_decoder' is not defined
+2018-12-24:08:43:44.789 - CRITICAL - [__init__.py:58] #  [get_current_user] name 'datetime_decoder' is not defined
+2018-12-24:08:43:48.427 - INFO - [__init__.py:79] #  in post logging
+2018-12-24:08:45:16.936 - INFO - [app.py:122] #  Listening on 127.0.0.1:8080
+2018-12-24:08:45:16.936 - INFO - [app.py:123] #  Listening on 127.0.0.1:8443
+2018-12-24:08:45:22.486 - CRITICAL - [__init__.py:58] #  [get_current_user] name 'datetime_decoder' is not defined
+2018-12-24:08:45:22.517 - CRITICAL - [__init__.py:58] #  [get_current_user] name 'datetime_decoder' is not defined
+2018-12-24:08:45:25.995 - INFO - [__init__.py:79] #  in post logging
+2018-12-24:08:45:38.815 - INFO - [app.py:122] #  Listening on 127.0.0.1:8080
+2018-12-24:08:45:38.815 - INFO - [app.py:123] #  Listening on 127.0.0.1:8443
+2018-12-24:08:45:41.817 - CRITICAL - [__init__.py:58] #  [get_current_user] name 'datetime_decoder' is not defined
+2018-12-24:08:45:41.847 - CRITICAL - [__init__.py:58] #  [get_current_user] name 'datetime_decoder' is not defined
+2018-12-24:08:45:45.000 - INFO - [__init__.py:79] #  in post logging
+2018-12-24:08:45:45.040 - CRITICAL - [__init__.py:58] #  [get_current_user] name 'datetime_decoder' is not defined
+2018-12-24:08:45:45.062 - CRITICAL - [__init__.py:58] #  [get_current_user] name 'datetime_decoder' is not defined
+2018-12-24:09:46:35.735 - INFO - [app.py:122] #  Listening on 127.0.0.1:8080
+2018-12-24:09:46:35.735 - INFO - [app.py:123] #  Listening on 127.0.0.1:8443
+2018-12-24:09:47:46.807 - INFO - [__init__.py:207] #  Client connected
+2018-12-24:09:49:21.949 - INFO - [__init__.py:210] #  Client disconnected
+2018-12-24:09:49:22.326 - INFO - [__init__.py:207] #  Client connected
+2018-12-24:09:49:23.878 - INFO - [__init__.py:210] #  Client disconnected
+2018-12-24:09:49:40.596 - INFO - [app.py:122] #  Listening on 127.0.0.1:8080
+2018-12-24:09:49:40.597 - INFO - [app.py:123] #  Listening on 127.0.0.1:8443
+2018-12-24:09:49:44.920 - INFO - [__init__.py:68] #  in post logging
+2018-12-24:09:49:45.522 - INFO - [__init__.py:207] #  Client connected
+2018-12-24:09:49:46.577 - INFO - [__init__.py:210] #  Client disconnected
+2018-12-24:09:49:52.281 - INFO - [__init__.py:68] #  in post logging
+2018-12-24:09:49:52.612 - INFO - [__init__.py:207] #  Client connected
+2018-12-24:09:50:02.988 - INFO - [app.py:122] #  Listening on 127.0.0.1:8080
+2018-12-24:09:50:02.988 - INFO - [app.py:123] #  Listening on 127.0.0.1:8443
+2018-12-24:09:50:38.394 - INFO - [app.py:122] #  Listening on 127.0.0.1:8080
+2018-12-24:09:50:38.394 - INFO - [app.py:123] #  Listening on 127.0.0.1:8443
+2018-12-24:09:50:50.520 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:10:40:20.107 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:10:40:20.650 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:10:41:57.566 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:10:41:57.976 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:10:53:16.721 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:10:53:17.309 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:10:53:40.776 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:10:53:41.988 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:10:54:04.022 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:10:54:04.461 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:10:54:38.912 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:10:54:39.446 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:10:55:10.530 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:10:55:11.046 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:10:55:19.293 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:10:55:19.742 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:10:55:27.015 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:10:55:27.461 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:10:55:37.022 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:10:55:38.323 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:10:55:56.559 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:10:55:57.092 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:10:56:40.210 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:10:56:40.714 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:10:56:53.363 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:10:56:53.814 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:10:57:03.365 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:10:57:04.717 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:10:57:14.726 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:10:57:15.240 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:10:57:25.389 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:10:57:25.858 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:10:57:49.868 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:10:57:51.177 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:10:57:56.888 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:10:57:57.350 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:10:59:04.609 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:10:59:05.147 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:10:59:19.010 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:10:59:19.583 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:10:59:52.200 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:10:59:52.758 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:00:44.253 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:03:44.525 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:03:45.049 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:10:32.644 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:10:33.265 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:10:49.614 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:10:50.876 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:12:50.572 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:12:51.264 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:15:01.845 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:15:03.179 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:15:30.160 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:15:30.650 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:15:42.248 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:15:42.765 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:16:00.268 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:16:00.764 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:20:09.676 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:20:10.207 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:21:45.455 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:21:46.912 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:24:15.648 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:24:16.197 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:24:39.133 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:24:39.585 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:28:17.753 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:28:18.286 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:32:17.520 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:32:18.104 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:33:35.653 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:33:36.203 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:34:01.347 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:34:01.751 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:34:22.335 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:34:23.520 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:34:54.256 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:34:54.653 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:35:31.095 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:35:31.497 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:35:52.512 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:35:52.934 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:36:33.596 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:36:34.052 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:37:30.082 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:37:31.264 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:38:10.326 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:38:10.736 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:40:08.246 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:40:08.937 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:40:59.322 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:41:00.637 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:41:45.243 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:41:45.697 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:42:31.345 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:42:31.821 - INFO - [__init__.py:206] #  Client connected

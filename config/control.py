@@ -1,23 +1,23 @@
-#from gevent import monkey
-#monkey.patch_all()
-#import gevent
+from gevent import monkey
+monkey.patch_all()
+import gevent
 import sys
 import uuid
 import logging
 from time import time
-from .config import conf
+from .config import config
 
 
 ###################################
 # CONTROL
 
 DECORATOR = True
-LOGGERNAME = conf.get('app',{}).get('name')
+LOGGERNAME = config.get('app',{}).get('name')
 
 ###################################
 
 loglevel = logging.INFO
-logfile_path = conf.get('app',{}).get('logfile')
+logfile_path = config.get('app',{}).get('logfile')
 
 formatter = logging.Formatter(
     ('%(asctime)s.%(msecs)03d - %(levelname)s - ' +
@@ -26,6 +26,7 @@ formatter = logging.Formatter(
 
 logger = logging.getLogger(LOGGERNAME)
 logger.setLevel(loglevel)
+logger.propagate = False
 
 sHandler = logging.StreamHandler(stream=sys.stdout)
 sHandler.setLevel(loglevel)
@@ -35,9 +36,10 @@ fHandler = logging.FileHandler(logfile_path, encoding='utf-8') #, mode='w')
 fHandler.setLevel(loglevel)
 fHandler.setFormatter(formatter)
 
+
 logger.addHandler(sHandler)
 logger.addHandler(fHandler)
-
+    
 
 def cut_line(line, maxchar=80):
     if not line:

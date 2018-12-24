@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 import os
+import sys
 import uuid
 import datetime
 import re
 import tweepy
 import tornado
 import json
-from config import conf, logger, decfun
+from config import config, logger, decfun
 
 from collections import OrderedDict
 
@@ -14,12 +15,12 @@ import tornado.web
 import tornado.websocket
 
 
-class BaseController(tornado.web.RequestHandler):
+class BaseHandler(tornado.web.RequestHandler):
     """A class to collect common handler methods - all other handlers should
     subclass this one.
     """
-    COOKIE_NAME = conf.get('app',{}).get('cookie_name')
-    COOKIE_SEC = conf.get('app',{}).get('cookie_sec')
+    COOKIE_NAME = config.get('app',{}).get('cookie_name')
+    COOKIE_SEC = config.get('app',{}).get('cookie_sec')
     
     @property
     def db(self):
@@ -30,13 +31,11 @@ class BaseController(tornado.web.RequestHandler):
         return self.application.root_path
     
     def prepare(self):
-        # print(self.request.full_url())
-        # print(self.request.headers)
-        # print('='*100)
-        if ('http://' in self.request.full_url() or
-            ':8080' in self.request.headers['Host'] or
-            (('X-Forwarded-Proto' in self.request.headers and 
-            self.request.headers['X-Forwarded-Proto'] != 'https'))):
+        if 'http://' in self.request.full_url() or \
+            ':8080' in self.request.headers['Host'] or \
+            ('X-Forwarded-Proto' in self.request.headers and \
+            self.request.headers['X-Forwarded-Proto'] != 'https'):
+            
             req = re.sub(r'(?:\:\d{2,4}[/]?)+', ':8443/', self.request.full_url())
             self.redirect(re.sub(r'^([^:]+)', 'https', req))
     
@@ -46,32 +45,97 @@ class BaseController(tornado.web.RequestHandler):
         super().render(template_name, **kwargs)
     
     def get_current_user(self):
-        user = None
-        try:
-            user_json = self.get_secure_cookie("user")
-            if not user_json: return None
-            user = json.loads(user_json, object_hook=datetime_decoder)
-            if user:
-                user = User(raw_data=user)
-                user.validate()
-        except Exception as err:
-            logger.fatal("[{0}] {1}".format(sys._getframe().f_code.co_name, err))
-        return user
-        
-        
-class Error404(BaseController):
+        return self.get_secure_cookie("user")
+
+
+class Error404(BaseHandler):
 
     def get(self):
         self.render('error404.jade', title="error")
 
 
-class HomeHandler(BaseController):
+class LoginHandler(BaseHandler):
+    @tornado.gen.coroutine
+    def get(self):
+        incorrect = self.get_secure_cookie("incorrect")
+        if incorrect and int(incorrect) > 3:
+            self.write('<center>blocked</center>')
+            return
+        self.render('signin.jade', title="signin")
+
+    @tornado.gen.coroutine
+    def post(self):
+        incorrect = self.get_secure_cookie("incorrect")
+        if incorrect and int(incorrect) > 3:
+            self.write('<center>blocked</center>')
+            return
+        
+        getusername = tornado.escape.xhtml_escape(self.get_argument("username"))
+        getpassword = tornado.escape.xhtml_escape(self.get_argument("password"))
+        if "demo" == getusername and "demo" == getpassword:
+            self.set_secure_cookie("user", self.get_argument("username"))
+            self.set_secure_cookie("incorrect", "0")
+            self.redirect(self.reverse_url("home"))
+        else:
+            incorrect = self.get_secure_cookie("incorrect") or 0
+            increased = str(int(incorrect)+1)
+            self.set_secure_cookie("incorrect", increased)
+            self.write("""<center>
+                            Something Wrong With Your Data (%s)<br />
+                            <a href="/login">Try it again</a>
+                          </center>""" % increased)
+
+
+class LogoutHandler(BaseHandler):
+    def get(self):
+        self.clear_cookie("user")
+        self.redirect(self.get_argument("next", self.reverse_url("home")))
+
+
+class HomeHandler(BaseHandler):
+
+    doc = {
+            '_source': ['title', 'film_rating', 'duration',
+                        'genre', 'release_date'],
+            'query': {
+                'match_all' : {}
+           },
+            'size' : 50,
+            'from': 0,
+       }
+
+    def initialize(self):
+        data = {}
+        self.res = self.application.es_conn.search(
+            index='imdb', doc_type='doc', body=self.doc, scroll='1m')
+        #scrollId = self.res['_scroll_id']    
+        #es.scroll(scroll_id = scrollId, scroll = '1m')
+    
+    @tornado.web.authenticated
+    def get(self, *args, **kwargs):
+        
+        all_keys = set()
+        content = []
+        for row in self.res['hits']['hits']:
+            all_keys |= set(row['_source'].keys())
+            content.append(row['_source'])
+        
+   
+        self.render("index.jade",
+                    title ="Partners Capital",
+                    colnames = all_keys,
+                    data = content,
+                    message=False)
+        
+
+
+class ResearchHandler(BaseHandler):
 
     def get(self, *args, **kwargs):
-        self.render("forms.jade", title="home")
+        self.render("research.jade", title="research")
 
 
-class TweetsHandler(BaseController):
+class TweetsHandler(BaseHandler):
     
     __oSQLite = None
     __cursor = None
@@ -117,46 +181,13 @@ class TweetsHandler(BaseController):
                     tweets=tweets)
 
         
-class SearchHandler(BaseController):
-
-    doc = {
-            '_source': ['title', 'film_rating', 'duration', 'genre', 'release_date'],
-            'query': {
-                'match_all' : {}
-           },
-            'size' : 50,
-            'from': 0,
-       }
-
-    def initialize(self):
-        data = {}
-        self.res = self.application.es_conn.search(index='imdb', doc_type='doc', body=self.doc, scroll='1m')
-        #scrollId = self.res['_scroll_id']    
-        #es.scroll(scroll_id = scrollId, scroll = '1m')
-    
-    def get(self):
-        
-        all_keys = set()
-        content = []
-        for row in self.res['hits']['hits']:
-            all_keys |= set(row['_source'].keys())
-            content.append(row['_source'])
-        
-   
-        self.render("search.jade",
-                    title =" search",
-                    colnames = all_keys,
-                    data = content,
-                    message=False)
-        
-        
-class ChartsHandler(BaseController):
+class ChartsHandler(BaseHandler):
 
     def get(self, *args, **kwargs):
         self.render("charts.jade", title="charts")
 
 
-class AboutHandler(BaseController):
+class AboutHandler(BaseHandler):
 
     def get(self, *args, **kwargs):
         self.render("about.jade", title="about")
@@ -179,7 +210,6 @@ class WebSckt(tornado.websocket.WebSocketHandler):
 
     def on_message(self, message): #, message):
         logger.info("message: {}".format(message))
-        #self.write_message(message)
         self.write_message(json.dumps({
                 'type': 'user',
                 'id': id(self),
@@ -233,12 +263,3 @@ class Broadcaster(tornado.websocket.WebSocketHandler):
         
         self.update_cache(content)
         self.send_updates(content)
-
-
-__all__ = ['HomeHandler',
-           'WebSckt',
-           'TweetsHandler',
-           'ChartsHandler',
-           'SearchHandler',
-           'AboutHandler',
-           'Error404']

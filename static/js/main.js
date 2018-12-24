@@ -3,6 +3,29 @@ $(document).ready(function() {
     if (!window.console.log) window.console.log = function() {};
 
     wss.start();
+    
+    $("#searchButton").on("click", function(e) {
+    	var message = $.trim($('#message').val());
+    	if ( message.length != 0) {
+    		sendMessage(message);
+    		$('#searchInput').val("").focus();
+    	}
+        return false;
+    });
+    $("#searchInput").on("keypress", function(e) {
+        if (e.keyCode == 13) {
+        	var message = $.trim($('#searchInput').val());
+        	if ( message.length != 0) {
+        		sendMessage(message);
+        		$('#searchInput').val("").focus();
+        	}
+            return false;
+        }
+    });
+
+    $('#searchInput').val("").focus()
+
+    
 });
 
 
