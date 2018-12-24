@@ -94,6 +94,85 @@ class LogoutHandler(BaseHandler):
 
 class HomeHandler(BaseHandler):
 
+    @tornado.web.authenticated
+    def get(self, *args, **kwargs):
+        self.render("home.jade", title="Partners Capital")
+
+
+class ResearchHandler(BaseHandler):
+    
+    @tornado.web.authenticated
+    def get(self, *args, **kwargs):
+        self.render("research.jade", title="Research - Partners Capital")
+
+
+class GutenbergHandler(BaseHandler):
+
+    doc = {
+            "_source": 
+            {
+                "includes": ["meta.author", "meta.filename", "meta.title",
+                             "meta.pages", "created", "meta.path_img"],
+                "excludes": ["content_base64"]
+            }, 
+            "query": {
+                "match_all": {}
+            },
+            "size": 1
+        }
+
+    def initialize(self):
+        data = {}
+        self.res = self.application.es_conn.search(
+            index='files', doc_type='_doc', body=self.doc, scroll='1m')
+        #scrollId = self.res['_scroll_id']    
+        #es.scroll(scroll_id = scrollId, scroll = '1m')
+    
+    @tornado.web.authenticated
+    def get(self, *args, **kwargs):
+        
+        pages = []
+        all_keys = set()
+        content = []
+        hits = self.res.get('hits')
+        
+        if hits:
+            total = hits.get('total')
+            max_score = hits.get('max_score')
+            rows = hits.get('hits')
+        
+            if rows:
+                for row in rows:
+                    _index = row.get('_index')
+                    _type = row.get('_type')
+                    _id = row.get('_id')
+                    _score = row.get('_score')
+                    _source = row.get('_source')
+                    all_keys |= set(_source.keys())
+                    content.append(_source)
+
+                    path_img = _source.get('meta', {}).get('path_img')
+                    folder_name = _source.get('meta', {}).get('filename')
+                    
+                    img_files = []
+                    for f in os.listdir(path_img):
+                        if os.path.isfile(os.path.join(path_img, f)) and \
+                        f.endswith(('.jpg', '.jpeg')):
+                            rel_path = os.path.join('static', 'img', 'gutenberg', 
+                                                    folder_name, f)
+                            img_files.append(rel_path)
+                    
+                    img_files.sort()
+                    pages.append(img_files)
+        
+        self.render("gutenberg.jade",
+                    title="Gutenberg - Partners Capital",
+                    pages=pages,
+                    message=False)
+
+
+class ImdbHandler(BaseHandler):
+
     doc = {
             '_source': ['title', 'film_rating', 'duration',
                         'genre', 'release_date'],
@@ -121,21 +200,14 @@ class HomeHandler(BaseHandler):
             content.append(row['_source'])
         
    
-        self.render("index.jade",
-                    title ="Partners Capital",
+        self.render("imdb.jade",
+                    title ="Imdb - Partners Capital",
                     colnames = all_keys,
                     data = content,
                     message=False)
-        
 
 
-class ResearchHandler(BaseHandler):
-
-    def get(self, *args, **kwargs):
-        self.render("research.jade", title="research")
-
-
-class TweetsHandler(BaseHandler):
+class TwitterHandler(BaseHandler):
     
     __oSQLite = None
     __cursor = None

@@ -52,7 +52,9 @@ class Application(tornado.web.Application):
             URLSpec(r"^/wss", WebSckt),
 
             URLSpec(r"(?i)^/research", ResearchHandler, name="research"),
-            URLSpec(r"(?i)^/tweets", TweetsHandler, name="tweets", kwargs={'keywords': keywords}),
+            URLSpec(r"(?i)^/gutenberg", GutenbergHandler, name="gutenberg"),
+            URLSpec(r"(?i)^/imdb", ImdbHandler, name="imdb"),
+            URLSpec(r"(?i)^/twitter", TwitterHandler, name="twitter", kwargs={'keywords': keywords}),
             URLSpec(r"(?i)^/charts", ChartsHandler, name="charts"),
             URLSpec(r"(?i)^/about", AboutHandler, name="about"),
             URLSpec(r"(?i)^/login", LoginHandler, name="login"),

@@ -438,3 +438,662 @@
 2018-12-24:11:41:45.697 - INFO - [__init__.py:206] #  Client connected
 2018-12-24:11:42:31.345 - INFO - [__init__.py:209] #  Client disconnected
 2018-12-24:11:42:31.821 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:43:39.796 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:43:40.281 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:11:45:07.479 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:11:51:08.582 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:12:06:03.893 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:12:06:17.318 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:12:06:18.502 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:12:14:41.222 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:12:15:00.972 - INFO - [__init__.py:209] #  Client disconnected
+2018-12-24:12:15:05.644 - INFO - [__init__.py:206] #  Client connected
+2018-12-24:12:21:13.199 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:12:21:13.199 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:12:22:18.536 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:12:22:18.536 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:12:26:25.040 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:12:26:25.040 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:12:27:05.430 - INFO - [__init__.py:247] #  Client connected
+2018-12-24:12:28:00.507 - INFO - [__init__.py:250] #  Client disconnected
+2018-12-24:12:28:00.896 - INFO - [__init__.py:247] #  Client connected
+2018-12-24:12:31:13.182 - INFO - [__init__.py:250] #  Client disconnected
+2018-12-24:12:31:14.408 - INFO - [__init__.py:247] #  Client connected
+2018-12-24:12:31:19.250 - INFO - [__init__.py:250] #  Client disconnected
+2018-12-24:12:31:19.782 - INFO - [__init__.py:247] #  Client connected
+2018-12-24:12:31:21.160 - INFO - [__init__.py:250] #  Client disconnected
+2018-12-24:12:31:21.522 - INFO - [__init__.py:247] #  Client connected
+2018-12-24:12:37:34.007 - INFO - [__init__.py:250] #  Client disconnected
+2018-12-24:12:37:34.452 - INFO - [__init__.py:247] #  Client connected
+2018-12-24:12:37:48.232 - INFO - [__init__.py:250] #  Client disconnected
+2018-12-24:12:37:48.635 - INFO - [__init__.py:247] #  Client connected
+2018-12-24:12:38:05.407 - INFO - [__init__.py:250] #  Client disconnected
+2018-12-24:12:38:05.794 - INFO - [__init__.py:247] #  Client connected
+2018-12-24:12:38:23.761 - INFO - [__init__.py:250] #  Client disconnected
+2018-12-24:12:38:24.140 - INFO - [__init__.py:247] #  Client connected
+2018-12-24:12:38:34.824 - INFO - [__init__.py:250] #  Client disconnected
+2018-12-24:12:38:35.239 - INFO - [__init__.py:247] #  Client connected
+2018-12-24:12:41:37.841 - INFO - [__init__.py:250] #  Client disconnected
+2018-12-24:12:41:38.438 - INFO - [__init__.py:247] #  Client connected
+2018-12-24:12:41:53.882 - INFO - [__init__.py:250] #  Client disconnected
+2018-12-24:12:41:54.411 - INFO - [__init__.py:247] #  Client connected
+2018-12-24:12:42:00.054 - INFO - [__init__.py:247] #  Client connected
+2018-12-24:12:43:09.453 - INFO - [__init__.py:250] #  Client disconnected
+2018-12-24:12:43:09.956 - INFO - [__init__.py:247] #  Client connected
+2018-12-24:12:43:12.985 - INFO - [__init__.py:250] #  Client disconnected
+2018-12-24:12:43:13.405 - INFO - [__init__.py:247] #  Client connected
+2018-12-24:12:43:20.846 - INFO - [__init__.py:250] #  Client disconnected
+2018-12-24:12:43:21.228 - INFO - [__init__.py:247] #  Client connected
+2018-12-24:12:43:24.241 - INFO - [__init__.py:250] #  Client disconnected
+2018-12-24:12:43:24.598 - INFO - [__init__.py:247] #  Client connected
+2018-12-24:12:44:38.447 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:12:44:38.447 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:12:45:23.823 - INFO - [__init__.py:249] #  Client connected
+2018-12-24:12:45:30.293 - INFO - [__init__.py:252] #  Client disconnected
+2018-12-24:12:45:30.778 - INFO - [__init__.py:249] #  Client connected
+2018-12-24:12:45:32.366 - INFO - [__init__.py:252] #  Client disconnected
+2018-12-24:12:45:32.810 - INFO - [__init__.py:249] #  Client connected
+2018-12-24:12:45:34.367 - INFO - [__init__.py:252] #  Client disconnected
+2018-12-24:12:45:34.824 - INFO - [__init__.py:249] #  Client connected
+2018-12-24:12:45:36.206 - INFO - [__init__.py:252] #  Client disconnected
+2018-12-24:12:45:36.638 - INFO - [__init__.py:249] #  Client connected
+2018-12-24:12:45:39.084 - INFO - [__init__.py:252] #  Client disconnected
+2018-12-24:12:45:39.540 - INFO - [__init__.py:249] #  Client connected
+2018-12-24:12:46:02.628 - INFO - [__init__.py:252] #  Client disconnected
+2018-12-24:12:46:03.110 - INFO - [__init__.py:249] #  Client connected
+2018-12-24:12:46:04.273 - INFO - [__init__.py:252] #  Client disconnected
+2018-12-24:12:46:04.696 - INFO - [__init__.py:249] #  Client connected
+2018-12-24:12:46:05.424 - INFO - [__init__.py:252] #  Client disconnected
+2018-12-24:12:46:05.870 - INFO - [__init__.py:249] #  Client connected
+2018-12-24:12:46:08.595 - INFO - [__init__.py:252] #  Client disconnected
+2018-12-24:12:46:09.015 - INFO - [__init__.py:249] #  Client connected
+2018-12-24:12:46:11.779 - INFO - [__init__.py:252] #  Client disconnected
+2018-12-24:12:46:12.261 - INFO - [__init__.py:249] #  Client connected
+2018-12-24:12:49:55.278 - INFO - [__init__.py:249] #  Client connected
+2018-12-24:12:49:57.102 - INFO - [__init__.py:252] #  Client disconnected
+2018-12-24:12:49:57.494 - INFO - [__init__.py:249] #  Client connected
+2018-12-24:13:52:33.835 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:13:52:33.835 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:13:52:35.972 - INFO - [__init__.py:261] #  Client connected
+2018-12-24:13:54:33.190 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:13:54:33.190 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:13:54:34.119 - INFO - [__init__.py:261] #  Client connected
+2018-12-24:14:00:05.069 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:14:00:05.069 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:14:00:06.666 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:14:00:30.906 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:14:00:31.416 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:14:02:16.197 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:14:02:16.811 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:14:02:32.213 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:14:02:32.805 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:14:02:45.599 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:14:02:46.293 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:14:03:12.577 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:14:03:13.984 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:14:03:27.223 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:14:03:27.873 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:14:03:38.975 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:14:03:39.582 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:14:05:14.067 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:14:05:14.692 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:14:05:25.997 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:14:05:26.584 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:14:05:38.136 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:14:05:38.939 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:14:07:01.357 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:14:07:01.999 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:14:09:53.559 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:14:09:54.198 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:14:11:46.164 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:14:11:47.620 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:14:12:03.082 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:14:12:04.458 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:14:50:29.799 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:14:55:32.430 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:14:57:14.103 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:14:57:54.722 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:14:58:12.331 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:14:58:13.023 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:14:58:33.524 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:14:58:34.097 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:00:27.469 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:00:28.145 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:01:03.639 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:01:04.268 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:09:36.340 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:10:08.277 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:13:44.796 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:13:45.454 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:14:01.095 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:14:01.717 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:14:04.554 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:14:05.163 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:14:10.630 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:14:11.283 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:14:58.190 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:14:58.848 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:15:55.302 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:15:56.647 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:16:08.630 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:16:09.971 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:16:31.047 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:16:31.695 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:16:40.287 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:16:40.950 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:17:00.832 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:17:01.467 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:17:56.578 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:17:57.244 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:20:19.696 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:20:20.320 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:20:44.291 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:20:44.919 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:21:23.642 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:21:24.277 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:23:12.048 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:23:12.684 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:24:57.768 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:24:58.535 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:25:47.826 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:25:49.298 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:26:04.826 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:26:06.251 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:26:44.217 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:26:44.962 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:26:58.196 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:26:58.967 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:27:07.006 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:27:07.761 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:27:14.647 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:27:15.385 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:27:27.516 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:27:28.342 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:27:41.481 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:27:42.315 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:28:04.077 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:28:04.841 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:28:15.378 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:28:16.199 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:28:27.212 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:28:28.000 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:29:04.651 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:29:05.462 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:29:20.679 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:29:21.477 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:29:39.816 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:29:40.595 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:30:19.556 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:30:20.507 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:30:39.496 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:30:40.326 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:31:41.703 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:31:42.445 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:31:56.709 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:31:57.630 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:32:06.289 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:32:07.148 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:32:46.638 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:32:47.417 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:33:28.268 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:33:28.985 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:33:55.476 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:33:56.865 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:34:26.487 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:34:27.258 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:38:56.582 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:39:50.880 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:40:00.287 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:40:00.947 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:41:59.790 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:42:00.454 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:44:27.700 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:44:28.324 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:48:23.045 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:48:23.858 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:55:06.927 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:55:07.948 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:15:58:40.107 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:15:58:41.088 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:16:02:32.691 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:16:02:33.902 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:16:18:24.904 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:16:18:25.954 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:16:18:53.733 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:16:18:54.843 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:16:19:20.587 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:16:19:21.546 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:16:19:32.152 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:16:19:33.438 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:16:20:32.046 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:16:20:33.432 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:16:24:35.643 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:16:24:37.125 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:16:24:49.160 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:16:24:50.338 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:16:25:19.133 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:16:25:20.591 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:16:26:14.051 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:16:26:15.318 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:16:26:58.819 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:16:26:59.984 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:16:29:10.118 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:16:29:11.256 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:16:31:10.302 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:16:31:11.508 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:16:31:43.636 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:16:31:44.575 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:16:31:55.407 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:16:31:56.633 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:16:35:57.928 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:16:35:57.929 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:16:36:04.476 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:16:36:29.881 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:16:36:31.413 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:16:37:22.286 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:16:37:22.286 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:16:37:24.843 - INFO - [__init__.py:128] #  {'_scroll_id': 'DXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAVb0WQ3ZqdWd3TjZTZ1dNTm9rTV9yM01wUQ==', 'took': 70, 'timed_out': False, '_shards': {'total': 1, 'successful': 1, 'skipped': 0, 'failed': 0}, 'hits': {'total': 42, 'max_score': 1.0, 'hits': [{'_index': 'files', '_type': '_doc', '_id': 'Ymib3GcBS7-TH6jUGXjz', '_score': 1.0, '_source': {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf', 'filename': '22523-pdf', 'pages': 383.0, 'author': 'Don', 'title': 'Bolsheviki.PDF'}, 'created': '2018-12-23 19:46:51'}}, {'_index': 'files', '_type': '_doc', '_id': 'Y2ib3GcBS7-TH6jUGnhT', '_score': 1.0, '_source': {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf', 'filename': '22099-pdf', 'pages': 290.0, 'author': 'Charles Beadle', 'title': 'Witch{protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 45\relax }Doctors'}, 'created': '2018-12-23 19:46:44'}}, {'_index': 'files', '_type': '_doc', '_id': 'TGiQ3GcBS7-TH6jUVnh_', '_score': 1.0, '_source': {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf', 'filename': '19487-pdf', 'pages': 158.0, 'author': 'A. Hugh Fisher', 'title': 'Bell{protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 39\relax }s Cathedrals: The Cathedral Church of Hereford, A Description Of Its Fabric And A Brief History Of The Episcopal See'}, 'created': '2018-12-23 19:34:43'}}, {'_index': 'files', '_type': '_doc', '_id': 'TWiQ3GcBS7-TH6jUV3g0', '_score': 1.0, '_source': {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf', 'filename': '19312-pdf', 'pages': 1732.0, 'author': 'â•ŸAbduâ•Žl{protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 45\relax }BahÃ¡', 'title': 'Tablets of Abdul{protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 45\relax }Baha Abbas'}, 'created': '2018-12-23 19:35:04'}}, {'_index': 'files', '_type': '_doc', '_id': 'U2iV3GcBS7-TH6jUn3gY', '_score': 1.0, '_source': {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf', 'filename': '19628-pdf', 'pages': 98.0, 'author': 'W. J. McGee', 'title': 'The Siouan Indians'}, 'created': '2018-12-23 19:40:43'}}, {'_index': 'files', '_type': '_doc', '_id': 'VGiV3GcBS7-TH6jUn3h_', '_score': 1.0, '_source': {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf', 'filename': '19800-pdf', 'pages': 526.0, 'author': 'Reginald R. Sharpe', 'title': 'London and the Kingdom {protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 45\relax } Volume I'}, 'created': '2018-12-23 19:40:51'}}, {'_index': 'files', '_type': '_doc', '_id': 'YWiZ3GcBS7-TH6jUYHiX', '_score': 1.0, '_source': {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf', 'filename': '20990-pdf', 'pages': 586.0, 'author': 'Reginald R. Sharpe', 'title': 'London and the Kingdom {protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 45\relax } Volume II'}, 'created': '2018-12-23 19:44:57'}}, {'_index': 'files', '_type': '_doc', '_id': 'VWiX3GcBS7-TH6jUXni6', '_score': 1.0, '_source': {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf', 'filename': '19978-pdf', 'pages': 48.0, 'author': 'Fernando Pessoa', 'title': '35 Sonnets'}, 'created': '2018-12-23 19:42:41'}}, {'_index': 'files', '_type': '_doc', '_id': 'VmiX3GcBS7-TH6jUX3gK', '_score': 1.0, '_source': {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf', 'filename': '20093-pdf', 'pages': 118.0, 'author': 'Various', 'title': 'The American Missionary {protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 45\relax } Volume 50, No. 4, April 1896'}, 'created': '2018-12-23 19:42:41'}}, {'_index': 'files', '_type': '_doc', '_id': 'V2iX3GcBS7-TH6jUX3h6', '_score': 1.0, '_source': {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf', 'filename': '19965-pdf', 'pages': 30.0, 'author': 'W. C. Rucker', 'title': 'Measles'}, 'created': '2018-12-23 19:42:41'}}]}}
+2018-12-24:16:37:26.372 - INFO - [__init__.py:253] #  Client connected
+2018-12-24:16:38:08.707 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:16:38:08.707 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:16:38:11.211 - INFO - [__init__.py:140] #  [{'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf', 'filename': '22523-pdf', 'pages': 383.0, 'author': 'Don', 'title': 'Bolsheviki.PDF'}, 'created': '2018-12-23 19:46:51'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf', 'filename': '22099-pdf', 'pages': 290.0, 'author': 'Charles Beadle', 'title': 'Witch{protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 45\relax }Doctors'}, 'created': '2018-12-23 19:46:44'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf', 'filename': '19487-pdf', 'pages': 158.0, 'author': 'A. Hugh Fisher', 'title': 'Bell{protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 39\relax }s Cathedrals: The Cathedral Church of Hereford, A Description Of Its Fabric And A Brief History Of The Episcopal See'}, 'created': '2018-12-23 19:34:43'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf', 'filename': '19312-pdf', 'pages': 1732.0, 'author': 'â•ŸAbduâ•Žl{protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 45\relax }BahÃ¡', 'title': 'Tablets of Abdul{protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 45\relax }Baha Abbas'}, 'created': '2018-12-23 19:35:04'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf', 'filename': '19628-pdf', 'pages': 98.0, 'author': 'W. J. McGee', 'title': 'The Siouan Indians'}, 'created': '2018-12-23 19:40:43'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf', 'filename': '19800-pdf', 'pages': 526.0, 'author': 'Reginald R. Sharpe', 'title': 'London and the Kingdom {protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 45\relax } Volume I'}, 'created': '2018-12-23 19:40:51'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf', 'filename': '20990-pdf', 'pages': 586.0, 'author': 'Reginald R. Sharpe', 'title': 'London and the Kingdom {protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 45\relax } Volume II'}, 'created': '2018-12-23 19:44:57'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf', 'filename': '19978-pdf', 'pages': 48.0, 'author': 'Fernando Pessoa', 'title': '35 Sonnets'}, 'created': '2018-12-23 19:42:41'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf', 'filename': '20093-pdf', 'pages': 118.0, 'author': 'Various', 'title': 'The American Missionary {protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 45\relax } Volume 50, No. 4, April 1896'}, 'created': '2018-12-23 19:42:41'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf', 'filename': '19965-pdf', 'pages': 30.0, 'author': 'W. C. Rucker', 'title': 'Measles'}, 'created': '2018-12-23 19:42:41'}]
+2018-12-24:16:38:12.078 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:16:38:50.728 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:16:38:50.914 - INFO - [__init__.py:140] #  [{'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf', 'filename': '22523-pdf', 'pages': 383.0, 'author': 'Don', 'title': 'Bolsheviki.PDF'}, 'created': '2018-12-23 19:46:51'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf', 'filename': '22099-pdf', 'pages': 290.0, 'author': 'Charles Beadle', 'title': 'Witch{protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 45\relax }Doctors'}, 'created': '2018-12-23 19:46:44'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf', 'filename': '19487-pdf', 'pages': 158.0, 'author': 'A. Hugh Fisher', 'title': 'Bell{protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 39\relax }s Cathedrals: The Cathedral Church of Hereford, A Description Of Its Fabric And A Brief History Of The Episcopal See'}, 'created': '2018-12-23 19:34:43'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf', 'filename': '19312-pdf', 'pages': 1732.0, 'author': 'â•ŸAbduâ•Žl{protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 45\relax }BahÃ¡', 'title': 'Tablets of Abdul{protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 45\relax }Baha Abbas'}, 'created': '2018-12-23 19:35:04'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf', 'filename': '19628-pdf', 'pages': 98.0, 'author': 'W. J. McGee', 'title': 'The Siouan Indians'}, 'created': '2018-12-23 19:40:43'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf', 'filename': '19800-pdf', 'pages': 526.0, 'author': 'Reginald R. Sharpe', 'title': 'London and the Kingdom {protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 45\relax } Volume I'}, 'created': '2018-12-23 19:40:51'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf', 'filename': '20990-pdf', 'pages': 586.0, 'author': 'Reginald R. Sharpe', 'title': 'London and the Kingdom {protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 45\relax } Volume II'}, 'created': '2018-12-23 19:44:57'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf', 'filename': '19978-pdf', 'pages': 48.0, 'author': 'Fernando Pessoa', 'title': '35 Sonnets'}, 'created': '2018-12-23 19:42:41'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf', 'filename': '20093-pdf', 'pages': 118.0, 'author': 'Various', 'title': 'The American Missionary {protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 45\relax } Volume 50, No. 4, April 1896'}, 'created': '2018-12-23 19:42:41'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf', 'filename': '19965-pdf', 'pages': 30.0, 'author': 'W. C. Rucker', 'title': 'Measles'}, 'created': '2018-12-23 19:42:41'}]
+2018-12-24:16:38:52.520 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:16:39:15.810 - INFO - [__init__.py:255] #  Client disconnected
+2018-12-24:16:39:16.005 - INFO - [__init__.py:140] #  [{'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf', 'filename': '22523-pdf', 'pages': 383.0, 'author': 'Don', 'title': 'Bolsheviki.PDF'}, 'created': '2018-12-23 19:46:51'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf', 'filename': '22099-pdf', 'pages': 290.0, 'author': 'Charles Beadle', 'title': 'Witch{protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 45\relax }Doctors'}, 'created': '2018-12-23 19:46:44'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf', 'filename': '19487-pdf', 'pages': 158.0, 'author': 'A. Hugh Fisher', 'title': 'Bell{protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 39\relax }s Cathedrals: The Cathedral Church of Hereford, A Description Of Its Fabric And A Brief History Of The Episcopal See'}, 'created': '2018-12-23 19:34:43'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf', 'filename': '19312-pdf', 'pages': 1732.0, 'author': 'â•ŸAbduâ•Žl{protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 45\relax }BahÃ¡', 'title': 'Tablets of Abdul{protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 45\relax }Baha Abbas'}, 'created': '2018-12-23 19:35:04'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf', 'filename': '19628-pdf', 'pages': 98.0, 'author': 'W. J. McGee', 'title': 'The Siouan Indians'}, 'created': '2018-12-23 19:40:43'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf', 'filename': '19800-pdf', 'pages': 526.0, 'author': 'Reginald R. Sharpe', 'title': 'London and the Kingdom {protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 45\relax } Volume I'}, 'created': '2018-12-23 19:40:51'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf', 'filename': '20990-pdf', 'pages': 586.0, 'author': 'Reginald R. Sharpe', 'title': 'London and the Kingdom {protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 45\relax } Volume II'}, 'created': '2018-12-23 19:44:57'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf', 'filename': '19978-pdf', 'pages': 48.0, 'author': 'Fernando Pessoa', 'title': '35 Sonnets'}, 'created': '2018-12-23 19:42:41'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf', 'filename': '20093-pdf', 'pages': 118.0, 'author': 'Various', 'title': 'The American Missionary {protect edef U00{U00}let enc@update \relax protect xdef U00/times/m/n/10.95 {U00/times/m/n/10.95 }U00/times/m/n/10.95 size@update enc@update char 45\relax } Volume 50, No. 4, April 1896'}, 'created': '2018-12-23 19:42:41'}, {'meta': {'path_img': '/home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf', 'filename': '19965-pdf', 'pages': 30.0, 'author': 'W. C. Rucker', 'title': 'Measles'}, 'created': '2018-12-23 19:42:41'}]
+2018-12-24:16:39:16.891 - INFO - [__init__.py:252] #  Client connected
+2018-12-24:18:14:12.698 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:18:14:12.698 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:18:15:36.581 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:18:15:36.581 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:18:16:36.677 - INFO - [__init__.py:163] #  [[], [], [], [], [], [], [], [], [], []]
+2018-12-24:18:17:34.799 - INFO - [__init__.py:163] #  [[], [], [], [], [], [], [], [], [], []]
+2018-12-24:18:17:36.061 - INFO - [__init__.py:275] #  Client connected
+2018-12-24:18:18:01.039 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:18:18:01.039 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:18:18:02.489 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf
+2018-12-24:18:18:02.489 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf
+2018-12-24:18:18:02.490 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf
+2018-12-24:18:18:02.490 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf
+2018-12-24:18:18:02.490 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf
+2018-12-24:18:18:02.490 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf
+2018-12-24:18:18:02.490 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf
+2018-12-24:18:18:02.490 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf
+2018-12-24:18:18:02.490 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf
+2018-12-24:18:18:02.490 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf
+2018-12-24:18:18:02.490 - INFO - [__init__.py:163] #  [[], [], [], [], [], [], [], [], [], []]
+2018-12-24:18:18:03.439 - INFO - [__init__.py:275] #  Client connected
+2018-12-24:18:18:30.896 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:18:18:30.896 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:18:18:33.334 - INFO - [__init__.py:275] #  Client connected
+2018-12-24:18:19:27.769 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:18:19:27.769 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:18:19:31.677 - INFO - [__init__.py:275] #  Client connected
+2018-12-24:18:19:41.857 - INFO - [__init__.py:278] #  Client disconnected
+2018-12-24:18:19:42.455 - INFO - [__init__.py:275] #  Client connected
+2018-12-24:18:19:45.861 - INFO - [__init__.py:278] #  Client disconnected
+2018-12-24:18:19:46.004 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf
+2018-12-24:18:19:46.004 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf
+2018-12-24:18:19:46.004 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf
+2018-12-24:18:19:46.004 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf
+2018-12-24:18:19:46.005 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf
+2018-12-24:18:19:46.005 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf
+2018-12-24:18:19:46.005 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf
+2018-12-24:18:19:46.005 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf
+2018-12-24:18:19:46.005 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf
+2018-12-24:18:19:46.005 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf
+2018-12-24:18:19:46.005 - INFO - [__init__.py:163] #  [[], [], [], [], [], [], [], [], [], []]
+2018-12-24:18:19:46.853 - INFO - [__init__.py:275] #  Client connected
+2018-12-24:18:21:54.633 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:18:21:54.633 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:18:21:57.559 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf
+2018-12-24:18:21:57.559 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf
+2018-12-24:18:21:57.559 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf
+2018-12-24:18:21:57.559 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf
+2018-12-24:18:21:57.559 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf
+2018-12-24:18:21:57.559 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf
+2018-12-24:18:21:57.559 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf
+2018-12-24:18:21:57.560 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf
+2018-12-24:18:21:57.560 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf
+2018-12-24:18:21:57.560 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf
+2018-12-24:18:21:57.560 - INFO - [__init__.py:163] #  [['b83850cd-0daa-4986-929e-9572a8f68c19-004.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-007.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-010.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-005.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-009.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-008.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-003.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-006.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-002.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-001.jpg'], ['ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-002.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-009.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-003.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-007.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-006.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-001.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-010.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-005.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-004.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-008.jpg'], ['1f12b263-ce34-4d11-9df4-27689090daff-003.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-007.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-005.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-004.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-006.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-010.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-001.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-008.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-002.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-009.jpg'], ['79f5288a-5a7e-49eb-b9b7-2b912076d337-0008.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0003.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0007.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0002.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0001.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0004.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0005.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0010.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0009.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0006.jpg'], ['7a3f73db-8cc5-465a-be5a-a0f5b85d2368-08.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-09.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-02.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-04.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-06.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-07.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-05.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-10.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-03.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-01.jpg'], ['ac25a744-ef7d-45ea-8f74-ddaac327ade6-005.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-008.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-007.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-001.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-009.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-010.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-006.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-004.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-002.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-003.jpg'], ['bdc1cf76-1db0-4104-bc93-579c6845bc1e-008.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-007.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-002.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-003.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-004.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-010.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-001.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-006.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-009.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-005.jpg'], ['83b67481-543d-4ee0-9ca9-443b3ebcc161-01.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-10.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-02.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-06.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-03.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-04.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-05.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-07.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-08.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-09.jpg'], ['854d0fed-d6fb-4ee3-abb1-fb686ec44706-006.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-010.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-002.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-009.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-003.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-005.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-001.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-007.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-008.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-004.jpg'], ['aaffce26-663f-4a44-9497-23583a49df3a-01.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-07.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-09.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-03.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-10.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-04.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-08.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-02.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-06.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-05.jpg']]
+2018-12-24:18:21:58.509 - INFO - [__init__.py:275] #  Client connected
+2018-12-24:18:22:18.988 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:18:22:18.988 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:18:23:40.864 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:18:23:40.864 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:18:23:44.314 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf
+2018-12-24:18:23:44.315 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf
+2018-12-24:18:23:44.315 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf
+2018-12-24:18:23:44.315 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf
+2018-12-24:18:23:44.315 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf
+2018-12-24:18:23:44.315 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf
+2018-12-24:18:23:44.315 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf
+2018-12-24:18:23:44.315 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf
+2018-12-24:18:23:44.315 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf
+2018-12-24:18:23:44.316 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf
+2018-12-24:18:23:44.316 - INFO - [__init__.py:163] #  [['b83850cd-0daa-4986-929e-9572a8f68c19-001.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-002.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-003.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-004.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-005.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-006.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-007.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-008.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-009.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-010.jpg'], ['ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-001.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-002.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-003.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-004.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-005.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-006.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-007.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-008.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-009.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-010.jpg'], ['1f12b263-ce34-4d11-9df4-27689090daff-001.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-002.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-003.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-004.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-005.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-006.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-007.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-008.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-009.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-010.jpg'], ['79f5288a-5a7e-49eb-b9b7-2b912076d337-0001.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0002.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0003.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0004.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0005.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0006.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0007.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0008.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0009.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0010.jpg'], ['7a3f73db-8cc5-465a-be5a-a0f5b85d2368-01.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-02.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-03.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-04.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-05.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-06.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-07.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-08.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-09.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-10.jpg'], ['ac25a744-ef7d-45ea-8f74-ddaac327ade6-001.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-002.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-003.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-004.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-005.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-006.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-007.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-008.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-009.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-010.jpg'], ['bdc1cf76-1db0-4104-bc93-579c6845bc1e-001.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-002.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-003.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-004.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-005.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-006.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-007.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-008.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-009.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-010.jpg'], ['83b67481-543d-4ee0-9ca9-443b3ebcc161-01.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-02.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-03.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-04.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-05.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-06.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-07.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-08.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-09.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-10.jpg'], ['854d0fed-d6fb-4ee3-abb1-fb686ec44706-001.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-002.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-003.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-004.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-005.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-006.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-007.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-008.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-009.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-010.jpg'], ['aaffce26-663f-4a44-9497-23583a49df3a-01.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-02.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-03.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-04.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-05.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-06.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-07.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-08.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-09.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-10.jpg']]
+2018-12-24:18:23:45.717 - INFO - [__init__.py:275] #  Client connected
+2018-12-24:18:23:57.262 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:18:23:57.262 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:18:23:59.132 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf
+2018-12-24:18:23:59.132 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf
+2018-12-24:18:23:59.133 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf
+2018-12-24:18:23:59.133 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf
+2018-12-24:18:23:59.133 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf
+2018-12-24:18:23:59.133 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf
+2018-12-24:18:23:59.133 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf
+2018-12-24:18:23:59.133 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf
+2018-12-24:18:23:59.133 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf
+2018-12-24:18:23:59.133 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf
+2018-12-24:18:23:59.133 - INFO - [__init__.py:162] #  [None, None, None, None, None, None, None, None, None, None]
+2018-12-24:18:24:00.272 - INFO - [__init__.py:274] #  Client connected
+2018-12-24:18:24:11.163 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:18:24:11.163 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:18:24:13.045 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf
+2018-12-24:18:24:13.046 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf
+2018-12-24:18:24:13.046 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf
+2018-12-24:18:24:13.046 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf
+2018-12-24:18:24:13.046 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf
+2018-12-24:18:24:13.046 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf
+2018-12-24:18:24:13.046 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf
+2018-12-24:18:24:13.046 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf
+2018-12-24:18:24:13.046 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf
+2018-12-24:18:24:13.047 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf
+2018-12-24:18:24:13.047 - INFO - [__init__.py:162] #  [None, None, None, None, None, None, None, None, None, None]
+2018-12-24:18:24:13.863 - INFO - [__init__.py:274] #  Client connected
+2018-12-24:18:24:30.531 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:18:24:30.531 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:18:24:43.788 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf
+2018-12-24:18:24:43.788 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf
+2018-12-24:18:24:43.788 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf
+2018-12-24:18:24:43.788 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf
+2018-12-24:18:24:43.788 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf
+2018-12-24:18:24:43.788 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf
+2018-12-24:18:24:43.788 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf
+2018-12-24:18:24:43.789 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf
+2018-12-24:18:24:43.789 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf
+2018-12-24:18:24:43.789 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf
+2018-12-24:18:24:43.789 - INFO - [__init__.py:163] #  [['b83850cd-0daa-4986-929e-9572a8f68c19-001.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-002.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-003.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-004.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-005.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-006.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-007.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-008.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-009.jpg', 'b83850cd-0daa-4986-929e-9572a8f68c19-010.jpg'], ['ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-001.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-002.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-003.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-004.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-005.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-006.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-007.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-008.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-009.jpg', 'ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-010.jpg'], ['1f12b263-ce34-4d11-9df4-27689090daff-001.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-002.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-003.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-004.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-005.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-006.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-007.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-008.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-009.jpg', '1f12b263-ce34-4d11-9df4-27689090daff-010.jpg'], ['79f5288a-5a7e-49eb-b9b7-2b912076d337-0001.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0002.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0003.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0004.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0005.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0006.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0007.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0008.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0009.jpg', '79f5288a-5a7e-49eb-b9b7-2b912076d337-0010.jpg'], ['7a3f73db-8cc5-465a-be5a-a0f5b85d2368-01.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-02.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-03.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-04.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-05.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-06.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-07.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-08.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-09.jpg', '7a3f73db-8cc5-465a-be5a-a0f5b85d2368-10.jpg'], ['ac25a744-ef7d-45ea-8f74-ddaac327ade6-001.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-002.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-003.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-004.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-005.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-006.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-007.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-008.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-009.jpg', 'ac25a744-ef7d-45ea-8f74-ddaac327ade6-010.jpg'], ['bdc1cf76-1db0-4104-bc93-579c6845bc1e-001.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-002.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-003.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-004.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-005.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-006.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-007.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-008.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-009.jpg', 'bdc1cf76-1db0-4104-bc93-579c6845bc1e-010.jpg'], ['83b67481-543d-4ee0-9ca9-443b3ebcc161-01.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-02.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-03.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-04.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-05.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-06.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-07.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-08.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-09.jpg', '83b67481-543d-4ee0-9ca9-443b3ebcc161-10.jpg'], ['854d0fed-d6fb-4ee3-abb1-fb686ec44706-001.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-002.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-003.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-004.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-005.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-006.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-007.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-008.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-009.jpg', '854d0fed-d6fb-4ee3-abb1-fb686ec44706-010.jpg'], ['aaffce26-663f-4a44-9497-23583a49df3a-01.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-02.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-03.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-04.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-05.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-06.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-07.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-08.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-09.jpg', 'aaffce26-663f-4a44-9497-23583a49df3a-10.jpg']]
+2018-12-24:18:24:44.708 - INFO - [__init__.py:275] #  Client connected
+2018-12-24:18:25:08.404 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:18:25:08.404 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:18:30:07.270 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:18:30:07.270 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:18:30:13.378 - INFO - [__init__.py:156] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf
+2018-12-24:18:30:13.378 - INFO - [__init__.py:156] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf
+2018-12-24:18:30:13.378 - INFO - [__init__.py:156] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf
+2018-12-24:18:30:13.378 - INFO - [__init__.py:156] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf
+2018-12-24:18:30:13.378 - INFO - [__init__.py:156] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf
+2018-12-24:18:30:13.379 - INFO - [__init__.py:156] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf
+2018-12-24:18:30:13.379 - INFO - [__init__.py:156] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf
+2018-12-24:18:30:13.379 - INFO - [__init__.py:156] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf
+2018-12-24:18:30:13.379 - INFO - [__init__.py:156] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf
+2018-12-24:18:30:13.379 - INFO - [__init__.py:156] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf
+2018-12-24:18:30:13.379 - INFO - [__init__.py:165] #  [None, None, None, None, None, None, None, None, None, None]
+2018-12-24:18:30:45.957 - INFO - [__init__.py:156] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf
+2018-12-24:18:30:45.958 - INFO - [__init__.py:156] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf
+2018-12-24:18:30:45.958 - INFO - [__init__.py:156] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf
+2018-12-24:18:30:45.958 - INFO - [__init__.py:156] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf
+2018-12-24:18:30:45.958 - INFO - [__init__.py:156] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf
+2018-12-24:18:30:45.958 - INFO - [__init__.py:156] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf
+2018-12-24:18:30:45.958 - INFO - [__init__.py:156] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf
+2018-12-24:18:30:45.959 - INFO - [__init__.py:156] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf
+2018-12-24:18:30:45.959 - INFO - [__init__.py:156] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf
+2018-12-24:18:30:45.959 - INFO - [__init__.py:156] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf
+2018-12-24:18:30:45.959 - INFO - [__init__.py:165] #  [None, None, None, None, None, None, None, None, None, None]
+2018-12-24:18:30:47.080 - INFO - [__init__.py:277] #  Client connected
+2018-12-24:18:31:15.627 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:18:31:15.628 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:18:31:28.482 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf
+2018-12-24:18:31:28.483 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf
+2018-12-24:18:31:28.483 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf
+2018-12-24:18:31:28.483 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf
+2018-12-24:18:31:28.483 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf
+2018-12-24:18:31:28.484 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf
+2018-12-24:18:31:28.484 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf
+2018-12-24:18:31:28.484 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf
+2018-12-24:18:31:28.484 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf
+2018-12-24:18:31:28.485 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf
+2018-12-24:18:31:28.485 - INFO - [__init__.py:165] #  [None, None, None, None, None, None, None, None, None, None]
+2018-12-24:18:31:29.548 - INFO - [__init__.py:277] #  Client connected
+2018-12-24:18:31:57.600 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:18:31:57.600 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:18:31:58.870 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf
+2018-12-24:18:31:58.870 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf
+2018-12-24:18:31:58.870 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf
+2018-12-24:18:31:58.870 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf
+2018-12-24:18:31:58.870 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf
+2018-12-24:18:31:58.870 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf
+2018-12-24:18:31:58.871 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf
+2018-12-24:18:31:58.871 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf
+2018-12-24:18:31:58.871 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf
+2018-12-24:18:31:58.871 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf
+2018-12-24:18:31:58.871 - INFO - [__init__.py:166] #  [['/home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf/b83850cd-0daa-4986-929e-9572a8f68c19-001.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf/b83850cd-0daa-4986-929e-9572a8f68c19-002.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf/b83850cd-0daa-4986-929e-9572a8f68c19-003.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf/b83850cd-0daa-4986-929e-9572a8f68c19-004.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf/b83850cd-0daa-4986-929e-9572a8f68c19-005.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf/b83850cd-0daa-4986-929e-9572a8f68c19-006.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf/b83850cd-0daa-4986-929e-9572a8f68c19-007.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf/b83850cd-0daa-4986-929e-9572a8f68c19-008.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf/b83850cd-0daa-4986-929e-9572a8f68c19-009.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf/b83850cd-0daa-4986-929e-9572a8f68c19-010.jpg'], ['/home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf/ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-001.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf/ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-002.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf/ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-003.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf/ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-004.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf/ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-005.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf/ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-006.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf/ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-007.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf/ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-008.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf/ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-009.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf/ff8ef6a5-6071-4c7f-8d07-775a832b7bdf-010.jpg'], ['/home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf/1f12b263-ce34-4d11-9df4-27689090daff-001.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf/1f12b263-ce34-4d11-9df4-27689090daff-002.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf/1f12b263-ce34-4d11-9df4-27689090daff-003.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf/1f12b263-ce34-4d11-9df4-27689090daff-004.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf/1f12b263-ce34-4d11-9df4-27689090daff-005.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf/1f12b263-ce34-4d11-9df4-27689090daff-006.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf/1f12b263-ce34-4d11-9df4-27689090daff-007.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf/1f12b263-ce34-4d11-9df4-27689090daff-008.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf/1f12b263-ce34-4d11-9df4-27689090daff-009.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf/1f12b263-ce34-4d11-9df4-27689090daff-010.jpg'], ['/home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf/79f5288a-5a7e-49eb-b9b7-2b912076d337-0001.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf/79f5288a-5a7e-49eb-b9b7-2b912076d337-0002.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf/79f5288a-5a7e-49eb-b9b7-2b912076d337-0003.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf/79f5288a-5a7e-49eb-b9b7-2b912076d337-0004.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf/79f5288a-5a7e-49eb-b9b7-2b912076d337-0005.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf/79f5288a-5a7e-49eb-b9b7-2b912076d337-0006.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf/79f5288a-5a7e-49eb-b9b7-2b912076d337-0007.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf/79f5288a-5a7e-49eb-b9b7-2b912076d337-0008.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf/79f5288a-5a7e-49eb-b9b7-2b912076d337-0009.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf/79f5288a-5a7e-49eb-b9b7-2b912076d337-0010.jpg'], ['/home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf/7a3f73db-8cc5-465a-be5a-a0f5b85d2368-01.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf/7a3f73db-8cc5-465a-be5a-a0f5b85d2368-02.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf/7a3f73db-8cc5-465a-be5a-a0f5b85d2368-03.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf/7a3f73db-8cc5-465a-be5a-a0f5b85d2368-04.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf/7a3f73db-8cc5-465a-be5a-a0f5b85d2368-05.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf/7a3f73db-8cc5-465a-be5a-a0f5b85d2368-06.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf/7a3f73db-8cc5-465a-be5a-a0f5b85d2368-07.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf/7a3f73db-8cc5-465a-be5a-a0f5b85d2368-08.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf/7a3f73db-8cc5-465a-be5a-a0f5b85d2368-09.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf/7a3f73db-8cc5-465a-be5a-a0f5b85d2368-10.jpg'], ['/home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf/ac25a744-ef7d-45ea-8f74-ddaac327ade6-001.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf/ac25a744-ef7d-45ea-8f74-ddaac327ade6-002.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf/ac25a744-ef7d-45ea-8f74-ddaac327ade6-003.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf/ac25a744-ef7d-45ea-8f74-ddaac327ade6-004.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf/ac25a744-ef7d-45ea-8f74-ddaac327ade6-005.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf/ac25a744-ef7d-45ea-8f74-ddaac327ade6-006.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf/ac25a744-ef7d-45ea-8f74-ddaac327ade6-007.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf/ac25a744-ef7d-45ea-8f74-ddaac327ade6-008.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf/ac25a744-ef7d-45ea-8f74-ddaac327ade6-009.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf/ac25a744-ef7d-45ea-8f74-ddaac327ade6-010.jpg'], ['/home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf/bdc1cf76-1db0-4104-bc93-579c6845bc1e-001.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf/bdc1cf76-1db0-4104-bc93-579c6845bc1e-002.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf/bdc1cf76-1db0-4104-bc93-579c6845bc1e-003.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf/bdc1cf76-1db0-4104-bc93-579c6845bc1e-004.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf/bdc1cf76-1db0-4104-bc93-579c6845bc1e-005.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf/bdc1cf76-1db0-4104-bc93-579c6845bc1e-006.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf/bdc1cf76-1db0-4104-bc93-579c6845bc1e-007.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf/bdc1cf76-1db0-4104-bc93-579c6845bc1e-008.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf/bdc1cf76-1db0-4104-bc93-579c6845bc1e-009.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf/bdc1cf76-1db0-4104-bc93-579c6845bc1e-010.jpg'], ['/home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf/83b67481-543d-4ee0-9ca9-443b3ebcc161-01.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf/83b67481-543d-4ee0-9ca9-443b3ebcc161-02.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf/83b67481-543d-4ee0-9ca9-443b3ebcc161-03.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf/83b67481-543d-4ee0-9ca9-443b3ebcc161-04.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf/83b67481-543d-4ee0-9ca9-443b3ebcc161-05.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf/83b67481-543d-4ee0-9ca9-443b3ebcc161-06.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf/83b67481-543d-4ee0-9ca9-443b3ebcc161-07.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf/83b67481-543d-4ee0-9ca9-443b3ebcc161-08.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf/83b67481-543d-4ee0-9ca9-443b3ebcc161-09.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf/83b67481-543d-4ee0-9ca9-443b3ebcc161-10.jpg'], ['/home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf/854d0fed-d6fb-4ee3-abb1-fb686ec44706-001.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf/854d0fed-d6fb-4ee3-abb1-fb686ec44706-002.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf/854d0fed-d6fb-4ee3-abb1-fb686ec44706-003.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf/854d0fed-d6fb-4ee3-abb1-fb686ec44706-004.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf/854d0fed-d6fb-4ee3-abb1-fb686ec44706-005.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf/854d0fed-d6fb-4ee3-abb1-fb686ec44706-006.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf/854d0fed-d6fb-4ee3-abb1-fb686ec44706-007.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf/854d0fed-d6fb-4ee3-abb1-fb686ec44706-008.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf/854d0fed-d6fb-4ee3-abb1-fb686ec44706-009.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf/854d0fed-d6fb-4ee3-abb1-fb686ec44706-010.jpg'], ['/home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf/aaffce26-663f-4a44-9497-23583a49df3a-01.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf/aaffce26-663f-4a44-9497-23583a49df3a-02.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf/aaffce26-663f-4a44-9497-23583a49df3a-03.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf/aaffce26-663f-4a44-9497-23583a49df3a-04.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf/aaffce26-663f-4a44-9497-23583a49df3a-05.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf/aaffce26-663f-4a44-9497-23583a49df3a-06.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf/aaffce26-663f-4a44-9497-23583a49df3a-07.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf/aaffce26-663f-4a44-9497-23583a49df3a-08.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf/aaffce26-663f-4a44-9497-23583a49df3a-09.jpg', '/home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf/aaffce26-663f-4a44-9497-23583a49df3a-10.jpg']]
+2018-12-24:18:31:59.904 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:18:32:36.974 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:18:32:36.974 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:18:34:44.065 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf
+2018-12-24:18:34:44.065 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf
+2018-12-24:18:34:44.065 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf
+2018-12-24:18:34:44.065 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf
+2018-12-24:18:34:44.065 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf
+2018-12-24:18:34:44.065 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf
+2018-12-24:18:34:44.066 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf
+2018-12-24:18:34:44.066 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf
+2018-12-24:18:34:44.066 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf
+2018-12-24:18:34:44.066 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf
+2018-12-24:18:35:17.860 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf
+2018-12-24:18:35:17.860 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf
+2018-12-24:18:35:17.861 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf
+2018-12-24:18:35:17.861 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf
+2018-12-24:18:35:17.861 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf
+2018-12-24:18:35:17.861 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf
+2018-12-24:18:35:17.861 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf
+2018-12-24:18:35:17.862 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf
+2018-12-24:18:35:17.862 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf
+2018-12-24:18:35:17.862 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf
+2018-12-24:18:35:28.622 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf
+2018-12-24:18:35:28.623 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf
+2018-12-24:18:35:28.623 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf
+2018-12-24:18:35:28.624 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf
+2018-12-24:18:35:28.624 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf
+2018-12-24:18:35:28.624 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf
+2018-12-24:18:35:28.624 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf
+2018-12-24:18:35:28.625 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf
+2018-12-24:18:35:28.625 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf
+2018-12-24:18:35:28.625 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf
+2018-12-24:18:35:41.004 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf
+2018-12-24:18:35:41.005 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf
+2018-12-24:18:35:41.005 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf
+2018-12-24:18:35:41.005 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf
+2018-12-24:18:35:41.005 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf
+2018-12-24:18:35:41.005 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf
+2018-12-24:18:35:41.005 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf
+2018-12-24:18:35:41.005 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf
+2018-12-24:18:35:41.006 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf
+2018-12-24:18:35:41.006 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf
+2018-12-24:18:35:48.341 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf
+2018-12-24:18:35:48.341 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf
+2018-12-24:18:35:48.341 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf
+2018-12-24:18:35:48.341 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf
+2018-12-24:18:35:48.342 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf
+2018-12-24:18:35:48.342 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf
+2018-12-24:18:35:48.342 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf
+2018-12-24:18:35:48.342 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf
+2018-12-24:18:35:48.342 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf
+2018-12-24:18:35:48.342 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf
+2018-12-24:18:35:49.496 - INFO - [__init__.py:276] #  Client connected
+2018-12-24:18:36:52.561 - INFO - [__init__.py:279] #  Client disconnected
+2018-12-24:18:36:52.775 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf
+2018-12-24:18:36:52.775 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf
+2018-12-24:18:36:52.776 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf
+2018-12-24:18:36:52.776 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf
+2018-12-24:18:36:52.776 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf
+2018-12-24:18:36:52.776 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf
+2018-12-24:18:36:52.777 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf
+2018-12-24:18:36:52.777 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf
+2018-12-24:18:36:52.777 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf
+2018-12-24:18:36:52.777 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf
+2018-12-24:18:36:53.852 - INFO - [__init__.py:276] #  Client connected
+2018-12-24:18:38:25.345 - INFO - [__init__.py:279] #  Client disconnected
+2018-12-24:18:38:25.531 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf
+2018-12-24:18:38:25.531 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf
+2018-12-24:18:38:25.531 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf
+2018-12-24:18:38:25.532 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf
+2018-12-24:18:38:25.532 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf
+2018-12-24:18:38:25.532 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf
+2018-12-24:18:38:25.532 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf
+2018-12-24:18:38:25.532 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf
+2018-12-24:18:38:25.532 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf
+2018-12-24:18:38:25.533 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf
+2018-12-24:18:38:26.547 - INFO - [__init__.py:276] #  Client connected
+2018-12-24:18:40:13.533 - INFO - [__init__.py:279] #  Client disconnected
+2018-12-24:18:40:13.730 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf
+2018-12-24:18:40:13.730 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf
+2018-12-24:18:40:13.730 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf
+2018-12-24:18:40:13.731 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf
+2018-12-24:18:40:13.731 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf
+2018-12-24:18:40:13.731 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf
+2018-12-24:18:40:13.731 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf
+2018-12-24:18:40:13.731 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf
+2018-12-24:18:40:13.731 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf
+2018-12-24:18:40:13.731 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf
+2018-12-24:18:41:02.953 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22523-pdf
+2018-12-24:18:41:02.953 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/22099-pdf
+2018-12-24:18:41:02.953 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19487-pdf
+2018-12-24:18:41:02.953 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19312-pdf
+2018-12-24:18:41:02.954 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19628-pdf
+2018-12-24:18:41:02.954 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19800-pdf
+2018-12-24:18:41:02.954 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20990-pdf
+2018-12-24:18:41:02.954 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19978-pdf
+2018-12-24:18:41:02.954 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/20093-pdf
+2018-12-24:18:41:02.954 - INFO - [__init__.py:155] #  /home/falkor/github/babieca/gutenberg/gutenberg/images/19965-pdf
+2018-12-24:18:41:05.454 - INFO - [__init__.py:276] #  Client connected
+2018-12-24:18:41:23.821 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:18:41:23.821 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:18:48:58.216 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:18:48:58.216 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:18:49:04.598 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:18:50:13.076 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:18:50:13.076 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:18:51:50.706 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:18:52:34.483 - INFO - [app.py:124] #  Listening on 127.0.0.1:8080
+2018-12-24:18:52:34.483 - INFO - [app.py:125] #  Listening on 127.0.0.1:8443
+2018-12-24:18:52:37.768 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:18:53:03.660 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:18:53:04.712 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:18:56:20.710 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:18:56:21.923 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:18:56:51.130 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:18:56:52.883 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:18:58:23.573 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:18:58:24.942 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:18:58:44.635 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:18:58:45.767 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:00:13.348 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:00:13.976 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:00:31.659 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:00:32.309 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:00:53.348 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:00:54.724 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:03:02.205 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:04:48.004 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:04:53.438 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:04:53.944 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:05:51.477 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:05:52.011 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:07:13.702 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:07:14.242 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:07:36.491 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:07:37.040 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:08:24.883 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:08:25.497 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:08:47.238 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:08:47.772 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:09:38.362 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:09:38.908 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:10:17.708 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:10:18.220 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:16:08.463 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:16:09.026 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:18:01.359 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:18:02.155 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:18:33.156 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:18:33.947 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:19:20.766 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:19:21.336 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:19:39.693 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:19:40.440 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:20:41.332 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:20:42.590 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:20:58.854 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:20:59.414 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:21:35.527 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:21:36.059 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:21:55.612 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:21:56.152 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:22:11.996 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:22:12.564 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:22:20.047 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:22:20.639 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:50:44.445 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:50:44.959 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:52:21.732 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:52:22.410 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:52:51.378 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:52:52.653 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:19:59:25.715 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:19:59:26.386 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:20:00:06.668 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:20:00:07.796 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:20:00:31.827 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:20:00:32.449 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:20:03:37.355 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:20:03:37.845 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:20:03:51.584 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:20:03:52.798 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:20:11:40.847 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:20:11:41.534 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:20:13:26.327 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:20:13:49.353 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:20:18:12.252 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:20:18:12.873 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:20:18:30.245 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:20:18:31.364 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:20:19:37.162 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:20:19:37.971 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:20:19:48.965 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:20:19:49.470 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:20:20:43.953 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:20:20:44.516 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:20:21:25.058 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:20:21:25.646 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:20:22:57.598 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:20:22:58.242 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:20:23:12.507 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:20:23:13.103 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:20:23:20.027 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:20:23:20.690 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:20:23:44.008 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:20:23:44.866 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:20:26:57.343 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:20:26:57.990 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:20:27:34.430 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:20:27:35.253 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:20:27:48.359 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:20:27:48.937 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:20:28:11.844 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:20:28:12.465 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:20:28:48.689 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:20:28:49.282 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:20:29:19.100 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:20:29:19.996 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:20:29:35.475 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:20:29:36.330 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:20:30:06.827 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:20:30:07.658 - INFO - [__init__.py:278] #  Client connected
+2018-12-24:20:30:33.065 - INFO - [__init__.py:281] #  Client disconnected
+2018-12-24:20:30:33.715 - INFO - [__init__.py:278] #  Client connected

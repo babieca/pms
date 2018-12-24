@@ -1,0 +1,143 @@
+extends layout
+
+block neck
+	style(type='text/css').
+		.grid-item { width: 25%; }
+		.grid-item--width2 { width: 50%; }
+	
+	link(rel='stylesheet', href=static_url('css/book.css'))
+
+
+block foot
+	script(type='text/javascript').
+		function decodeHTML(encoded){
+			var elem = document.createElement('textarea');
+			elem.innerHTML = encoded;
+			var decoded = elem.value;
+			return decoded
+		}
+
+	// Isotope
+	script(type='text/javascript').
+		var $grid = $('.grid').isotope({
+			itemSelector: '.element-item',
+			layoutMode: 'fitRows',
+			getSortData: {
+				name: '.name',
+				symbol: '.symbol',
+				number: '.number parseInt',
+				category: '[data-category]',
+				weight: function( itemElem ) {
+					var weight = $( itemElem ).find('.weight').text();
+					return parseFloat( weight.replace( /[\(\)]/g, '') );
+				}
+			}
+		});
+		// filter functions
+		var filterFns = {
+			// show if number is greater than 50
+			numberGreaterThan50: function() {
+				var number = $(this).find('.number').text();
+				return parseInt( number, 10 ) > 50;
+			},
+			// show if name ends with -ium
+			ium: function() {
+				var name = $(this).find('.name').text();
+				return name.match( /ium$/ );
+			}
+		};
+		// bind filter button click
+		$('#filters').on( 'click', 'button', function() {
+			var filterValue = $( this ).attr('data-filter');
+			// use filterFn if matches value
+			filterValue = filterFns[ filterValue ] || filterValue;
+			$grid.isotope({ filter: filterValue });
+		});
+		// bind sort button click
+			$('#sorts').on( 'click', 'button', function() {
+			var sortByValue = $(this).attr('data-sort-by');
+			$grid.isotope({ sortBy: sortByValue });
+		});
+		// change is-checked class on buttons
+		$('.button-group').each( function( i, buttonGroup ) {
+			var $buttonGroup = $( buttonGroup );
+			$buttonGroup.on( 'click', 'button', function() {
+				$buttonGroup.find('.is-checked').removeClass('is-checked');
+				$( this ).addClass('is-checked');
+			});
+		});
+
+	script(type='text/javascript', src=static_url('js/book.js'))
+
+block content	
+	main.col-md-10.ml-sm-auto.pt-3(role='main')
+
+		#filters.button-group
+			button.button.is-checked(data-filter='*') show all
+			button.button(data-filter='.metal') metal
+			button.button(data-filter='.transition') transition
+			button.button(data-filter='.alkali, .alkaline-earth') alkali and alkaline-earth
+			button.button(data-filter=':not(.transition)') not transition
+			button.button(data-filter='.metal:not(.transition)') metal but not transition
+			button.button(data-filter='numberGreaterThan50') number > 50
+			button.button(data-filter='ium') name ends with –ium
+
+		#sorts.button-group
+			button.button.is-checked(data-sort-by='original-order') original order
+			button.button(data-sort-by='name') name
+			button.button(data-sort-by='symbol') symbol
+			button.button(data-sort-by='number') number
+			button.button(data-sort-by='weight') weight
+			button.button(data-sort-by='category') category
+		
+		hr
+		
+
+						
+		.book-wrapper
+			.book-container
+				#book.book
+					each elem in pages
+						each page in elem
+							.page
+								img(src=page, alt='')
+		
+		hr
+		
+		.grid
+			.element-item.card.mt-2.mr-2(data-category='')
+				.card-body
+					h5.card-title Card title
+					p.card-text
+						| Some quick example text to build on the card title and make up the bulk of the card's content.
+					a.btn.btn-primary(href='#') Go somewhere
+			.element-item.card.mt-2.mr-2(data-category='')
+				.card-body
+					h5.card-title Card title
+					p.card-text
+						| Some quick example text to build on the card title and make up the bulk of the card's content.
+					a.btn.btn-primary(href='#') Go somewhere
+			.element-item.card.mt-2.mr-2(data-category='')
+				.card-body
+					h5.card-title Card title
+					p.card-text
+						| Some quick example text to build on the card title and make up the bulk of the card's content.
+					a.btn.btn-primary(href='#') Go somewhere
+			.element-item.card.mt-2.mr-2(data-category='')
+				.card-body
+					h5.card-title Card title
+					p.card-text
+						| Some quick example text to build on the card title and make up the bulk of the card's content.
+					a.btn.btn-primary(href='#') Go somewhere
+			.element-item.card.mt-2.mr-2(data-category='')
+				.card-body
+					h5.card-title Card title
+					p.card-text
+						| Some quick example text to build on the card title and make up the bulk of the card's content.
+					a.btn.btn-primary(href='#') Go somewhere
+			.element-item.card.mt-2.mr-2(data-category='')
+				.card-body
+					h5.card-title Card title
+					p.card-text
+						| Some quick example text to build on the card title and make up the bulk of the card's content.
+					a.btn.btn-primary(href='#') Go somewhere

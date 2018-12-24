@@ -10,53 +10,33 @@ html(lang='en')
 		link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css', integrity='sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS', crossorigin='anonymous')
 		// Custom styles for this template
 		link(rel='stylesheet', href=static_url('css/main.css'))
+		
+		block neck
+		
 	body
 		include navbar
-				
-		block content
 		
-		//
-		//	Bootstrap core JavaScript
-		//	==================================================
-		// Placed at the end of the document so the pages load faster
+		.container-fluid
+			.row
+				include sidebar
+				block content
+		
+		// Bootstrap 4
 		script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
 		script(src='https://unpkg.com/popper.js/dist/umd/popper.min.js')
 		// script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js', integrity='sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut', crossorigin='anonymous')
 		script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js', integrity='sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k', crossorigin='anonymous')
+		
 		// Icons
 		script(src='https://unpkg.com/feather-icons/dist/feather.min.js')
 		script.
 			feather.replace()
-		// Graphs
-		script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js')
-		script.
-			var ctx = document.getElementById("myChart");
-			var myChart = new Chart(ctx, {
-			type: 'line',
-			data: {
-			labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-			datasets: [{
-			data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-			lineTension: 0,
-			backgroundColor: 'transparent',
-			borderColor: '#007bff',
-			borderWidth: 4,
-			pointBackgroundColor: '#007bff'
-			}]
-			},
-			options: {
-			scales: {
-			yAxes: [{
-			ticks: {
-			beginAtZero: false
-			}
-			}]
-			},
-			legend: {
-			display: false,
-			}
-			}
-			});
+		
+		// Isotope
+		script(src='https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js')
+		
+		// TurnJS
+		// script(type='text/javascript', src=static_url('js/turn.min.js'))
 		
 		script(type='text/javascript', src=static_url('js/main.js'))
 		
