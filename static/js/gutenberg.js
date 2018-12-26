@@ -53,4 +53,4 @@ var turn = {
   }
 };
 
-turn.init('book');
+//turn.init('book');

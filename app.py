@@ -22,7 +22,6 @@ from pyjade.ext.tornado import patch_tornado
 patch_tornado()
 
 from controller import *
-
 BASEDIR = config.get('app',{}).get('basedir')
 
 define("address", default=config.get('app',{}).get('listen_addr'), type=str)

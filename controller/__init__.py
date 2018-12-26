@@ -13,6 +13,7 @@ from collections import OrderedDict
 
 import tornado.web
 import tornado.websocket
+from importlib.resources import contents
 
 
 class BaseHandler(tornado.web.RequestHandler):
@@ -107,67 +108,11 @@ class ResearchHandler(BaseHandler):
 
 
 class GutenbergHandler(BaseHandler):
-
-    doc = {
-            "_source": 
-            {
-                "includes": ["meta.author", "meta.filename", "meta.title",
-                             "meta.pages", "created", "meta.path_img"],
-                "excludes": ["content_base64"]
-            }, 
-            "query": {
-                "match_all": {}
-            },
-            "size": 1
-        }
-
-    def initialize(self):
-        data = {}
-        self.res = self.application.es_conn.search(
-            index='files', doc_type='_doc', body=self.doc, scroll='1m')
-        #scrollId = self.res['_scroll_id']    
-        #es.scroll(scroll_id = scrollId, scroll = '1m')
     
     @tornado.web.authenticated
-    def get(self, *args, **kwargs):
-        
-        pages = []
-        all_keys = set()
-        content = []
-        hits = self.res.get('hits')
-        
-        if hits:
-            total = hits.get('total')
-            max_score = hits.get('max_score')
-            rows = hits.get('hits')
-        
-            if rows:
-                for row in rows:
-                    _index = row.get('_index')
-                    _type = row.get('_type')
-                    _id = row.get('_id')
-                    _score = row.get('_score')
-                    _source = row.get('_source')
-                    all_keys |= set(_source.keys())
-                    content.append(_source)
-
-                    path_img = _source.get('meta', {}).get('path_img')
-                    folder_name = _source.get('meta', {}).get('filename')
-                    
-                    img_files = []
-                    for f in os.listdir(path_img):
-                        if os.path.isfile(os.path.join(path_img, f)) and \
-                        f.endswith(('.jpg', '.jpeg')):
-                            rel_path = os.path.join('static', 'img', 'gutenberg', 
-                                                    folder_name, f)
-                            img_files.append(rel_path)
-                    
-                    img_files.sort()
-                    pages.append(img_files)
-        
+    def get(self, *args, **kwargs):        
         self.render("gutenberg.jade",
                     title="Gutenberg - Partners Capital",
-                    pages=pages,
                     message=False)
 
 
@@ -265,6 +210,75 @@ class AboutHandler(BaseHandler):
         self.render("about.jade", title="about")
 
 
+def gutenberg(message, es_conn):
+    doc = {
+        "_source": 
+        {
+            "includes": ["meta.author", "meta.filename", "meta.title",
+                         "meta.pages", "created", "meta.path_img"],
+            "excludes": ["content_base64"]
+        }, 
+        "query": {
+            "match_all": {}
+        },
+        "size": 1
+    }
+
+    res = es_conn.search(index='files', doc_type='_doc', body=doc, scroll='1m')
+
+    #scrollId = self.res['_scroll_id']    
+    #es.scroll(scroll_id = scrollId, scroll = '1m')
+    pages = []
+    all_keys = set()
+    content = []
+    hits = res.get('hits')
+    res = {}
+    
+    if hits:
+        total = hits.get('total')
+        max_score = hits.get('max_score')
+        rows = hits.get('hits')
+    
+        if rows:
+            for row in rows:
+                _index = row.get('_index')
+                _type = row.get('_type')
+                _id = row.get('_id')
+                _score = row.get('_score')
+                _source = row.get('_source')
+                
+                _meta = _source.get('meta', {})
+                author =  _meta.get('author', '')
+                title = _meta.get('title', '')
+                numpages = _meta.get('pages', '')
+                created = _source.get('created', '')
+                
+                
+                all_keys |= set(_source.keys())
+                content.append(_source)
+
+                path_img = _source.get('meta', {}).get('path_img')
+                folder_name = _source.get('meta', {}).get('filename')
+                
+                for f in os.listdir(path_img):
+                    if os.path.isfile(os.path.join(path_img, f)) and \
+                    f.endswith(('.jpg', '.jpeg')):
+                        rel_path = os.path.join('static', 'img', 'gutenberg', 
+                                                folder_name, f)
+                        pages.append(rel_path)
+                
+                pages.sort()
+                
+                res = {
+                    'author': author,
+                    'title': title,
+                    'numpages': numpages,
+                    'created': created,
+                    'pages': pages
+                }
+    return res
+
+
 class WebSckt(tornado.websocket.WebSocketHandler):
 
     def check_origin(self, origin):
@@ -280,13 +294,24 @@ class WebSckt(tornado.websocket.WebSocketHandler):
     def on_close(self):
         logger.info("Client disconnected")
 
-    def on_message(self, message): #, message):
-        logger.info("message: {}".format(message))
-        self.write_message(json.dumps({
-                'type': 'user',
-                'id': id(self),
-                'message': message,
-            }))
+    def on_message(self, message):
+        recv = json.loads(message)
+        path = recv.get('path')
+        msg = recv.get('message')
+        data = {}
+        
+        if path and type(path) is str:    
+            if path == '/gutenberg':
+                if msg and type(msg) is str:
+                    data = gutenberg(msg, self.application.es_conn)
+        
+        if data:
+            content = {
+                'type': 'websocket',
+                'path': path, 
+                'message': data
+                }
+            self.write_message(json.dumps(content))
 
 class Broadcaster(tornado.websocket.WebSocketHandler):
     waiters = set()
