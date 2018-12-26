@@ -2,7 +2,7 @@
 import os
 import sys
 import uuid
-import datetime
+from datetime import datetime
 import re
 import tweepy
 import tornado
@@ -215,67 +215,72 @@ def gutenberg(message, es_conn):
         "_source": 
         {
             "includes": ["meta.author", "meta.filename", "meta.title",
-                         "meta.pages", "created", "meta.path_img"],
+                         "meta.pages", "meta.path_img", "created",
+                         "summary"],
             "excludes": ["content_base64"]
         }, 
         "query": {
             "match_all": {}
-        },
-        "size": 1
+        }
     }
 
     res = es_conn.search(index='files', doc_type='_doc', body=doc, scroll='1m')
 
     #scrollId = self.res['_scroll_id']    
     #es.scroll(scroll_id = scrollId, scroll = '1m')
-    pages = []
-    all_keys = set()
-    content = []
+    
+    #all_keys = set()
     hits = res.get('hits')
     res = {}
     
     if hits:
-        total = hits.get('total')
-        max_score = hits.get('max_score')
+        _total = hits.get('total')
+        _max_score = hits.get('max_score')
         rows = hits.get('hits')
     
         if rows:
             for row in rows:
-                _index = row.get('_index')
-                _type = row.get('_type')
                 _id = row.get('_id')
                 _score = row.get('_score')
                 _source = row.get('_source')
                 
                 _meta = _source.get('meta', {})
-                author =  _meta.get('author', '')
-                title = _meta.get('title', '')
-                numpages = _meta.get('pages', '')
-                created = _source.get('created', '')
+                _author =  _meta.get('author', '')
+                _title = _meta.get('title', '')
+                _numpages = _meta.get('pages', -1)
+                _summary = _source.get('summary', '')
                 
+                _date = _source.get('created', '1970-01-01 00:00:00')
+                d = datetime.strptime(_date, "%Y-%m-%d %H:%M:%S")
+                _created = d.strftime("%d-%b-%Y")
                 
-                all_keys |= set(_source.keys())
-                content.append(_source)
+                #all_keys |= set(_source.keys())
 
                 path_img = _source.get('meta', {}).get('path_img')
                 folder_name = _source.get('meta', {}).get('filename')
                 
+                _pages = []
                 for f in os.listdir(path_img):
                     if os.path.isfile(os.path.join(path_img, f)) and \
                     f.endswith(('.jpg', '.jpeg')):
                         rel_path = os.path.join('static', 'img', 'gutenberg', 
                                                 folder_name, f)
-                        pages.append(rel_path)
+                        _pages.append(rel_path)
                 
-                pages.sort()
+                _pages.sort()
                 
-                res = {
-                    'author': author,
-                    'title': title,
-                    'numpages': numpages,
-                    'created': created,
-                    'pages': pages
+                res[_id] = {
+                    'author': _author,
+                    'title': _title,
+                    'numpages': _numpages,
+                    'summary': _summary,
+                    'created': _created,
+                    'pages': _pages,
+                    'score': _score,
+                    'max_score': _max_score,
+                    'total': _total
                 }
+    logger.info(res)
     return res
 
 
@@ -351,7 +356,7 @@ class Broadcaster(tornado.websocket.WebSocketHandler):
         logger.info("got message %r", message)
         parsed = tornado.escape.json_decode(message)
         content = {
-            "time": datetime.datetime.now(),
+            "time": datetime.now(),
             "id": str(uuid.uuid4()),
             "body": parsed["body"],
             }
