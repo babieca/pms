@@ -22,11 +22,13 @@ from pyjade.ext.tornado import patch_tornado
 patch_tornado()
 
 from controller import *
-BASEDIR = config.get('app',{}).get('basedir')
 
-define("address", default=config.get('app',{}).get('listen_addr'), type=str)
-define("portHTTP", default=config.get('app',{}).get('port_http'), type=int)
-define("portHTTPS", default=config.get('app',{}).get('port_https'), type=int)
+_app = config.get('app',{})
+BASEDIR = _app.get('basedir')
+
+define("address", default=_app.get('listen_addr', '127.0.0.1'), type=str)
+define("portHTTP", default=_app.get('port_http', '8080'), type=int)
+define("portHTTPS", default=_app.get('port_https', '8443'), type=int)
 define("env", default='dev', type=str)
 
 
@@ -71,7 +73,7 @@ class Application(tornado.web.Application):
             template_path=server_path('view'),
             static_path=server_path('static'),
             xsrf_cookies=True,
-            cookie_secret=config.get('app',{}).get('cookie_sec'),
+            cookie_secret=_app.get('cookie_sec'),
             default_handler_class=Error404,
             login_url="/login",
         )

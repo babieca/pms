@@ -16,8 +16,8 @@ html(lang='en')
 	body
 		include navbar
 		
-		.container-fluid
-			.row
+		.container-fluid(style="height: 100%;")
+			.row(style="height: 100%;")
 				include sidebar
 				block content
 		
@@ -39,6 +39,8 @@ html(lang='en')
 		// script(type='text/javascript', src=static_url('js/turn.min.js'))
 		
 		script(type='text/javascript', src=static_url('js/main.js'))
+		
+		script(type='text/javascript', src=static_url('vendors/twbs-pagination/jquery.twbsPagination.min.js'))
 		
 		block foot
 

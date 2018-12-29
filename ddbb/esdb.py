@@ -10,8 +10,7 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 host=config.get('es',{}).get('host')
 port=config.get('es',{}).get('port')
 
-result = sock.connect_ex((host, port))
-if result != 0:
+if sock.connect_ex((host, port)) != 0:
    raise ValueError("Error connecting to Elasticsearch on '{}:{}'".
                     format(host, port))
 

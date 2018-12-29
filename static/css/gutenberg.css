@@ -2,6 +2,14 @@ body.hide-overflow {
     /* overflow: hidden; */
 }
 
+#gutenberg_blank{
+	background: url('../img/cactus.jpg') no-repeat ; 
+ 	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
 /* helpers */
 
 .book-wrapper {

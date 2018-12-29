@@ -216,12 +216,13 @@ def gutenberg(message, es_conn):
         {
             "includes": ["meta.author", "meta.filename", "meta.title",
                          "meta.pages", "meta.path_img", "created",
-                         "summary"],
+                         "summary", "meta.filename", "meta.extension"],
             "excludes": ["content_base64"]
         }, 
         "query": {
             "match_all": {}
-        }
+        },
+        "size": 50
     }
 
     res = es_conn.search(index='files', doc_type='_doc', body=doc, scroll='1m')
@@ -254,6 +255,10 @@ def gutenberg(message, es_conn):
                 d = datetime.strptime(_date, "%Y-%m-%d %H:%M:%S")
                 _created = d.strftime("%d-%b-%Y")
                 
+                _file_name = _meta.get('filename', '')
+                _file_extension = _meta.get('extension', '')
+                _fileurl = os.path.join('static', 'files', 
+                                        _file_name + _file_extension)
                 #all_keys |= set(_source.keys())
 
                 path_img = _source.get('meta', {}).get('path_img')
@@ -278,7 +283,8 @@ def gutenberg(message, es_conn):
                     'pages': _pages,
                     'score': _score,
                     'max_score': _max_score,
-                    'total': _total
+                    'total': _total,
+                    'fileurl': _fileurl
                 }
     logger.info(res)
     return res

@@ -2,6 +2,23 @@ extends layout
 
 block neck	
 	link(rel='stylesheet', href=static_url('css/gutenberg.css'))
+	style(type='text/css').
+		.page {
+			display: none;
+		}
+		.page-active {
+			display: block;
+		}
+	style(type='text/css').
+		.form-control-borderless {
+			border: none;
+		}
+		.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+			border: none;
+			outline: none;
+			box-shadow: none;
+		}
+
 
 block foot
 	script(type='text/javascript').
@@ -14,8 +31,17 @@ block foot
 	script(type='text/javascript', src=static_url('js/gutenberg.js'))
 
 block content
-	main.col-md-10.ml-sm-auto.pt-3(role='main')
-		.row
-			#parent
-			//- if message == False
-			//- 	img.mx-auto.d-block.img-fluid.my-4(src='/static/img/library_1024x414.jpg')
+	main.col-md-10.ml-sm-auto.h-100(role='main')
+		#gutenberg_blank.h-100
+			div(style='display:flex;justify-content:center;align-items:center;width:100%;height:100%;')
+				div(style='width:50%;height:50%;')
+					form.card.card-sm#card_search
+						.card-body.row.no-gutters.align-items-center
+							.col-auto.mr-2
+								i.h4.feather(data-feather='search')
+							.col
+								input.form-control.form-control-lg.form-control-borderless#gutenbergInput(type='search', placeholder='Search topics or keywords')
+							.col-auto
+								button.btn.btn-lg.btn-outline-secondary#gutenbergButton(type='submit') Search
+		#gutenberg_container(style="display: none;")
+			ul#pagination.pagination.justify-content-end.my-2
