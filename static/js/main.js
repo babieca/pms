@@ -114,7 +114,7 @@ var wss = {
 	        			// template for pagination links
 	        			href: false,
 	        			// variable name in href template for page number
-	        			hrefVariable: '{{number}}',
+	        			//hrefVariable: '{{number}}',
 	        			// Text labels
 	        			first: 'First',
 	        			prev: 'Prev.',
@@ -126,6 +126,11 @@ var wss = {
 	        			onPageClick: function (event, page) {
 	        				$('.page-active').removeClass('page-active');
 	        				$('#page'+page).addClass('page-active');
+	        				if ($(".page-active")[0]){
+	        					var el = document.getElementsByClassName('page-active')[0].id;
+	        					console.log(el);
+	        					//turn.init(el);
+	        				}
 	        			},
 	        			// pagination Classes
 	        			paginationClass: 'pagination',
@@ -143,13 +148,13 @@ var wss = {
 	        	}else{
 	        		wss.showMessage(JSON.stringify(recv));
 	        	}
-        	}
-        }
-    },
+        	} // if(recv.hasOwnProperty('path') && recv.hasOwnProperty('message')){
+        } // wss.socket.onmessage
+    }, // start
 
     showMessage: function(message) {
     	console.log('received: ' + message)
-    },
+    },  // showMessage
     
     tweetMessage: function(message){
 		var data = [date_format(message['created_at']), 
@@ -163,7 +168,7 @@ var wss = {
 	    	.row.add(data)
 	    	.draw();
     	
-    }
+    } // tweetMessage
 };
 
 // Helper functions -----------------------------

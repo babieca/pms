@@ -47,7 +47,7 @@ class Application(tornado.web.Application):
         keywords = ['trump']
 
         handlers = [
-            URLSpec(r"/", HomeHandler, name="home"),
+            URLSpec(r"/", GutenbergHandler, name="home"),
             #URLSpec(r"(?i)^/((\?|index|home).*?(\?.*)?)?$", HomeHandler, name="home"),
 
             URLSpec(r"^/wss", WebSckt),
@@ -109,11 +109,7 @@ def run_server():
 
     application = Application()
 
-    ssl_ctx = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
-    ssl_ctx.load_cert_chain(os.path.join(BASEDIR, "config/certs/cert.crt"),
-                            os.path.join(BASEDIR, "config/certs/cert.key"))
 
-    # server = tornado.httpserver.HTTPServer(application, ssl_options=ssl_ctx)
     serverHTTP = tornado.httpserver.HTTPServer(application)
     serverHTTPS = tornado.httpserver.HTTPServer(application, ssl_options={
         "certfile": os.path.join(BASEDIR, "config/certs/cert.crt"),

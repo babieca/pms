@@ -47,8 +47,8 @@ class BaseHandler(tornado.web.RequestHandler):
     
     def get_current_user(self):
         return self.get_secure_cookie("user")
-
-
+        
+        
 class Error404(BaseHandler):
 
     def get(self):
@@ -296,11 +296,11 @@ class WebSckt(tornado.websocket.WebSocketHandler):
         return True
  
     def open(self):
+        logger.info("Client connected")
         self.write_message(json.dumps({
             'type': 'sys',
             'message': 'Welcome to Websocket',
             }))
-        logger.info("Client connected")
 
     def on_close(self):
         logger.info("Client disconnected")
