@@ -95,10 +95,10 @@ var wss = {
 	        		    	
 		        			content = obj[key];
 		        			var child = document.createElement("div");
-		        			child.innerHTML = gutenberg_node(key, pagenum, content).trim();
+		        			child.innerHTML = gutenberg_node(pagenum, content).trim();
 		        			container.appendChild(child);
 		        			container.style.width="100%";
-		        			turn.init(key);
+		        			//turn.init(key);
 		        			feather.replace();
 		        			pagenum = pagenum + 1;
 	        		    }
@@ -216,7 +216,7 @@ function date_format(dateString)
     return formatedDay + "-" + formatedMonth + "-" + year + " " + formatedHour + ':' + formatedMinute + ':' + formatedSecond;
 }
 
-function gutenberg_node(_id, pagenum, data){
+function gutenberg_node(pagenum, data){
 	var pages = data["pages"];
 	var img = ''
 	var node =  
@@ -225,9 +225,11 @@ function gutenberg_node(_id, pagenum, data){
 		'<nav class="navbar navbar-light bg-light justify-content-between">' +
 			'<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">' + 
 				'<div class="btn-group mr-2" role="group" aria-label="First group">' +
-					'<button class="btn btn-sm btn-outline-dark" type="button" disabled>' + 
-						'<i data-feather="monitor"></i> Read Online' +
-					'</button>' +
+					'<a href=readonline/' + data["document"] + ' target="_blank">' +
+						'<button class="btn btn-sm btn-outline-dark" type="button">' + 
+							'<i data-feather="monitor"></i> Read Online' +
+						'</button>' +
+					'</a>' +
 				'</div>' +
 				'<div class="btn-group" role="group" aria-label="Second group">' +
 					'<a href=' + data["fileurl"] + ' target="_blank">' +
@@ -255,17 +257,6 @@ function gutenberg_node(_id, pagenum, data){
 				'<p class="lead">' + data['summary'] + '</p>' +
 			'</div>' +
 		'</fieldset>' +
-		'<div class="book-wrapper">' +
-			'<div class="book-container">' +
-				'<div class="book" id="' + _id + '">'
-					for (var i = 0; i < pages.length; i++) {
-						img +='<div class="page"><img src="' +pages[i] +'" alt=""/></div>'
-					}
-				node += img
-				node +=
-				'</div>' +
-			'</div>' +
-		'</div>' +
 	'</div>' +
 '</div>'
 	return node
