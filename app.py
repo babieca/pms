@@ -56,10 +56,14 @@ class Application(tornado.web.Application):
             URLSpec(r"(?i)^/gutenberg", GutenbergHandler, name="gutenberg"),
             URLSpec(r"(?i)^/imdb", ImdbHandler, name="imdb"),
             URLSpec(r"(?i)^/twitter", TwitterHandler, name="twitter", kwargs={'keywords': keywords}),
-            URLSpec(r"(?i)^/charts", ChartsHandler, name="charts"),
             URLSpec(r"(?i)^/about", AboutHandler, name="about"),
+            
+            
             URLSpec(r"(?i)^/login", LoginHandler, name="login"),
             URLSpec(r"(?i)^/logout", LogoutHandler, name="logout"),
+            URLSpec(r"(?i)^/profile", ProfileHandler, name="profile"),
+            
+            URLSpec(r"(?i)^/readonline/([^/]+)", ReadOnlineHandler, name="readonline"),
 
             URLSpec(r"(?i)^/static/js/(.*)", tornado.web.StaticFileHandler, {"path": server_path('static', 'js')}),
             URLSpec(r"(?i)^/static/css/(.*)", tornado.web.StaticFileHandler, {"path": server_path('static', 'css')}),
@@ -78,15 +82,15 @@ class Application(tornado.web.Application):
             login_url="/login",
         )
 
-        # SQLite
-        self.sqlite_conn = SQLite(
-            config.get('sqlite',{}).get('path'),
-            config.get('sqlite',{}).get('name'),
-            config.get('sqlite',{}).get('table'),
-            True)
-
-        self.sqlite_conn.create(
-            config.get('sqlite',{}).get('create_tbl_twitter'))
+        # Twitter - database
+        twitter_db = config.get('twitter',{}).get('db')
+        if twitter_db:
+            self.sqlite_conn = SQLite( twitter_db.get('path'), 
+                                       twitter_db.get('name'),
+                                       twitter_db.get('table'),
+                                       True)
+    
+            self.sqlite_conn.create(twitter_db.get('create_tbl_twitter'))
 
         # Elasticsearch
         self.es_conn = es
@@ -95,12 +99,16 @@ class Application(tornado.web.Application):
 
 
 def resetTwitterDDBB():
-    oSQLite = SQLite(config.get('sqlite',{}).get('path'),
-                     config.get('sqlite',{}).get('name'),
-                     config.get('sqlite',{}).get('table'),
-                     True)
-    oSQLite.create(config.get('sqlite',{}).get('create_tbl_twitter'))
-    oSQLite.close()
+    
+    # Twitter - database
+    twitter_db = config.get('twitter',{}).get('db')
+    if twitter_db:
+        oSQLite = SQLite(twitter_db.get('path'),
+                         twitter_db.get('name'),
+                         twitter_db.get('table'),
+                         True)
+        oSQLite.create(twitter_db.get('create_tbl_twitter'))
+        oSQLite.close()
 
 
 def run_server():

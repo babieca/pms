@@ -2,7 +2,6 @@ config.py
 
 bin/
 downloads/
-utils/Dump20171222/
 venv/
 
 __pycache__
@@ -17,7 +16,6 @@ __pycache__
 *.cert
 *.pyc
 *.sql
-*.db
 
 tweet_example
 tweet.db-journal

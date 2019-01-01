@@ -5,7 +5,7 @@ import sys
 import uuid
 import logging
 from time import time
-from .config import config
+from config import config
 
 
 ###################################

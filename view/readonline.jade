@@ -1,0 +1,181 @@
+doctype html
+html(lang='en')
+	head
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+		meta(name='description', content='')
+		meta(name='author', content='')
+		title !{title}
+		// Bootstrap core CSS
+		link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css', integrity='sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS', crossorigin='anonymous')
+		style(type='text/css').
+			html,body {
+				height: 100%;
+				margin: 0;
+				background-color: #e8e8e8;
+			}
+			.box {
+				display: flex;
+				flex-flow: column;
+				height: 100%;
+			}
+			.box .row-mod {
+				border: 1px dotted grey;
+			}
+			.box .row-mod.header {
+				flex: 0 1 auto;
+				/* The above is shorthand for:
+				flex-grow: 0,
+				flex-shrink: 1,
+				flex-basis: auto
+				*/
+			}
+			.box .row-mod.content {
+				flex: 1 1 auto;
+			}
+			.box .row-mod.footer {
+				flex: 0 1 40px;
+			}
+			html1,body1 {
+				height: 100%;
+				width: 100%;
+				min-height: 100%;
+				min-width: 100%;
+			}
+			body1 {
+				overflow: hidden;
+				background-color: #e8e8e8;
+				margin: 0;
+				padding: 0;
+			}
+			.flipbook-viewport {
+				overflow: hidden;
+				width: 100%;
+				height: 100%;
+			}
+			.flipbook-viewport .container {
+				position: absolute;
+				top: 0;
+				left: 0;
+				margin: auto;
+			}
+			.flipbook-viewport .flipbook {
+				width: 922px;
+				height: 600px;
+			}
+			.flipbook-viewport .page {
+				width: 461px;
+				height: 600px;
+				background-color: white;
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+			}
+			.flipbook .page {
+				-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+				-moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+				-ms-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+				-o-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+				box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+			}
+			.flipbook-viewport .page img {
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				margin: 0;
+			}
+			.flipbook-viewport .shadow {
+				-webkit-transition: -webkit-box-shadow 0.5s;
+				-moz-transition: -moz-box-shadow 0.5s;
+				-o-transition: -webkit-box-shadow 0.5s;
+				-ms-transition: -ms-box-shadow 0.5s;
+				-webkit-box-shadow: 0 0 20px #ccc;
+				-moz-box-shadow: 0 0 20px #ccc;
+				-o-box-shadow: 0 0 20px #ccc;
+				-ms-box-shadow: 0 0 20px #ccc;
+				box-shadow: 0 0 20px #ccc;
+			}
+	body
+		.box
+			.row-mod.header
+				.form-inline
+					.form-group.mb-2
+						input#pageFld.form-control.mr-sm-2(type='number', min='1/', placeholder='1', aria-label='page')
+					button#prevBtn.btn.btn-outline-danger.my-2.my-sm-0 Previous
+					button#nextBtn.btn.btn-outline-success.my-2.my-sm-0 Next
+			.row-mod.content#box-content
+				.flipbook-viewport
+					.flipbook#flipbook
+						each page in pages
+							div(style='background-image:url(https://127.0.0.1:8443/'+page+')')
+			.row-mod.footer
+				p
+					b footer
+					| (fixed height)
+		
+		// Bootstrap 4
+		script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+		script(src='https://unpkg.com/popper.js/dist/umd/popper.min.js')
+		// script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js', integrity='sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut', crossorigin='anonymous')
+		script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js', integrity='sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k', crossorigin='anonymous')
+		
+		// TurnJS
+		//script(type='text/javascript', src=static_url('js/gutenberg_turnjs.min.js'))
+		script(type='text/javascript', src=static_url('vendors/turnjs4/lib/turn.min.js'))
+		
+		script(type='text/javascript').
+			window.addEventListener('resize', resize);
+			document.body.addEventListener('touchmove', function(e) {
+				e.preventDefault();
+			});
+			function loadApp() {
+				var size = getSize();
+				console.log(size);
+				$('.flipbook').turn({
+					width: size.width,
+					height: size.height,
+					elevation: 50,
+					gradients: true,
+					autoCenter: true
+				});
+			}
+			function getSize() {
+				//var width = document.body.clientWidth;
+				//var height = document.body.clientHeight;
+				console.log("asdasdasd")
+				var width = document.getElementById('box-content').offsetWidth
+				var height = document.getElementById('box-content').offsetHeight
+				console.log("W/H" + width + "/" + height)
+				return {
+					width: width,
+					height: height
+				}
+			}
+			function resize() {
+				var size = getSize();
+				if (size.width > size.height) { // landscape
+					$('.flipbook').turn('display', 'double');
+				}
+				else {
+					$('.flipbook').turn('display', 'single');
+				}
+				$('.flipbook').turn('size', size.width, size.height);
+			}
+			loadApp();
+
+		script(type='text/javascript').
+			$("#pageFld").val($("#flipbook").turn("page"));
+			$("#flipbook").bind("turned", function(event, page, view) {
+				$("#pageFld").val(page);
+			});
+			$("#pageFld").change(function() {
+				$("#flipbook").turn("page", $(this).val());
+			});
+			$("#prevBtn").click(function() {
+				$("#flipbook").turn("previous");
+			});
+			$("#nextBtn").click(function() {
+				$("#flipbook").turn("next");
+			});

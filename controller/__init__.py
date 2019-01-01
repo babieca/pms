@@ -15,6 +15,8 @@ import tornado.web
 import tornado.websocket
 from importlib.resources import contents
 
+_app = config.get('app',{})
+BASEDIR = _app.get('basedir')
 
 class BaseHandler(tornado.web.RequestHandler):
     """A class to collect common handler methods - all other handlers should
@@ -191,23 +193,48 @@ class TwitterHandler(BaseHandler):
             colnames = list(data[0].keys())
             tweets = [list(row.values()) for row in data]
 
-        self.render("tweets.jade",
+        self.render("twitter.jade",
                     title="tweets",
                     keywords=self.keywords,
                     colnames=colnames,
                     tweets=tweets)
-
         
-class ChartsHandler(BaseHandler):
-
-    def get(self, *args, **kwargs):
-        self.render("charts.jade", title="charts")
-
 
 class AboutHandler(BaseHandler):
 
     def get(self, *args, **kwargs):
         self.render("about.jade", title="about")
+
+
+class ProfileHandler(BaseHandler):
+
+    def get(self, *args, **kwargs):
+        self.render("profile.jade", title="profile")
+
+
+class ReadOnlineHandler(BaseHandler):
+
+    def get(self, _doc):
+        if not _doc: raise tornado.web.HTTPError(404)
+        
+        path_img = os.path.join(BASEDIR, 'static', 'img', 'gutenberg', _doc)
+        pages = []
+        if os.path.isdir(os.path.join(path_img)):
+            for f in os.listdir(path_img):
+                if os.path.isfile(os.path.join(path_img, f)) and \
+                f.endswith(('.jpg', '.jpeg')):
+                    rel_path = os.path.join('static', 'img', 'gutenberg', 
+                                            _doc, f)
+                    pages.append(rel_path)
+            
+            if pages:
+                pages.sort()
+            
+                self.render("readonline.jade", title="Read Online", pages=pages)
+            else:
+                raise tornado.web.HTTPError(404)
+        else:
+            raise tornado.web.HTTPError(404)
 
 
 def gutenberg(message, es_conn):
@@ -260,7 +287,8 @@ def gutenberg(message, es_conn):
                 _fileurl = os.path.join('static', 'files', 
                                         _file_name + _file_extension)
                 #all_keys |= set(_source.keys())
-
+                
+                '''
                 path_img = _source.get('meta', {}).get('path_img')
                 folder_name = _source.get('meta', {}).get('filename')
                 
@@ -273,17 +301,17 @@ def gutenberg(message, es_conn):
                         _pages.append(rel_path)
                 
                 _pages.sort()
-                
+                '''
                 res[_id] = {
                     'author': _author,
                     'title': _title,
                     'numpages': _numpages,
                     'summary': _summary,
                     'created': _created,
-                    'pages': _pages,
                     'score': _score,
                     'max_score': _max_score,
                     'total': _total,
+                    'document': _file_name,
                     'fileurl': _fileurl
                 }
     logger.info(res)

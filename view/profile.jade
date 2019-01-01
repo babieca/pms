@@ -1,0 +1,131 @@
+extends layout
+
+block neck	
+
+block foot
+
+block content
+	main.col-md-10.ml-sm-auto.h-100(role='main')
+		.row
+			.col-sm-3
+				// left col
+				.text-center.mb-5
+					img.avatar.img-circle.img-thumbnail.mb-2(src='//ssl.gstatic.com/accounts/ui/avatar_2x.png', alt='avatar')
+					h6 Upload a different photo...
+					input.text-center.center-block.file-upload(type='file')
+
+				ul.list-group
+					li.list-group-item.text-muted
+						| Activity 
+						i.fa.fa-dashboard.fa-1x
+					li.list-group-item.text-right
+						span.pull-left
+							strong Shares
+						|  125
+					li.list-group-item.text-right
+						span.pull-left
+							strong Likes
+						|  13
+					li.list-group-item.text-right
+						span.pull-left
+							strong Posts
+						|  37
+					li.list-group-item.text-right
+						span.pull-left
+							strong Followers
+						|  78
+
+			// /col-3
+			
+			.col-sm-9
+			
+				ul#myTab.nav.nav-tabs(role='tablist').mb-3
+					li.nav-item
+						a#home-tab.nav-link.active(data-toggle='tab', href='#home', role='tab', aria-controls='home', aria-selected='true') Home
+					li.nav-item
+						a#messages-tab.nav-link(data-toggle='tab', href='#messages', role='tab', aria-controls='messages', aria-selected='false') Messages
+					li.nav-item
+						a#twitter-tab.nav-link(data-toggle='tab', href='#twitter', role='tab', aria-controls='twitter', aria-selected='false') Twitter
+				
+				#myTabContent.tab-content
+					#home.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='home-tab')
+						form#registrationForm.form(action='##', method='post')
+							.form-group
+								.col-xs-6
+									label(for='first_name')
+										h4 First name
+									input#first_name.form-control(type='text', name='first_name', placeholder='first name', title='enter your first name if any.')
+							.form-group
+								.col-xs-6
+									label(for='last_name')
+										h4 Last name
+									input#last_name.form-control(type='text', name='last_name', placeholder='last name', title='enter your last name if any.')
+							.form-group
+								.col-xs-6
+									label(for='phone')
+										h4 Phone
+									input#phone.form-control(type='text', name='phone', placeholder='enter phone', title='enter your phone number if any.')
+							.form-group
+								.col-xs-6
+									label(for='mobile')
+										h4 Mobile
+									input#mobile.form-control(type='text', name='mobile', placeholder='enter mobile number', title='enter your mobile number if any.')
+							.form-group
+								.col-xs-6
+									label(for='email')
+										h4 Email
+									input#email.form-control(type='email', name='email', placeholder='you@email.com', title='enter your email.')
+							.form-group
+								.col-xs-6
+									label(for='email')
+										h4 Location
+									input#location.form-control(type='email', placeholder='somewhere', title='enter a location')
+							.form-group
+								.col-xs-6
+									label(for='password')
+										h4 Password
+									input#password.form-control(type='password', name='password', placeholder='password', title='enter your password.')
+							.form-group
+								.col-xs-6
+									label(for='password2')
+										h4 Verify
+									input#password2.form-control(type='password', name='password2', placeholder='password2', title='enter your password2.')
+							.form-group
+								.col-xs-12
+									br
+									button.btn.btn-lg.btn-success(type='submit')
+										i.glyphicon.glyphicon-ok-sign
+										|  Save
+									button.btn.btn-lg(type='reset')
+										i.glyphicon.glyphicon-repeat
+										|  Reset
+					
+					// /tab-pane
+					#messages.tab-pane.fade(role='tabpanel', aria-labelledby='messages-tab')
+						.jumbotron
+						
+					// /tab-pane
+					#twitter.tab-pane.fade(role='tabpanel', aria-labelledby='settings-tab')
+						form.form-inline.mb-5(action='/profile/settings', method='post')
+							.form-group.mx-sm-3.mb-2
+								label.sr-only(for='follow') Follow
+								input#follow.form-control(type='text', name='follow', placeholder='follow on Twitter', title='type anything you want to follow')
+							button.btn.btn-success.mr-2(type='submit') Add
+							button.btn.btn-danger(type='submit') Delete
+							
+						// form
+						ul.list-group
+							li.list-group-item.d-flex.justify-content-between.align-items-center
+								| Trump
+								span.badge.badge-primary.badge-pill 14
+							li.list-group-item.d-flex.justify-content-between.align-items-center
+								| Brexit
+								span.badge.badge-primary.badge-pill 2
+							li.list-group-item.d-flex.justify-content-between.align-items-center
+								| Brent
+								span.badge.badge-primary.badge-pill 1
+						
+					// /tab-pane
+				// /tab-content
+			// /col-9
+		// /row
