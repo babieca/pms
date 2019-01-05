@@ -2,14 +2,19 @@
 import os
 import sys
 import uuid
-from datetime import datetime
 import re
 import tweepy
 import tornado
 import json
-from config import config, logger, decfun
-
+import bcrypt
+from datetime import datetime
 from collections import OrderedDict
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
+from config import config, logger, decfun
+from models import User, Contact
+from models import User
 
 import tornado.web
 import tornado.websocket
@@ -17,6 +22,15 @@ from importlib.resources import contents
 
 _app = config.get('app',{})
 BASEDIR = _app.get('basedir')
+
+# sqlalchemy
+db_path = config.get('users',{}).get('db', {}).get('path')
+db_url = 'sqlite:///{db}'.format(db=db_path)
+engine = create_engine(db_url)
+
+Session = sessionmaker()
+Session.configure(bind=engine)
+session = Session()
 
 class BaseHandler(tornado.web.RequestHandler):
     """A class to collect common handler methods - all other handlers should
@@ -41,6 +55,12 @@ class BaseHandler(tornado.web.RequestHandler):
             
             req = re.sub(r'(?:\:\d{2,4}[/]?)+', ':8443/', self.request.full_url())
             self.redirect(re.sub(r'^([^:]+)', 'https', req))
+            
+        self.clear_header('Server')
+        self.set_header('X-FRAME-OPTIONS', 'Deny')
+        self.set_header('X-XSS-Protection', '1; mode=block')
+        self.set_header('X-Content-Type-Options', 'nosniff')
+        self.set_header('Strict-Transport-Security', 'max-age=31536000; includeSubdomains')
     
     def render(self, template_name, **kwargs):
         kwargs["current_url"] = self.request.uri
@@ -48,7 +68,40 @@ class BaseHandler(tornado.web.RequestHandler):
         super().render(template_name, **kwargs)
     
     def get_current_user(self):
-        return self.get_secure_cookie("user")
+        email = self.get_secure_cookie("user")
+        if email is None:
+            return None
+        return User.objects(email=email).first()
+    
+    def check_permission(self, action):
+        user = self.get_current_user()
+        admin = self.is_admin_user()
+        if action in self.perm_public or (user and action in self.perm_user) or (admin and action in self.perm_admin):
+            pass # ok
+        else:
+            self.raise403()
+    
+    def is_admin_user(self):
+        user = self.get_current_user()
+        return user and user.admin
+
+    def raise400(self, msg=None):
+        raise tornado.web.HTTPError(400, msg or 'Invalid request')
+
+    def raise401(self, msg=None):
+        raise tornado.web.HTTPError(401, msg or 'Not enough permissions to perform this action')
+
+    def raise403(self, msg=None):
+        raise tornado.web.HTTPError(403, msg or 'Not enough permissions to perform this action')
+
+    def raise404(self, msg=None):
+        raise tornado.web.HTTPError(404, msg or 'Object not found')
+
+    def raise422(self, msg=None):
+        raise tornado.web.HTTPError(422, msg or 'Invalid request')
+
+    def raise500(self, msg=None):
+        raise tornado.web.HTTPError(500, msg or 'Something is not right')
         
         
 class Error404(BaseHandler):
@@ -58,6 +111,7 @@ class Error404(BaseHandler):
 
 
 class LoginHandler(BaseHandler):
+                
     @tornado.gen.coroutine
     def get(self):
         incorrect = self.get_secure_cookie("incorrect")
@@ -73,24 +127,39 @@ class LoginHandler(BaseHandler):
             self.write('<center>blocked</center>')
             return
         
-        getusername = tornado.escape.xhtml_escape(self.get_argument("username"))
-        getpassword = tornado.escape.xhtml_escape(self.get_argument("password"))
-        if "demo" == getusername and "demo" == getpassword:
-            self.set_secure_cookie("user", self.get_argument("username"))
-            self.set_secure_cookie("incorrect", "0")
-            self.redirect(self.reverse_url("home"))
-        else:
-            incorrect = self.get_secure_cookie("incorrect") or 0
-            increased = str(int(incorrect)+1)
-            self.set_secure_cookie("incorrect", increased)
-            self.write("""<center>
-                            Something Wrong With Your Data (%s)<br />
-                            <a href="/login">Try it again</a>
-                          </center>""" % increased)
+        form_email = tornado.escape.xhtml_escape(self.get_argument("email"))
+        form_password = tornado.escape.xhtml_escape(self.get_argument("password"))
+        
+        if form_email and form_password:
+            user = (session.query(User,Contact)
+                .filter(User.id == Contact.user_id)
+                .filter(Contact.email == form_email)
+                .first())
+            salt = bcrypt.gensalt()
+            hashed = bcrypt.hashpw(form_password.encode("utf-8"), salt)
+            if user and bcrypt.hashpw(form_password.encode("utf-8"), hashed) == hashed:
+                user.last_loggedin = datetime.now()
+                session.add(user)
+                session.commit()
+                self.set_secure_cookie("user", self.get_argument("username"))
+                self.set_secure_cookie("incorrect", "0")
+                self.redirect(self.reverse_url("home"))
+
+        incorrect = self.get_secure_cookie("incorrect") or 0
+        increased = str(int(incorrect)+1)
+        self.set_secure_cookie("incorrect", increased)
+        self.render('signin.jade', title="signin")
 
 
 class LogoutHandler(BaseHandler):
+    """Logout the current user."""
+    
     def get(self):
+        user = current_user
+        user.authenticated = False
+        db.session.add(user)
+        db.session.commit()
+        logout_user()
         self.clear_cookie("user")
         self.redirect(self.get_argument("next", self.reverse_url("home")))
 

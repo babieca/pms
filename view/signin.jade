@@ -9,7 +9,6 @@ html(lang='en')
 		// Bootstrap core CSS
 		link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css', integrity='sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS', crossorigin='anonymous')
 		// Custom styles for this template
-		//link(rel='stylesheet', href=static_url('css/signin.css'))
 		style(type='text/css').
 			:root {
 				--input-padding-x: 1.5rem;
@@ -144,10 +143,10 @@ html(lang='en')
 							h5.card-title.text-center Sign In
 							form.form-signin(action='login', method='post')
 								.form-label-group
-									input#username.form-control(type='text', name='username', placeholder='Username', required='', autofocus='')
-									label(for='username') Username
+									input#email.form-control(type='email', name='email', placeholder='email', required='', autofocus='')
+									label(for='email') Email
 								.form-label-group
-									input#inputPassword.form-control(type='password', name='password', placeholder='Password', required='')
+									input#inputPassword.form-control(type='password', name='password', placeholder='password', required='')
 									label(for='inputPassword') Password
 								.custom-control.custom-checkbox.mb-3
 									input#customCheck1.custom-control-input(type='checkbox')
