@@ -123,11 +123,12 @@ var wss = {
 	        			onPageClick: function (event, page) {
 	        				$('.page-active').removeClass('page-active');
 	        				$('#page'+page).addClass('page-active');
+	        				/*
 	        				if ($(".page-active")[0]){
 	        					var el = document.getElementsByClassName('page-active')[0].id;
 	        					console.log(el);
-	        					//turn.init(el);
 	        				}
+	        				*/
 	        			},
 	        			// pagination Classes
 	        			paginationClass: 'pagination',

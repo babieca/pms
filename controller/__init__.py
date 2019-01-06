@@ -9,12 +9,9 @@ import json
 import bcrypt
 from datetime import datetime
 from collections import OrderedDict
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
 
 from config import config, logger, decfun
 from models import User, Contact
-from models import User
 
 import tornado.web
 import tornado.websocket
@@ -22,15 +19,6 @@ from importlib.resources import contents
 
 _app = config.get('app',{})
 BASEDIR = _app.get('basedir')
-
-# sqlalchemy
-db_path = config.get('users',{}).get('db', {}).get('path')
-db_url = 'sqlite:///{db}'.format(db=db_path)
-engine = create_engine(db_url)
-
-Session = sessionmaker()
-Session.configure(bind=engine)
-session = Session()
 
 class BaseHandler(tornado.web.RequestHandler):
     """A class to collect common handler methods - all other handlers should
@@ -71,7 +59,12 @@ class BaseHandler(tornado.web.RequestHandler):
         email = self.get_secure_cookie("user")
         if email is None:
             return None
-        return User.objects(email=email).first()
+        session = self.application.session_user_db
+        user = (session.query(User,Contact)
+            .filter(User.id == Contact.user_id)
+            .filter(Contact.email == email.decode('utf-8'))
+            .first())
+        return user.Contact.email
     
     def check_permission(self, action):
         user = self.get_current_user()
@@ -131,19 +124,24 @@ class LoginHandler(BaseHandler):
         form_password = tornado.escape.xhtml_escape(self.get_argument("password"))
         
         if form_email and form_password:
+            
+            session = self.application.session_user_db
+            
             user = (session.query(User,Contact)
                 .filter(User.id == Contact.user_id)
                 .filter(Contact.email == form_email)
                 .first())
             salt = bcrypt.gensalt()
             hashed = bcrypt.hashpw(form_password.encode("utf-8"), salt)
+            
             if user and bcrypt.hashpw(form_password.encode("utf-8"), hashed) == hashed:
-                user.last_loggedin = datetime.now()
-                session.add(user)
+                user.User.last_loggedin = datetime.now()
+                user.User.no_of_logins += 1
                 session.commit()
-                self.set_secure_cookie("user", self.get_argument("username"))
+                self.set_secure_cookie("user", form_email)
                 self.set_secure_cookie("incorrect", "0")
                 self.redirect(self.reverse_url("home"))
+                return
 
         incorrect = self.get_secure_cookie("incorrect") or 0
         increased = str(int(incorrect)+1)
@@ -155,11 +153,6 @@ class LogoutHandler(BaseHandler):
     """Logout the current user."""
     
     def get(self):
-        user = current_user
-        user.authenticated = False
-        db.session.add(user)
-        db.session.commit()
-        logout_user()
         self.clear_cookie("user")
         self.redirect(self.get_argument("next", self.reverse_url("home")))
 
@@ -316,7 +309,21 @@ def gutenberg(message, es_conn):
             "excludes": ["content_base64"]
         }, 
         "query": {
-            "match_all": {}
+            "multi_match": {
+                "query" : message,
+                "fields" : ["title^3", "content"]
+            }
+        },
+        "highlight" : {
+            "number_of_fragments" : 3,
+            "fragment_size" : 150,
+            "fields" : {
+                "_all" : { "pre_tags" : ["<em>"], "post_tags" : ["</em>"] },
+                "meta.title" : { "number_of_fragments" : 0 },
+                "meta.author" : { "number_of_fragments" : 0 },
+                "summary" : { "number_of_fragments" : 5, "order" : "score" },
+                "content" : { "number_of_fragments" : 5, "order" : "score" }
+            }
         },
         "size": 50
     }
@@ -383,7 +390,7 @@ def gutenberg(message, es_conn):
                     'document': _file_name,
                     'fileurl': _fileurl
                 }
-    logger.info(res)
+
     return res
 
 

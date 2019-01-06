@@ -2,20 +2,23 @@ import bcrypt
 from datetime import datetime
 from sqlalchemy import create_engine, Table, MetaData, Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.orm import mapper, relationship, sessionmaker
-from config import config
+from config import config, logger
 
 
 class User():
     
-    def __init__(self, name, password, created, last_loggedin):
+    def __init__(self, name, password, created):
         self.name = name
         self.password = password
         self.created = created
-        self.last_loggedin = last_loggedin
+        self.last_loggedin = None
+        self.no_of_logins = 0
     
     def __repr__(self):
-        return ("<User(name='{}', password='{}')>"
-                .format(self.name, self.password))
+        return ("<User(name='{}', password='{}', created='{}', "
+                "last_loggedin='{}', no_of_logins='{}')>"
+                .format(self.name, self.password, self.created,
+                        self.last_loggedin, self.no_of_logins))
 
 
 class Contact():
@@ -54,7 +57,8 @@ tbl_users = Table(db_tbl_users, meta,
              Column('name', String),
              Column('password', String),
              Column('created', DateTime, default=datetime.utcnow),
-             Column('last_loggedin', DateTime))
+             Column('last_loggedin', DateTime),
+             Column('no_of_logins', Integer))
 
 tbl_contact = Table(db_tbl_contact, meta,
              Column('id', Integer, primary_key=True),
@@ -91,7 +95,7 @@ if not user:
     plaintext_password = b'demo'
     salt = bcrypt.gensalt()
     hashed = bcrypt.hashpw(plaintext_password, salt)
-    user = User(name='demo', password=hashed, created=datetime.now(), last_loggedin = None)
+    user = User(name='demo', password=hashed, created=datetime.now())
     contact = Contact(email='demo@test.com')
     follow = Twitter(following='Trump')
 
@@ -101,6 +105,13 @@ if not user:
     try:
         session.add(user)
         session.commit()
+        
+        user = (session.query(User,Contact)
+            .filter(User.id == Contact.user_id)
+            .filter(Contact.email == 'demo@test.com')
+            .all())
+        
+        logger.info("User saved: {}".format(user))
     
     finally:
         session.close()

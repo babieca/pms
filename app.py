@@ -5,6 +5,8 @@ import gevent
 import os
 import ssl
 import asyncio
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
 from config import config, logger, decfun
 from ddbb import SQLite, es
@@ -25,6 +27,16 @@ from controller import *
 
 _app = config.get('app',{})
 BASEDIR = _app.get('basedir')
+
+
+# sqlalchemy
+db_path = config.get('users',{}).get('db', {}).get('path')
+db_url = 'sqlite:///{db}'.format(db=db_path)
+engine = create_engine(db_url)
+
+Session = sessionmaker()
+Session.configure(bind=engine)
+session_user_db = Session()
 
 define("address", default=_app.get('listen_addr', '127.0.0.1'), type=str)
 define("portHTTP", default=_app.get('port_http', '8080'), type=int)
@@ -94,6 +106,9 @@ class Application(tornado.web.Application):
 
         # Elasticsearch
         self.es_conn = es
+        
+        # User db
+        self.session_user_db = session_user_db
 
         super(Application, self).__init__(handlers, **settings)
 
