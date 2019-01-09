@@ -1,67 +1,47 @@
 extends layout
 
-block content			
-	main.col-md-10.ml-sm-auto.pt-3.px-2(role='main')
-		.d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pb-2.mb-3.border-bottom
-			h1.h2
-			.btn-toolbar.mb-2.mb-md-0
-				.btn-group.mr-2
-					button.btn.btn-sm.btn-outline-secondary Share
-					button.btn.btn-sm.btn-outline-secondary Export
-				button.btn.btn-sm.btn-outline-secondary.dropdown-toggle
-					span(data-feather='calendar')
-					|  This week
-				
+block neck	
+	link(rel='stylesheet', href=static_url('css/home.css'))
+	style(type='text/css').
+		.page {
+			display: none;
+		}
+		.page-active {
+			display: block;
+		}
+	style(type='text/css').
+		.form-control-borderless {
+			border: none;
+		}
+		.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+			border: none;
+			outline: none;
+			box-shadow: none;
+		}
 
-		.card-columns
-			.card
-				img.card-img-top(src='http://via.placeholder.com/1600x900/483D8B/ffffff?text=Card+1', alt='Card image cap')
-				.card-body
-					h5.card-title Card title that wraps to a new line
-					p.card-text
-						| This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-			.card.p-3
-				blockquote.blockquote.mb-0.card-body
-					p
-						| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-					footer.blockquote-footer
-						small.text-muted
-							| Someone famous in 
-							cite(title='Source Title') Source Title
-			.card
-				img.card-img-top(src='http://via.placeholder.com/1600x450/9400D3/ffffff?text=Card+2', alt='Card image cap')
-				.card-body
-					h5.card-title Card title
-					p.card-text This card has supporting text below as a natural lead-in to additional content.
-					p.card-text
-						small.text-muted Last updated 3 mins ago
-			.card.bg-primary.text-white.text-center.p-3
-				blockquote.blockquote.mb-0
-					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.
-					footer.blockquote-footer
-						small
-							| Someone famous in 
-							cite(title='Source Title') Source Title
-			.card.text-center
-				.card-body
-					h5.card-title Card title
-					p.card-text This card has supporting text below as a natural lead-in to additional content.
-					p.card-text
-						small.text-muted Last updated 3 mins ago
-			.card
-				img.card-img(src='http://via.placeholder.com/1600x1600/FF1493/ffffff?text=Card+3', alt='Card image')
-			.card.p-3.text-right
-				blockquote.blockquote.mb-0
-					p
-						| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-					footer.blockquote-footer
-						small.text-muted
-							| Someone famous in 
-							cite(title='Source Title') Source Title
-			.card
-				.card-body
-					h5.card-title Card title
-					p.card-text
-						| This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
-					p.card-text
-						small.text-muted Last updated 3 mins ago
+
+block foot
+	script(type='text/javascript').
+		function decodeHTML(encoded){
+			var elem = document.createElement('textarea');
+			elem.innerHTML = encoded;
+			var decoded = elem.value;
+			return decoded
+		}
+	script(type='text/javascript', src=static_url('js/home.js'))
+
+block content
+	main.col-md-10.ml-sm-auto.h-100(role='main')
+		#home_blank.h-100
+			div(style='display:flex;justify-content:center;align-items:center;width:100%;height:100%;')
+				div(style='width:50%;height:50%;')
+					form.card.card-sm#card_search
+						.card-body.row.no-gutters.align-items-center
+							.col-auto.mr-2
+								i.h4.feather(data-feather='search')
+							.col
+								input.form-control.form-control-lg.form-control-borderless#homeInput(type='search', placeholder='Search topics or keywords')
+							.col-auto
+								button.btn.btn-lg.btn-outline-secondary#homeButton(type='submit') Search
+		#home_container(style="display: none;")
+			ul#pagination.pagination.justify-content-end.my-2

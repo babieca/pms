@@ -59,7 +59,7 @@ class Application(tornado.web.Application):
         keywords = ['trump']
 
         handlers = [
-            URLSpec(r"/", GutenbergHandler, name="home"),
+            URLSpec(r"/", HomeHandler, name="home"),
             #URLSpec(r"(?i)^/((\?|index|home).*?(\?.*)?)?$", HomeHandler, name="home"),
 
             URLSpec(r"^/wss", WebSckt),

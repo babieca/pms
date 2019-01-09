@@ -299,18 +299,18 @@ class ReadOnlineHandler(BaseHandler):
             raise tornado.web.HTTPError(404)
 
 
-def gutenberg(message, es_conn):
+def search_docs(query, es_conn):
     doc = {
         "_source": 
         {
             "includes": ["meta.author", "meta.filename", "meta.title",
-                         "meta.pages", "meta.path_img", "created",
-                         "summary", "meta.filename", "meta.extension"],
+                         "meta.pages", "meta.folder_file", "meta.folder_img",
+                         "meta.filename", "meta.extension", "created", "summary"],
             "excludes": ["content_base64"]
         }, 
         "query": {
             "multi_match": {
-                "query" : message,
+                "query" : query,
                 "fields" : ["title^3", "content"]
             }
         },
@@ -358,9 +358,10 @@ def gutenberg(message, es_conn):
                 d = datetime.strptime(_date, "%Y-%m-%d %H:%M:%S")
                 _created = d.strftime("%d-%b-%Y")
                 
+                _file_folder = _meta.get('folder_file', '')
                 _file_name = _meta.get('filename', '')
                 _file_extension = _meta.get('extension', '')
-                _fileurl = os.path.join('static', 'files', 
+                _fileurl = os.path.join('public', 'files', _file_folder,
                                         _file_name + _file_extension)
                 #all_keys |= set(_source.keys())
                 
@@ -387,7 +388,7 @@ def gutenberg(message, es_conn):
                     'score': _score,
                     'max_score': _max_score,
                     'total': _total,
-                    'document': _file_name,
+                    'document': os.path.join(_folder_file, _file_name),
                     'fileurl': _fileurl
                 }
 
@@ -395,9 +396,6 @@ def gutenberg(message, es_conn):
 
 
 class WebSckt(tornado.websocket.WebSocketHandler):
-
-    def check_origin(self, origin):
-        return True
  
     def open(self):
         logger.info("Client connected")
@@ -416,17 +414,17 @@ class WebSckt(tornado.websocket.WebSocketHandler):
         data = {}
         
         if path and type(path) is str:    
-            if path == '/gutenberg':
+            if path == '/':
                 if msg and type(msg) is str:
-                    data = gutenberg(msg, self.application.es_conn)
+                    data = search_docs(msg, self.application.es_conn)
         
-        if data:
-            content = {
-                'type': 'websocket',
-                'path': path, 
-                'message': data
+            if data:
+                content = {
+                    'type': 'websocket',
+                    'path': path, 
+                    'message': data
                 }
-            self.write_message(json.dumps(content))
+                self.write_message(json.dumps(content))
 
 class Broadcaster(tornado.websocket.WebSocketHandler):
     waiters = set()
