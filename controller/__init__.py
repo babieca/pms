@@ -171,51 +171,6 @@ class ResearchHandler(BaseHandler):
         self.render("research.jade", title="Research - Partners Capital")
 
 
-class GutenbergHandler(BaseHandler):
-    
-    @tornado.web.authenticated
-    def get(self, *args, **kwargs):        
-        self.render("gutenberg.jade",
-                    title="Gutenberg - Partners Capital",
-                    message=False)
-
-
-class ImdbHandler(BaseHandler):
-
-    doc = {
-            '_source': ['title', 'film_rating', 'duration',
-                        'genre', 'release_date'],
-            'query': {
-                'match_all' : {}
-           },
-            'size' : 50,
-            'from': 0,
-       }
-
-    def initialize(self):
-        data = {}
-        self.res = self.application.es_conn.search(
-            index='imdb', doc_type='doc', body=self.doc, scroll='1m')
-        #scrollId = self.res['_scroll_id']    
-        #es.scroll(scroll_id = scrollId, scroll = '1m')
-    
-    @tornado.web.authenticated
-    def get(self, *args, **kwargs):
-        
-        all_keys = set()
-        content = []
-        for row in self.res['hits']['hits']:
-            all_keys |= set(row['_source'].keys())
-            content.append(row['_source'])
-        
-   
-        self.render("imdb.jade",
-                    title ="Imdb - Partners Capital",
-                    colnames = all_keys,
-                    data = content,
-                    message=False)
-
-
 class TwitterHandler(BaseHandler):
     
     __oSQLite = None
@@ -279,7 +234,7 @@ class ReadOnlineHandler(BaseHandler):
     def get(self, _doc):
         if not _doc: raise tornado.web.HTTPError(404)
         
-        path_img = os.path.join(BASEDIR, 'static', 'img', 'gutenberg', _doc)
+        path_img = os.path.join(BASEDIR, 'public', _doc)
         pages = []
         if os.path.isdir(os.path.join(path_img)):
             for f in os.listdir(path_img):
@@ -359,10 +314,10 @@ def search_docs(query, es_conn):
                 _created = d.strftime("%d-%b-%Y")
                 
                 _file_folder = _meta.get('folder_file', '')
+                _file_img = _meta.get('folder_img', '')
                 _file_name = _meta.get('filename', '')
                 _file_extension = _meta.get('extension', '')
-                _fileurl = os.path.join('public', 'files', _file_folder,
-                                        _file_name + _file_extension)
+                _fileurl = os.path.join('public', _file_folder, _file_name + _file_extension)
                 #all_keys |= set(_source.keys())
                 
                 '''
@@ -388,7 +343,7 @@ def search_docs(query, es_conn):
                     'score': _score,
                     'max_score': _max_score,
                     'total': _total,
-                    'document': os.path.join(_folder_file, _file_name),
+                    'document': _file_img,
                     'fileurl': _fileurl
                 }
 

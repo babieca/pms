@@ -65,8 +65,6 @@ class Application(tornado.web.Application):
             URLSpec(r"^/wss", WebSckt),
 
             URLSpec(r"(?i)^/research", ResearchHandler, name="research"),
-            URLSpec(r"(?i)^/gutenberg", GutenbergHandler, name="gutenberg"),
-            URLSpec(r"(?i)^/imdb", ImdbHandler, name="imdb"),
             URLSpec(r"(?i)^/twitter", TwitterHandler, name="twitter", kwargs={'keywords': keywords}),
             URLSpec(r"(?i)^/about", AboutHandler, name="about"),
             
