@@ -16,6 +16,7 @@ from models import User, Contact
 import tornado.web
 import tornado.websocket
 from importlib.resources import contents
+from numpy.core._methods import _sum
 
 _app = config.get('app',{})
 BASEDIR = _app.get('basedir')
@@ -164,13 +165,6 @@ class HomeHandler(BaseHandler):
         self.render("home.jade", title="Partners Capital")
 
 
-class ResearchHandler(BaseHandler):
-    
-    @tornado.web.authenticated
-    def get(self, *args, **kwargs):
-        self.render("research.jade", title="Research - Partners Capital")
-
-
 class TwitterHandler(BaseHandler):
     
     __oSQLite = None
@@ -230,28 +224,28 @@ class ProfileHandler(BaseHandler):
 
 
 class ReadOnlineHandler(BaseHandler):
-
     def get(self, _doc):
+        
         if not _doc: raise tornado.web.HTTPError(404)
         
         path_img = os.path.join(BASEDIR, 'public', _doc)
         pages = []
         if os.path.isdir(os.path.join(path_img)):
             for f in os.listdir(path_img):
-                if os.path.isfile(os.path.join(path_img, f)) and \
-                f.endswith(('.jpg', '.jpeg')):
-                    rel_path = os.path.join('static', 'img', 'gutenberg', 
-                                            _doc, f)
+                if os.path.isfile(os.path.join(path_img, f)) and f.endswith(('.jpg', '.jpeg')):
+                    rel_path = os.path.join('public', _doc, f)
                     pages.append(rel_path)
-            
             if pages:
                 pages.sort()
-            
                 self.render("readonline.jade", title="Read Online", pages=pages)
             else:
                 raise tornado.web.HTTPError(404)
         else:
             raise tornado.web.HTTPError(404)
+
+
+def remove_null(data):
+    return data if data else ''
 
 
 def search_docs(query, es_conn):
@@ -260,7 +254,8 @@ def search_docs(query, es_conn):
         {
             "includes": ["meta.author", "meta.filename", "meta.title",
                          "meta.pages", "meta.folder_file", "meta.folder_img",
-                         "meta.filename", "meta.extension", "created", "summary"],
+                         "meta.filename", "meta.extension", 
+                         "created", "summary", "tags"],
             "excludes": ["content_base64"]
         }, 
         "query": {
@@ -308,6 +303,7 @@ def search_docs(query, es_conn):
                 _title = _meta.get('title', '')
                 _numpages = _meta.get('pages', -1)
                 _summary = _source.get('summary', '')
+                _tags = _source.get('tags', '')
                 
                 _date = _source.get('created', '1970-01-01 00:00:00')
                 d = datetime.strptime(_date, "%Y-%m-%d %H:%M:%S")
@@ -320,31 +316,34 @@ def search_docs(query, es_conn):
                 _fileurl = os.path.join('public', _file_folder, _file_name + _file_extension)
                 #all_keys |= set(_source.keys())
                 
-                '''
-                path_img = _source.get('meta', {}).get('path_img')
-                folder_name = _source.get('meta', {}).get('filename')
+                if _summary:
+                    _summary = ['<p>' + s + '</p>'for s in _summary.splitlines()]
+                    _summary = ' '.join(_summary)
+                    if _tags:
+                        for t in _tags:
+                            _summary = _summary.replace(t, '<strong style="color: #102889">' + t + '</strong>')
+                    _summary = _summary.replace(query, '<strong style="color: #ff0000">' + query + '</strong>')
                 
-                _pages = []
-                for f in os.listdir(path_img):
-                    if os.path.isfile(os.path.join(path_img, f)) and \
-                    f.endswith(('.jpg', '.jpeg')):
-                        rel_path = os.path.join('static', 'img', 'gutenberg', 
-                                                folder_name, f)
-                        _pages.append(rel_path)
+                if _title:
+                    _title = _title.replace(query, '<strong>' + query + '</strong>')
                 
-                _pages.sort()
-                '''
+                if _tags:
+                    _tags = ['<span class="badge badge-secondary" style="font-size:12px;">' + t +'</span>' for t in _tags]
+                    _tags = ' '.join(_tags)
+                    _tags = '<p>' + _tags + '</p>'
+                
                 res[_id] = {
-                    'author': _author,
-                    'title': _title,
-                    'numpages': _numpages,
-                    'summary': _summary,
-                    'created': _created,
-                    'score': _score,
-                    'max_score': _max_score,
-                    'total': _total,
-                    'document': _file_img,
-                    'fileurl': _fileurl
+                    'author': remove_null(_author),
+                    'title': remove_null(_title),
+                    'numpages': remove_null(_numpages),
+                    'summary': remove_null(_summary),
+                    'created': remove_null(_created),
+                    'score': remove_null(_score),
+                    'max_score': remove_null(_max_score),
+                    'total': remove_null(_total),
+                    'document': remove_null(_file_img),
+                    'fileurl': remove_null(_fileurl),
+                    'tags': remove_null(_tags)
                 }
 
     return res

@@ -1,7 +1,8 @@
 extends layout
 
-block neck	
-	link(rel='stylesheet', href=static_url('css/home.css'))
+block neck
+	link(rel='stylesheet', href=static_url('vendors/colorlib-search-1/colorlib-search-1/css/main.css'))
+	link(rel='stylesheet', href=static_url('vendors/bootstrap-datepicker-1.6.4-dist/css/bootstrap-datepicker.min.css'))
 	style(type='text/css').
 		.page {
 			display: none;
@@ -18,9 +19,22 @@ block neck
 			outline: none;
 			box-shadow: none;
 		}
+	style.
+		.pb-cmnt-container {
+			font-family: Lato;
+			margin-top: 100px;
+		}
+		.pb-cmnt-textarea {
+			resize: none;
+			padding: 20px;
+			height: 130px;
+			width: 100%;
+			border: 1px solid #F2F2F2;
+		}
 
 
 block foot
+	script(type='text/javascript', src=static_url('vendors/bootstrap-datepicker-1.6.4-dist/js/bootstrap-datepicker.min.js'))
 	script(type='text/javascript').
 		function decodeHTML(encoded){
 			var elem = document.createElement('textarea');
@@ -28,20 +42,42 @@ block foot
 			var decoded = elem.value;
 			return decoded
 		}
-	script(type='text/javascript', src=static_url('js/home.js'))
+	script(type='text/javascript').
+		$('.input-daterange').datepicker({
+			format: "dd/mm/yyyy",
+			weekStart: 1,
+			endDate: "+0d",
+			daysOfWeekHighlighted: "0,6",
+			todayHighlight: true,
+			toggleActive: true
+		});
 
 block content
 	main.col-md-10.ml-sm-auto.h-100(role='main')
-		#home_blank.h-100
-			div(style='display:flex;justify-content:center;align-items:center;width:100%;height:100%;')
-				div(style='width:50%;height:50%;')
-					form.card.card-sm#card_search
-						.card-body.row.no-gutters.align-items-center
-							.col-auto.mr-2
-								i.h4.feather(data-feather='search')
-							.col
-								input.form-control.form-control-lg.form-control-borderless#homeInput(type='search', placeholder='Search topics or keywords')
-							.col-auto
-								button.btn.btn-lg.btn-outline-secondary#homeButton(type='submit') Search
+		.s01#home_blank
+			form
+				.inner-form
+					.input-field.first-wrap
+						input#homeInput(type='text', placeholder='What are you looking for?')
+					.input-field.third-wrap
+						button.btn-search#homeButton((type='button') Search
+				br
+				.row
+					.col-md-12
+						.inner-form
+							.input-field.first-wrap
+								input(type='text', placeholder='containing all these words')
+							.input-field.first-wrap
+								input(type='text', placeholder='excluding all these words')
+				br
+				.row
+					.col-md-6.offset-md-2
+						.inner-form
+							#datepicker.input-daterange.input-group
+								span.input-group-addon.text-white(style="font-size: 20px; padding: 0px 20px;") From
+								input.input-sm.form-control(type='text', name='start')
+								span.input-group-addon.text-white(style="font-size: 20px; padding: 0px 20px;") to
+								input.input-sm.form-control(type='text', name='end')
+										
 		#home_container(style="display: none;")
 			ul#pagination.pagination.justify-content-end.my-2

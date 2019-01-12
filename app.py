@@ -64,7 +64,6 @@ class Application(tornado.web.Application):
 
             URLSpec(r"^/wss", WebSckt),
 
-            URLSpec(r"(?i)^/research", ResearchHandler, name="research"),
             URLSpec(r"(?i)^/twitter", TwitterHandler, name="twitter", kwargs={'keywords': keywords}),
             URLSpec(r"(?i)^/about", AboutHandler, name="about"),
             
@@ -73,8 +72,10 @@ class Application(tornado.web.Application):
             URLSpec(r"(?i)^/logout", LogoutHandler, name="logout"),
             URLSpec(r"(?i)^/profile", ProfileHandler, name="profile"),
             
-            URLSpec(r"(?i)^/readonline/([^/]+)", ReadOnlineHandler, name="readonline"),
-
+            URLSpec(r"(?i)^/readonline/(.*)", ReadOnlineHandler, name="readonline"),
+            
+            URLSpec(r"(?i)^/public/(.*)", tornado.web.StaticFileHandler, {"path": server_path('public')}),
+            
             URLSpec(r"(?i)^/static/js/(.*)", tornado.web.StaticFileHandler, {"path": server_path('static', 'js')}),
             URLSpec(r"(?i)^/static/css/(.*)", tornado.web.StaticFileHandler, {"path": server_path('static', 'css')}),
             URLSpec(r"(?i)^/static/img/(.*)", tornado.web.StaticFileHandler, {"path": server_path('static', 'img')}),
@@ -88,7 +89,7 @@ class Application(tornado.web.Application):
             static_path=server_path('static'),
             xsrf_cookies=True,
             cookie_secret=_app.get('cookie_sec'),
-            default_handler_class=Error404,
+            #default_handler_class=Error404,
             login_url="/login",
         )
 
