@@ -9,7 +9,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 from config import config, logger, decfun
-from ddbb import SQLite, es
+from ddbb import SQLite
 from utils import twitterStream
 
 import tornado.web
@@ -66,6 +66,7 @@ class Application(tornado.web.Application):
 
             URLSpec(r"(?i)^/twitter", TwitterHandler, name="twitter", kwargs={'keywords': keywords}),
             URLSpec(r"(?i)^/about", AboutHandler, name="about"),
+            URLSpec(r"(?i)^/sectors/(.*)", SectorsHandler, name="sectors"),
             
             
             URLSpec(r"(?i)^/login", LoginHandler, name="login"),
@@ -102,9 +103,6 @@ class Application(tornado.web.Application):
                                        True)
     
             self.sqlite_conn.create(twitter_db.get('create_tbl_twitter'))
-
-        # Elasticsearch
-        self.es_conn = es
         
         # User db
         self.session_user_db = session_user_db

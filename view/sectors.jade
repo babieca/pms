@@ -1,0 +1,31 @@
+extends layout
+
+block neck
+
+block foot
+
+block content
+	main.col-md-10.ml-sm-auto.h-100(role='main')
+		each sector in files_dir
+			each filename in files_dir[sector]
+				.card
+					.card-body
+						.row
+							.col-md-6
+								span(data-feather='file-text')
+								| &nbsp;&nbsp;!{filename}
+							.col-md-3
+								div
+									| tags
+							.col-md-3
+								.btn-toolbar(role='toolbar', aria-label='Toolbar with button groups')
+									.btn-group.mr-2(role='group', aria-label='First group')
+										a(href='readonline/', target='_blank')
+											button.btn.btn-sm.btn-outline-dark(type='button')
+												i(data-feather='monitor')
+												|  Read Online
+									.btn-group(role='group', aria-label='Second group')
+										a(href='', target='_blank')
+											button.btn.btn-sm.btn-outline-dark(type='button')
+												i(data-feather='download')
+												|  Download

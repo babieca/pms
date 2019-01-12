@@ -9,6 +9,7 @@ import json
 import hashlib
 import string
 import uuid
+from functools import reduce
 from datetime import datetime
 from config import logger, decfun
 
@@ -139,3 +140,27 @@ def input2num(iput):
             if regnum.match(oput):
                 return float(oput)
         return -1
+
+
+def null_to_emtpy_str(data):
+    return data if data else ''
+
+
+def get_directory_structure(rootdir):
+    """
+    Creates a nested dictionary that represents the folder structure of rootdir
+    """
+    dir = {}
+    rootdir = rootdir.rstrip(os.sep)
+    start = rootdir.rfind(os.sep) + 1
+    for path, dirs, files in os.walk(rootdir):
+        folders = path[start:].split(os.sep)
+        subdir = dict.fromkeys(files)
+        parent = reduce(dict.get, folders[:-1], dir)
+        parent[folders[-1]] = subdir
+    return dir
+
+def num_of_files_in_dir_rec(directory):
+    if not os.path.exists(directory):
+        raise ValueError("File '{}' do not exist".format(directory))
+    return sum([len(files) for r, d, files in os.walk(directory)])
