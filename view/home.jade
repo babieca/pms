@@ -66,18 +66,18 @@ block content
 					.col-md-12
 						.inner-form
 							.input-field.first-wrap
-								input(type='text', placeholder='containing all these words')
+								input#inclwords(type='text', placeholder='containing all these words')
 							.input-field.first-wrap
-								input(type='text', placeholder='excluding all these words')
+								input#exclwords(type='text', placeholder='excluding all these words')
 				br
 				.row
 					.col-md-6.offset-md-2
 						.inner-form
 							#datepicker.input-daterange.input-group
 								span.input-group-addon.text-white(style="font-size: 20px; padding: 0px 20px;") From
-								input.input-sm.form-control(type='text', name='start')
+								input#fromdate.input-sm.form-control(type='text', name='start')
 								span.input-group-addon.text-white(style="font-size: 20px; padding: 0px 20px;") to
-								input.input-sm.form-control(type='text', name='end')
+								input#todate.input-sm.form-control(type='text', name='end')
 										
 		#home_container(style="display: none;")
 			ul#pagination.pagination.justify-content-end.my-2

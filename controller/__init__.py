@@ -232,15 +232,19 @@ class SectorsHandler(BaseHandler):
     
     def get(self, sector):
         if sector:
-            
+            docs = {}
             folder = os.path.join(BASEDIR, 'public', 'files', sector)
             files_dir = utils.get_directory_structure(folder)
-            logger.info(files_dir)
+
             for folder, files in files_dir.items():
-                for k, v in files.items():
-                    logger.info(es_queries.search_filename(k))
+                for filename, _ in files.items():
+                    dot = filename.find('.')
+                    res = es_queries.search_by_filename_and_folder(
+                        filename[:dot], os.path.join('files', sector))
+                    docs = {**docs, **res}
+            logger.info(docs)
             self.render("sectors.jade", title="Sectors",
-                        files_dir=files_dir)
+                        docs=docs)
 
 
 class ReadOnlineHandler(BaseHandler):
@@ -278,14 +282,18 @@ class WebSckt(tornado.websocket.WebSocketHandler):
 
     def on_message(self, message):
         recv = json.loads(message)
+        logger.info(recv)
         path = recv.get('path')
         msg = recv.get('message')
         data = {}
         
         if path and type(path) is str:    
             if path == '/':
-                if msg and type(msg) is str:
-                    data = es_queries.search_docs(msg)
+                if msg:
+                    data = es_queries.search_docs(
+                        should=msg.get('should',''),
+                        must=msg.get('must', ''),
+                        must_not=msg.get('must_not',''))
         
             if data:
                 content = {

@@ -23,16 +23,16 @@ $(document).ready(function() {
         }
     });
     $("#homeButton").on("click", function(e) {
-    	var message = $.trim($('#homeInput').val());
+    	var message = get_input_values();
     	if ( message.length != 0) {
     		sendMessage(message);
     		$('#homeButton').val("").focus();
     	}
         return false;
     });
-    $("#homeInput").on("keypress", function(e) {
+    $("#homeInput, #inclwords, #exclwords, #fromdate, #todate").on("keypress", function(e) {
         if (e.keyCode == 13) {
-        	var message = $.trim($('#homeInput').val());
+        	var message = get_input_values();
         	if ( message.length != 0) {
         		sendMessage(message);
         		$('#homeInput').val("").focus();
@@ -44,6 +44,18 @@ $(document).ready(function() {
     $('#searchInput').val("").focus()
     
 });
+
+
+function get_input_values(){
+	var dict = {};
+	dict["should"] = $.trim($('#homeInput').val());
+	dict["must"] = $.trim($('#inclwords').val());
+	dict["mustnot"] = $.trim($('#exclwords').val());
+	dict["from"] = $.trim($('#fromdate').val());
+	dict["to"] = $.trim($('#todate').val());
+	return dict
+}
+
 
 function sendMessage(message) {
 	var data = new Object();

@@ -160,6 +160,7 @@ def get_directory_structure(rootdir):
         parent[folders[-1]] = subdir
     return dir
 
+
 def num_of_files_in_dir_rec(directory):
     if not os.path.exists(directory):
         raise ValueError("File '{}' do not exist".format(directory))
