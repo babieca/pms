@@ -289,7 +289,9 @@ class WebSckt(tornado.websocket.WebSocketHandler):
         
         if path and type(path) is str:    
             if path == '/':
-                if msg:
+                if msg and type(msg) is str:
+                    data = es_queries.search_docs( should=msg, must='', must_not= '')
+                elif msg:
                     data = es_queries.search_docs(
                         should=msg.get('should',''),
                         must=msg.get('must', ''),

@@ -102,10 +102,116 @@ def search_docs(should, must='', must_not=''):
             "includes": ["meta.author", "meta.filename", "meta.title",
                          "meta.pages", "meta.folder_file", "meta.folder_img",
                          "meta.filename", "meta.extension", 
-                         "created", "summary", "tags"],
+                         "created", "summary", "tags", "sentiment"],
             "excludes": ["content_base64"]
         }, 
-        "query": {
+        "highlight" : {
+            "number_of_fragments" : 3,
+            "fragment_size" : 150,
+            "fields" : {
+                "_all" : { "pre_tags" : ["<em>"], "post_tags" : ["</em>"] },
+                "meta.title" : { "number_of_fragments" : 0 },
+                "meta.author" : { "number_of_fragments" : 0 },
+                "summary" : { "number_of_fragments" : 5, "order" : "score" },
+                "content" : { "number_of_fragments" : 5, "order" : "score" }
+            }
+        },
+        "size": 50
+    }
+
+    if not should and not must and must_not:
+        # 001
+        query["query"] = {
+            "bool": {
+                "must_not": [
+                    {"multi_match": {
+                        "query": must_not,
+                        "fields": ["title^3", "content"]
+                    }}
+                ]
+            }
+        }
+    elif not should and must and not must_not:
+        # 010
+        query["query"] = {
+            "bool": {
+                "must": [
+                    {"multi_match": {
+                        "query": must,
+                        "fields": ["title^3", "content"]
+                    }}
+                ]
+            }
+        }
+    elif not should and must and must_not:
+        # 011
+        query["query"] = {
+            "bool": {
+                "must": [
+                    {"multi_match": {
+                        "query": must,
+                        "fields": ["title^3", "content"]
+                    }}
+                ],
+                "must_not": [
+                    {"multi_match": {
+                        "query": must_not,
+                        "fields": ["title^3", "content"]
+                    }}
+                ]
+            }
+        }
+    elif should and not must and not must_not:
+        # 100
+        query["query"] = {
+            "bool": {
+                "should": [
+                    {"multi_match": {
+                        "query" : should,
+                        "fields" : ["title^3", "content"]
+                    }}
+                ]
+            }
+        }  
+    elif should and not must and must_not:
+        # 101
+        query["query"] = {
+            "bool": {
+                "should": [
+                    {"multi_match": {
+                        "query" : should,
+                        "fields" : ["title^3", "content"]
+                    }}
+                ],
+                "must_not": [
+                    {"multi_match": {
+                        "query": must_not,
+                        "fields": ["title^3", "content"]
+                    }}
+                ]
+            }
+        }
+    elif should and must and not must_not:
+        # 110
+        query["query"] = {
+            "bool": {
+                "should": [
+                    {"multi_match": {
+                        "query" : should,
+                        "fields" : ["title^3", "content"]
+                    }}
+                ],
+                "must": [
+                    {"multi_match": {
+                        "query": must,
+                        "fields": ["title^3", "content"]
+                    }}
+                ]
+            }
+        }
+    elif should and must and must_not:
+        # 111
+        query["query"] = {
             "bool": {
                 "should": [
                     {"multi_match": {
@@ -126,22 +232,8 @@ def search_docs(should, must='', must_not=''):
                     }}
                 ]
             }
-        },
-        "highlight" : {
-            "number_of_fragments" : 3,
-            "fragment_size" : 150,
-            "fields" : {
-                "_all" : { "pre_tags" : ["<em>"], "post_tags" : ["</em>"] },
-                "meta.title" : { "number_of_fragments" : 0 },
-                "meta.author" : { "number_of_fragments" : 0 },
-                "summary" : { "number_of_fragments" : 5, "order" : "score" },
-                "content" : { "number_of_fragments" : 5, "order" : "score" }
-            }
-        },
-        "size": 50
-    }
-
-    logger.info(query)
+        }
+    
     res = es.search(index='files', doc_type='_doc', body=query, scroll='1m')
 
     #scrollId = self.res['_scroll_id']    
@@ -199,17 +291,18 @@ def get_hits(to_search, res):
 
 
 def get_formatted_hits(to_search, res):
-    
     hits = res.get('hits')
     res = {}
     #all_keys = set()
     
+    logger.info(res)
     if hits:
         _total = hits.get('total')
         _max_score = hits.get('max_score')
         rows = hits.get('hits')
-    
+        logger.info("in get formatted hits! 2")
         if rows:
+            logger.info("in get formatted hits!3")
             for row in rows:
                 _id = row.get('_id')
                 _score = row.get('_score')
@@ -221,6 +314,7 @@ def get_formatted_hits(to_search, res):
                 _numpages = _meta.get('pages', -1)
                 _summary = _source.get('summary', '')
                 _tags = _source.get('tags', '')
+                _sentiment = _source.get('sentiment', '')
                 
                 _date = _source.get('created', '1970-01-01 00:00:00')
                 d = datetime.strptime(_date, "%Y-%m-%d %H:%M:%S")
@@ -248,6 +342,17 @@ def get_formatted_hits(to_search, res):
                     _tags = ['<span class="badge badge-secondary" style="font-size:12px;">' + t +'</span>' for t in _tags]
                     _tags = ' '.join(_tags)
                     _tags = '<p>' + _tags + '</p>'
+                
+                if _sentiment:
+                    _summary = []
+                    for data in _sentiment:
+                        s = '<p>' + data['sentence'] + '</p>'
+                        if _tags:
+                            for t in _tags:
+                                s = s.replace(t, '<strong style="color: #102889">' + t + '</strong>')
+                        s = s.replace(to_search, '<strong style="color: #ff0000">' + to_search + '</strong>')
+                        _summary.append(s)
+                    _summary = ' '.join(_summary)
                 
                 res[_id] = {
                     'author': utils.null_to_emtpy_str(_author),
