@@ -7,9 +7,9 @@ import ssl
 import asyncio
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy import engine_from_config
 
 from config import config, logger, decfun
-from ddbb import SQLite
 from utils import twitterStream
 
 import tornado.web
@@ -29,14 +29,24 @@ _app = config.get('app',{})
 BASEDIR = _app.get('basedir')
 
 
-# sqlalchemy
-db_path = config.get('users',{}).get('db', {}).get('path')
-db_url = 'sqlite:///{db}'.format(db=db_path)
-engine = create_engine(db_url)
+# sqlalchemy - User
+db_path_user = config.get('users',{}).get('db', {}).get('path')
+db_url_user = 'sqlite:///{db}'.format(db=db_path_user)
+engine_user = create_engine(db_url_user)
 
-Session = sessionmaker()
-Session.configure(bind=engine)
-session_user_db = Session()
+# sqlalchemy - Twitter
+db_path_twitter = config.get('twitter',{}).get('db', {}).get('path')
+db_url_twitter = 'sqlite:///{db}'.format(db=db_path_twitter)
+engine_twitter = create_engine(db_url_twitter)
+
+Session1 = sessionmaker()
+Session1.configure(bind=engine_user)
+session_user = Session1()
+
+Session2 = sessionmaker()
+Session2.configure(bind=engine_twitter)
+session_twitter = Session2()
+
 
 define("address", default=_app.get('listen_addr', '127.0.0.1'), type=str)
 define("portHTTP", default=_app.get('port_http', '8080'), type=int)
@@ -54,20 +64,16 @@ def server_path(*args) -> str:
 class Application(tornado.web.Application):
 
     def __init__(self):
-
-        # keywords = items2listen()
-        keywords = ['trump']
-
         handlers = [
-            URLSpec(r"/", HomeHandler, name="home"),
-            #URLSpec(r"(?i)^/((\?|index|home).*?(\?.*)?)?$", HomeHandler, name="home"),
+            #URLSpec(r"/", SearchHandler, name="search"),
+            URLSpec(r"(?i)^/((\?|index|home|search).*?(\?.*)?)?$", SearchHandler, name="search"),
 
             URLSpec(r"^/wss", WebSckt),
+            URLSpec(r"^/bcst", Broadcaster),
 
-            URLSpec(r"(?i)^/twitter", TwitterHandler, name="twitter", kwargs={'keywords': keywords}),
+            URLSpec(r"(?i)^/twitter", TwitterHandler, name="twitter"),
             URLSpec(r"(?i)^/about", AboutHandler, name="about"),
             URLSpec(r"(?i)^/sectors/(.*)", SectorsHandler, name="sectors"),
-            
             
             URLSpec(r"(?i)^/login", LoginHandler, name="login"),
             URLSpec(r"(?i)^/logout", LogoutHandler, name="logout"),
@@ -90,22 +96,14 @@ class Application(tornado.web.Application):
             static_path=server_path('static'),
             xsrf_cookies=True,
             cookie_secret=_app.get('cookie_sec'),
-            #default_handler_class=Error404,
+            default_handler_class=Error404,
             login_url="/login",
         )
 
-        # Twitter - database
-        twitter_db = config.get('twitter',{}).get('db')
-        if twitter_db:
-            self.sqlite_conn = SQLite( twitter_db.get('path'), 
-                                       twitter_db.get('name'),
-                                       twitter_db.get('table'),
-                                       True)
-    
-            self.sqlite_conn.create(twitter_db.get('create_tbl_twitter'))
         
         # User db
-        self.session_user_db = session_user_db
+        self.session_user_db = session_user
+        self.session_twitter_db = session_twitter
 
         self.basedir = BASEDIR
         self.cookie_name = config.get('app',{}).get('cookie_name')
@@ -114,25 +112,11 @@ class Application(tornado.web.Application):
         super(Application, self).__init__(handlers, **settings)
 
 
-def resetTwitterDDBB():
-    
-    # Twitter - database
-    twitter_db = config.get('twitter',{}).get('db')
-    if twitter_db:
-        oSQLite = SQLite(twitter_db.get('path'),
-                         twitter_db.get('name'),
-                         twitter_db.get('table'),
-                         True)
-        oSQLite.create(twitter_db.get('create_tbl_twitter'))
-        oSQLite.close()
-
-
 def run_server():
 
     options.parse_command_line(final=False)
 
     application = Application()
-
 
     serverHTTP = tornado.httpserver.HTTPServer(application)
     serverHTTPS = tornado.httpserver.HTTPServer(application, ssl_options={
@@ -151,10 +135,7 @@ def run_server():
 if __name__ == '__main__':
 
     loop = asyncio.get_event_loop()
-
-    loop.create_task(twitterStream(['trump', 'clinton']))
+    loop.create_task(twitterStream(keywords=['trump', 'brexit'], session_db=session_twitter))
     loop.create_task(run_server())
-
     loop.run_forever()
-
     loop.close()

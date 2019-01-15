@@ -11,7 +11,7 @@ from collections import OrderedDict
 
 from controller import BaseHandler
 from config import config, logger, decfun
-from models import User, Contact
+from models import User, Contact, Tweets
 from utils import utils, es_queries
 
 import tornado.web
@@ -80,57 +80,31 @@ class LogoutHandler(BaseHandler):
         self.redirect(self.get_argument("next", self.reverse_url("home")))
 
 
-class HomeHandler(BaseHandler):
+class SearchHandler(BaseHandler):
 
     @tornado.web.authenticated
     def get(self, *args, **kwargs):
-        self.render("home.jade", title="Partners Capital")
+        self.render("search.jade", title="Partners Capital")
 
 
 class TwitterHandler(BaseHandler):
-    
-    __oSQLite = None
-    __cursor = None
-    
-    def initialize(self, keywords):
-        self.keywords = keywords
         
     def get(self, *args, **kwargs):
-
-        col1 = 'created_at'
-        col2 = 'keyword'
-        col3 = 'tweet'
-        col4 = 'user_name'
-        col5 = 'user_followers_count'
-        col6 = 'user_location'
-        
-        strSQL = '''
-            SELECT
-                strftime('%d-%m-%Y %H:%M:%S', {col1}) as Date,
-                {col2} as Keyword,
-                {col3} as Tweet,
-                {col4} as Username,
-                {col5} as Followers,
-                {col6} as Location
-            FROM
-                {tn}
-            ORDER BY Date DESC''' \
-            .format(col1=col1, col2=col2, col3=col3,
-                    col4=col4, col5=col5, col6=col6,
-                    tn='twitter')
-            
-        data = self.application.sqlite_conn.select(strSQL)
-
-        colnames = tweets = []
-        if data:
-            colnames = list(data[0].keys())
-            tweets = [list(row.values()) for row in data]
+        session = self.application.session_twitter_db
+        result = (session.query(Tweets).with_entities(
+            Tweets.created_at,
+            Tweets.keyword,
+            Tweets.tweet,
+            Tweets.user_name,
+            Tweets.user_followers_count,
+            Tweets.user_location).order_by(Tweets.created_at.desc()).all())
 
         self.render("twitter.jade",
                     title="tweets",
-                    keywords=self.keywords,
-                    colnames=colnames,
-                    tweets=tweets)
+                    keywords="trump",
+                    colnames=["Created at", "Keyword", "Tweet", "Username",
+                              "Followers", "User location"],
+                    tweets=result)
         
 
 class AboutHandler(BaseHandler):
@@ -188,10 +162,6 @@ class WebSckt(tornado.websocket.WebSocketHandler):
  
     def open(self):
         logger.info("Client connected")
-        self.write_message(json.dumps({
-            'type': 'sys',
-            'message': 'Welcome to Websocket',
-            }))
 
     def on_close(self):
         logger.info("Client disconnected")

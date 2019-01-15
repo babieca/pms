@@ -1,0 +1,96 @@
+extends layout
+
+block neck
+	link(rel='stylesheet', href=static_url('vendors/colorlib-search-1/colorlib-search-1/css/main.css'))
+	link(rel='stylesheet', href=static_url('vendors/bootstrap-datepicker-1.6.4-dist/css/bootstrap-datepicker.min.css'))
+	style(type='text/css').
+		.page {
+			display: none;
+		}
+		.page-active {
+			display: block;
+		}
+	style(type='text/css').
+		.form-control-borderless {
+			border: none;
+		}
+		.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+			border: none;
+			outline: none;
+			box-shadow: none;
+		}
+	style.
+		.pb-cmnt-container {
+			font-family: Lato;
+			margin-top: 100px;
+		}
+		.pb-cmnt-textarea {
+			resize: none;
+			padding: 20px;
+			height: 130px;
+			width: 100%;
+			border: 1px solid #F2F2F2;
+		}
+
+
+block foot
+	script(type='text/javascript', src=static_url('js/search.js'))
+	script(type='text/javascript', src=static_url('vendors/bootstrap-datepicker-1.6.4-dist/js/bootstrap-datepicker.min.js'))
+	script(type='text/javascript').
+		function decodeHTML(encoded){
+			var elem = document.createElement('textarea');
+			elem.innerHTML = encoded;
+			var decoded = elem.value;
+			return decoded
+		}
+	script(type='text/javascript').
+		$('.input-daterange').datepicker({
+			format: "dd/mm/yyyy",
+			weekStart: 1,
+			endDate: "+0d",
+			daysOfWeekHighlighted: "0,6",
+			todayHighlight: true,
+			toggleActive: true
+		});
+
+block content
+	main.col-md-10.ml-sm-auto.h-100(role='main')
+		.s01#home_blank
+			form
+				.inner-form
+					.input-field.first-wrap
+						input#homeInput(type='text', placeholder='What are you looking for?')
+					.input-field.third-wrap
+						button.btn-search#homeButton((type='button') Search
+				br
+				.row
+					.col-md-12
+						.inner-form
+							.input-field.first-wrap
+								input#inclwords(type='text', placeholder='containing all these words')
+							.input-field.first-wrap
+								input#exclwords(type='text', placeholder='excluding all these words')
+							.second-wrap
+								select#sector.custom-select.mr-sm-2(style="height:68px; font-size:20px; padding: 10px 32px; font-family: sans-serif")
+									option(value='0', selected='') Sectors...
+									option(value='1') Commodities
+									option(value='2') Credit
+									option(value='3') Cross Assets
+									option(value='4') Economics
+									option(value='5') Emerging Markets
+									option(value='6') Equity
+									option(value='7') FX Strategy
+									option(value='8') Interest Rate Strategy
+									option(value='9') Others
+				br
+				.row
+					.col-md-6.offset-md-2
+						.inner-form
+							#datepicker.input-daterange.input-group
+								span.input-group-addon.text-white(style="font-size: 20px; padding: 0px 20px;") From
+								input#fromdate.input-sm.form-control(type='text', name='start')
+								span.input-group-addon.text-white(style="font-size: 20px; padding: 0px 20px;") to
+								input#todate.input-sm.form-control(type='text', name='end')
+										
+		#home_container(style="display: none;")
+			ul#pagination.pagination.justify-content-end.my-2

@@ -1,33 +1,33 @@
-# -*- coding: utf-8 -*-
-import tweepy
 import datetime
 import re
 import json
 import asyncio
+from tweepy.streaming import StreamListener
+from tweepy import OAuthHandler
+from tweepy import Stream
 
 from config import config, logger
-from ddbb import SQLite
+from models import Tweets
 from controller import Broadcaster
 
-auth = tweepy.OAuthHandler(
-    config.get('twitter',{}).get('api_key'),
-    config.get('twitter',{}).get('api_secret'))
+consumer_key = config.get('twitter',{}).get('api_key')
+consumer_secret = config.get('twitter',{}).get('api_secret')
+access_token = config.get('twitter',{}).get('access_token')
+access_token_secret = config.get('twitter',{}).get('access_token_secret')
 
-auth.set_access_token(
-    config.get('twitter',{}).get('access_token'),
-    config.get('twitter',{}).get('access_token_secret'))
+auth = OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
 
-api = tweepy.API(auth)
+class StreamListener(StreamListener, Broadcaster):
 
-class StreamListener(tweepy.StreamListener, Broadcaster):
-
-    def __init__(self, keywords):
+    def __init__(self, keywords, session_db):
         self.keywords = keywords
+        self.session_db = session_db
     
     def on_data(self, data):
         # Make it JSON
         tweet = json.loads(data)
-
+        
         # filter out retweets
         if ('text' in tweet and
             'created_at' in tweet and
@@ -36,19 +36,31 @@ class StreamListener(tweepy.StreamListener, Broadcaster):
             'screen_name' in tweet['user'] and
             'followers_count' in tweet['user'] and
             'created_at' in tweet['user']):
-        
+            
             if 'RT @' not in tweet['text']:
                 kws = self.keywords.split() if type(self.keywords) is str else self.keywords
                 for kw in kws:
                     if kw in tweet['text']:
-                        
-                        logger.info(tweet)
                         created_at = datetime.datetime.strptime(
-                                        tweet['created_at'],
+                                        tweet.get('created_at'),
                                         '%a %b %d %H:%M:%S +%f %Y')
                         user_created_at = datetime.datetime.strptime(
-                                            tweet['user']['created_at'],
+                                            tweet.get('user', {}).get('created_at'),
                                             '%a %b %d %H:%M:%S +%f %Y')
+                        
+                        new_tweet = Tweets(
+                            created_at=created_at,
+                            id_str= tweet.get('id_str'),
+                            tweet= tweet.get('text'),
+                            user_name= tweet.get('user', {}).get('name', ''),
+                            user_screen_name= tweet.get('user', {}).get('screen_name', ''),
+                            user_followers_count= tweet.get('user', {}).get('followers_count', ''),
+                            user_created_at= user_created_at,
+                            user_location= tweet.get('user', {}).get('location', ''),
+                            keyword= kw)
+                        
+                        self.session_db.add(new_tweet)
+                        self.session_db.commit()
                         
                         data = {'created_at': created_at.isoformat(),
                                 'id_str': tweet['id_str'],
@@ -59,13 +71,6 @@ class StreamListener(tweepy.StreamListener, Broadcaster):
                                 'user_created_at': user_created_at.isoformat(),
                                 'user_location': tweet['user']['location'],
                                 'keyword': kw}
-                        
-                        oSQLite = SQLite(config.get('sqlite',{}).get('path'),
-                                         config.get('sqlite',{}).get('name'),
-                                         config.get('sqlite',{}).get('table'))
-                        oSQLite.insert(data)
-
-                        logger.info(data)
                         Broadcaster.update_cache(data)
                         Broadcaster.send_updates(data)
         
@@ -80,20 +85,14 @@ class StreamListener(tweepy.StreamListener, Broadcaster):
     
     def on_timeout(self, status):
         logger.info('Stream disconnected; continuing...')  
-    
-    '''    
-    def on_data(self, data):
-        pass
-        #return format_tweets(data)
-    '''
 
 
-async def twitterStream(keywords):
-    stream_listener = StreamListener(keywords)
-    stream = tweepy.Stream(auth=api.auth, listener=stream_listener)
+async def twitterStream(keywords, session_db):
+    stream_listener = StreamListener(keywords, session_db)
+    stream = Stream(auth=auth, listener=stream_listener)
     
     # filter levels: none, low, medium, high
-    stream.filter(languages=["en"], track=keywords, encoding='utf8', is_async=True, filter_level='medium')
+    stream.filter(languages=["en"], track=keywords, encoding='utf8', is_async=True, filter_level='none')
 
 
 def twitter_search(to_search, retweets=False, max_tweets=100):

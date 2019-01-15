@@ -1,4 +1,5 @@
 import tornado.web
+import re
 from models import User, Contact
 
 class BaseHandler(tornado.web.RequestHandler):

@@ -247,29 +247,27 @@ def search_docs(should=None, must=None, must_not=None,
         9: 'others'}
     
     if sector or date_from or date_to:
+        if not "query" in query:
+            query["query"] = {}
+        if not "bool" in query["query"]:
+            query["query"]["bool"] = {}
+        query["query"]["bool"]["filter"] = []
         if sector:
             sector = int(sector)
             if sector>0:
-                if not "query" in query:
-                    query["query"] = {}
-                if not "bool" in query["query"]:
-                    query["query"]["bool"] = {}
-                query["query"]["bool"]["filter"] = []
-                
-                if sector and sector>0:
-                    filter_sector = {
-                            "nested": {
-                                "path": "meta",
-                                "query": {
-                                    "term": {
-                                        "meta.folder_file": {
-                                            "value": "files/" + sector_index.get(sector)
-                                        }
+                filter_sector = {
+                        "nested": {
+                            "path": "meta",
+                            "query": {
+                                "term": {
+                                    "meta.folder_file": {
+                                        "value": "files/" + sector_index.get(sector)
                                     }
                                 }
                             }
                         }
-                    query["query"]["bool"]["filter"].append(filter_sector)
+                    }
+                query["query"]["bool"]["filter"].append(filter_sector)
         if date_from and not date_to:
             filter_date = {
                 "range": {
@@ -301,7 +299,7 @@ def search_docs(should=None, must=None, must_not=None,
                 }
             }
             query["query"]["bool"]["filter"].append(filter_date)
-    logger.info(query)
+    logger.debug(query)
     res = es.search(index='files', doc_type='_doc', body=query, scroll='1m')
 
     #scrollId = self.res['_scroll_id']    
