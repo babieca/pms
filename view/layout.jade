@@ -6,9 +6,12 @@ html(lang='en')
 		meta(name='description', content='')
 		meta(name='author', content='')
 		title !{title}
+		
 		// Bootstrap core CSS
 		link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css', integrity='sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS', crossorigin='anonymous')
-		// Custom styles for this template
+		
+		link(rel='stylesheet', href=static_url("vendors/DataTables/datatables.min.css"))
+		
 		link(rel='stylesheet', href=static_url('css/main.css'))
 		
 		block neck
@@ -33,6 +36,8 @@ html(lang='en')
 			feather.replace()
 		
 		script(type='text/javascript', src=static_url('vendors/jquery.twbsPagination.min.js'))
+		
+		script(type='text/javascript', src=static_url("vendors/DataTables/datatables.min.js"))
 		
 		script(type='text/javascript', src=static_url('js/main.js'))
 

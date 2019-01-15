@@ -51,9 +51,12 @@ block content
 				.card-body
 					.row
 						.col-md-9
-							img.pdficon(src='/static/img/pdf_32x32.png', alt='Document')
-							each info in docs[key]
-								| &nbsp;&nbsp;!{docs[key][info]}
+							.row
+								.col-md-1
+									img.pdficon(src='/static/img/pdf_32x32.png', alt='Document')
+								.col-md-11
+									each info in docs[key]
+										| &nbsp;&nbsp;!{docs[key][info]}
 						.col-md-3
 							.rate
 								input#star5(type='radio', name='rate', value='5')

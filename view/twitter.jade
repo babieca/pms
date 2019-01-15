@@ -1,22 +1,22 @@
 extends layout
 
 block neck
-	link(rel='stylesheet', href=static_url("css/dataTables.bootstrap4.min.css"))
 	link(rel='stylesheet', href=static_url("css/tweets.css"))
-	
-block feet
-	script(type='text/javascript', src=static_url("js/jquery.dataTables.min.js"))
-	script(type='text/javascript', src=static_url("js/dataTables.bootstrap4.min.js"))
-	script(type='text/javascript', src=static_url("js/tweets.js"))
 
-block link
-	- var selected = 'tweets';
-
+block foot
+	script(type='text/javascript').
+		table = $('#dynamic_table').DataTable( {
+			"order": [[ 0, "desc" ], [ 1, 'asc' ]],
+			"columnDefs": [
+				{ "width": "15%"},
+				{ targets: '_all', visible: true }
+			]
+		} );
 
 block content
-	.row(style="width:100%;")
-		#content.col-md-12
-			table#dynamic_table1.table.table-hover.table-responsive-lg.display(cellspacing='0', width='100%', max-width='100%', style='font-size: 80%;')
+	main.col-md-10.ml-sm-auto.h-100(role='main')
+		#content
+			table#dynamic_table.table.table-hover.table-responsive-lg.display(cellspacing='0', width='100%', max-width='100%', style='font-size: 80%;')
 				thead.bg-secondary
 					tr
 						each colname in colnames
@@ -31,4 +31,4 @@ block content
 							each data in tweet
 								td(style='width:1px;white-space:nowrap;')
 									#{data}
-									
+										

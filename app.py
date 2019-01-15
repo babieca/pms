@@ -107,6 +107,10 @@ class Application(tornado.web.Application):
         # User db
         self.session_user_db = session_user_db
 
+        self.basedir = BASEDIR
+        self.cookie_name = config.get('app',{}).get('cookie_name')
+        self.cookie_sec = config.get('app',{}).get('cookie_sec')
+        
         super(Application, self).__init__(handlers, **settings)
 
 

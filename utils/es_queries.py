@@ -95,7 +95,8 @@ def search_by_filename_and_folder(filename, folder_file):
         return res
 
 
-def search_docs(should, must='', must_not=''):
+def search_docs(should=None, must=None, must_not=None,
+                sector=None, date_from=None, date_to=None):
     query = {
         "_source": 
         {
@@ -116,7 +117,7 @@ def search_docs(should, must='', must_not=''):
                 "content" : { "number_of_fragments" : 5, "order" : "score" }
             }
         },
-        "size": 50
+        "size": 100
     }
 
     if not should and not must and must_not:
@@ -234,6 +235,73 @@ def search_docs(should, must='', must_not=''):
             }
         }
     
+    sector_index = {
+        1: 'commodities',
+        2: 'credit',
+        3: 'cross_assets',
+        4: 'economics',
+        5: 'emerging_markets',
+        6: 'equity',
+        7: 'fx_strategy',
+        8: 'interest_rate_strategy',
+        9: 'others'}
+    
+    if sector or date_from or date_to:
+        if sector:
+            sector = int(sector)
+            if sector>0:
+                if not "query" in query:
+                    query["query"] = {}
+                if not "bool" in query["query"]:
+                    query["query"]["bool"] = {}
+                query["query"]["bool"]["filter"] = []
+                
+                if sector and sector>0:
+                    filter_sector = {
+                            "nested": {
+                                "path": "meta",
+                                "query": {
+                                    "term": {
+                                        "meta.folder_file": {
+                                            "value": "files/" + sector_index.get(sector)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    query["query"]["bool"]["filter"].append(filter_sector)
+        if date_from and not date_to:
+            filter_date = {
+                "range": {
+                    "created": {
+                        "gte": date_from,
+                        "format": "dd/MM/yyyy"
+                    }
+                }
+            }
+            query["query"]["bool"]["filter"].append(filter_date)
+        elif not date_from and date_to:
+            filter_date = {
+                "range": {
+                    "created": {
+                        "lte": date_to,
+                        "format": "dd/MM/yyyy"
+                    }
+                }
+            }
+            query["query"]["bool"]["filter"].append(filter_date)
+        elif date_from and date_to:
+            filter_date = {
+                "range": {
+                    "created": {
+                        "gte": date_from,
+                        "lte": date_to,
+                        "format": "dd/MM/yyyy||dd/MM/yyyyy"
+                    }
+                }
+            }
+            query["query"]["bool"]["filter"].append(filter_date)
+    logger.info(query)
     res = es.search(index='files', doc_type='_doc', body=query, scroll='1m')
 
     #scrollId = self.res['_scroll_id']    
@@ -290,19 +358,16 @@ def get_hits(to_search, res):
     return res
 
 
-def get_formatted_hits(to_search, res):
-    hits = res.get('hits')
+def get_formatted_hits(to_search, data):
+    hits = data.get('hits')
     res = {}
     #all_keys = set()
     
-    logger.info(res)
     if hits:
         _total = hits.get('total')
         _max_score = hits.get('max_score')
         rows = hits.get('hits')
-        logger.info("in get formatted hits! 2")
         if rows:
-            logger.info("in get formatted hits!3")
             for row in rows:
                 _id = row.get('_id')
                 _score = row.get('_score')
@@ -327,32 +392,42 @@ def get_formatted_hits(to_search, res):
                 _fileurl = os.path.join('public', _file_folder, _file_name + _file_extension)
                 #all_keys |= set(_source.keys())
                 
+                
                 if _summary:
                     _summary = ['<p>' + s + '</p>'for s in _summary.splitlines()]
                     _summary = ' '.join(_summary)
                     if _tags:
                         for t in _tags:
                             _summary = _summary.replace(t, '<strong style="color: #102889">' + t + '</strong>')
-                    _summary = _summary.replace(to_search, '<strong style="color: #ff0000">' + to_search + '</strong>')
+                    
+                    if to_search:
+                        _summary = _summary.replace(to_search, '<strong style="color: #ff0000">' + to_search + '</strong>')
                 
                 if _title:
                     _title = _title.replace(to_search, '<strong>' + to_search + '</strong>')
                 
                 if _tags:
-                    _tags = ['<span class="badge badge-secondary" style="font-size:12px;">' + t +'</span>' for t in _tags]
-                    _tags = ' '.join(_tags)
-                    _tags = '<p>' + _tags + '</p>'
+                    formatted_tags = ['<span class="badge badge-secondary" style="font-size:12px;">' + t +'</span>' for t in _tags]
+                    formatted_tags = ' '.join(formatted_tags)
+                    formatted_tags = '<p>' + formatted_tags + '</p>'
                 
+                _new_summary = []
                 if _sentiment:
-                    _summary = []
-                    for data in _sentiment:
-                        s = '<p>' + data['sentence'] + '</p>'
+                    for row in _sentiment:
+                        s = ''
+                        if row['label'] == 'pos':
+                            s = '<p style="color: #267c2c">' + row['sentence'] + '</p>'
+                        elif row['label'] == 'neg':
+                            s = '<p style="color: #f44242">' + row['sentence'] + '</p>'
+                        else:    
+                            s = '<p>' + row['sentence'] + '</p>'
                         if _tags:
                             for t in _tags:
-                                s = s.replace(t, '<strong style="color: #102889">' + t + '</strong>')
-                        s = s.replace(to_search, '<strong style="color: #ff0000">' + to_search + '</strong>')
-                        _summary.append(s)
-                    _summary = ' '.join(_summary)
+                                s = s.replace(t, '<strong>' + t + '</strong>')
+                        if to_search:
+                            s = s.replace(to_search, '<strong style="color: #26287c">' + to_search + '</strong>')
+                        _new_summary.append(s)
+                if _new_summary: _summary = ' '.join(_new_summary)
                 
                 res[_id] = {
                     'author': utils.null_to_emtpy_str(_author),
@@ -365,6 +440,6 @@ def get_formatted_hits(to_search, res):
                     'total': utils.null_to_emtpy_str(_total),
                     'document': utils.null_to_emtpy_str(_file_img),
                     'fileurl': utils.null_to_emtpy_str(_fileurl),
-                    'tags': utils.null_to_emtpy_str(_tags)
+                    'tags': utils.null_to_emtpy_str(formatted_tags)
                 }
     return res

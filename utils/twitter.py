@@ -5,7 +5,7 @@ import re
 import json
 import asyncio
 
-from config import config
+from config import config, logger
 from ddbb import SQLite
 from controller import Broadcaster
 
@@ -18,7 +18,6 @@ auth.set_access_token(
     config.get('twitter',{}).get('access_token_secret'))
 
 api = tweepy.API(auth)
-
 
 class StreamListener(tweepy.StreamListener, Broadcaster):
 
@@ -43,6 +42,7 @@ class StreamListener(tweepy.StreamListener, Broadcaster):
                 for kw in kws:
                     if kw in tweet['text']:
                         
+                        logger.info(tweet)
                         created_at = datetime.datetime.strptime(
                                         tweet['created_at'],
                                         '%a %b %d %H:%M:%S +%f %Y')
@@ -65,10 +65,12 @@ class StreamListener(tweepy.StreamListener, Broadcaster):
                                          config.get('sqlite',{}).get('table'))
                         oSQLite.insert(data)
 
+                        logger.info(data)
                         Broadcaster.update_cache(data)
                         Broadcaster.send_updates(data)
         
     def on_error(self, status_code):
+        logger.warning("error receiving tweets. Status code {}".format(status_code))
         if status_code == 420:
             return False
         
@@ -87,7 +89,6 @@ class StreamListener(tweepy.StreamListener, Broadcaster):
 
 
 async def twitterStream(keywords):
-
     stream_listener = StreamListener(keywords)
     stream = tweepy.Stream(auth=api.auth, listener=stream_listener)
     
