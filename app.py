@@ -65,8 +65,8 @@ class Application(tornado.web.Application):
 
     def __init__(self):
         handlers = [
-            #URLSpec(r"/", SearchHandler, name="search"),
-            URLSpec(r"(?i)^/((\?|index|home|search).*?(\?.*)?)?$", SearchHandler, name="search"),
+            URLSpec(r"/", SearchHandler, name="search"),
+            #URLSpec(r"(?i)^/((\?|index|home|search).*?(\?.*)?)?$", SearchHandler, name="search"),
 
             URLSpec(r"^/wss", WebSckt),
             URLSpec(r"^/bcst", Broadcaster),

@@ -392,7 +392,7 @@ def get_formatted_hits(to_search, data):
                 
                 
                 if _summary:
-                    _summary = ['<p>' + s + '</p>'for s in _summary.splitlines()]
+                    _summary = ['<p style="line-height:16px;">' + s + '</p>'for s in _summary.splitlines()]
                     _summary = ' '.join(_summary)
                     if _tags:
                         for t in _tags:
@@ -405,7 +405,7 @@ def get_formatted_hits(to_search, data):
                     _title = _title.replace(to_search, '<strong>' + to_search + '</strong>')
                 
                 if _tags:
-                    formatted_tags = ['<span class="badge badge-secondary" style="font-size:12px;">' + t +'</span>' for t in _tags]
+                    formatted_tags = ['<span class="badge badge-secondary" style="font-size:14px;">' + t +'</span>' for t in _tags]
                     formatted_tags = ' '.join(formatted_tags)
                     formatted_tags = '<p>' + formatted_tags + '</p>'
                 
@@ -414,11 +414,11 @@ def get_formatted_hits(to_search, data):
                     for row in _sentiment:
                         s = ''
                         if row['label'] == 'pos':
-                            s = '<p style="color: #267c2c">' + row['sentence'] + '</p>'
+                            s = '<p style="color: #267c2c; line-height:16px;">' + row['sentence'] + '</p>'
                         elif row['label'] == 'neg':
-                            s = '<p style="color: #f44242">' + row['sentence'] + '</p>'
+                            s = '<p style="color: #f44242; line-height:16px;">' + row['sentence'] + '</p>'
                         else:    
-                            s = '<p>' + row['sentence'] + '</p>'
+                            s = '<p style="line-height:16px;">' + row['sentence'] + '</p>'
                         if _tags:
                             for t in _tags:
                                 s = s.replace(t, '<strong>' + t + '</strong>')

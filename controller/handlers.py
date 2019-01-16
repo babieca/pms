@@ -63,7 +63,7 @@ class LoginHandler(BaseHandler):
                 session.commit()
                 self.set_secure_cookie("user", form_email)
                 self.set_secure_cookie("incorrect", "0")
-                self.redirect(self.reverse_url("home"))
+                self.redirect(self.reverse_url("search"))
                 return
 
         incorrect = self.get_secure_cookie("incorrect") or 0
